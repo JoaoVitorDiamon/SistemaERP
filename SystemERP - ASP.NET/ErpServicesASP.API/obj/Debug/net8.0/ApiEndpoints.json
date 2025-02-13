@@ -1,0 +1,126 @@
+[
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.CargoController",
+    "Method": "ListarCargos",
+    "RelativePath": "api/Cargo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.CargoController",
+    "Method": "CriarCargo",
+    "RelativePath": "api/Cargo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoCargo",
+        "Type": "ErpServicesASP.API.Dto.Cargo.CargoCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.CargoController",
+    "Method": "CriarCargo",
+    "RelativePath": "api/Cargo",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cargo",
+        "Type": "ErpServicesASP.API.Model.CargoModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.CargoController",
+    "Method": "GetCargoPorId",
+    "RelativePath": "api/Cargo/{idcargo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcargo",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.CargoController",
+    "Method": "DeletarCargoPorId",
+    "RelativePath": "api/Cargo/delete/{idcargo}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcargo",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

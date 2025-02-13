@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sl+rElbNykOt5Hn1ZA8+uvJeLuLk7iUafaJBncGuEQ8kWdxiy9laTDSA2rXtLfP8NwYo6PvCr2ShrCg+X7jvfg==",
+  "dgSpecHash": "H030lXaCOVEbJTKiAGI8P03aLeIqIImomJsD/RxjDCYyYqDV4CDq6IYx3LB3su99k+vyHWnrToZResj6NCFfcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\ErpServicesASP.API\\ErpServicesASP.API.csproj",
+  "projectFilePath": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\ErpServicesASP.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\khaleu\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
