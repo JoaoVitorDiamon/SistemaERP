@@ -1,9 +1,11 @@
-package com.system.SystemERP.Entity;
+package com.system.SystemERP.Entity.TermosDePagamentos;
 
 
+import com.system.SystemERP.Enum.TermosDePagamentos.TermosDePagamentoEnum;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import java.time.Instant;
 
 @Entity
@@ -20,6 +22,7 @@ public class TermosDePagamento {
     @CreationTimestamp
     @Column(name = "dataCriacao")
     private Instant dataCriacao;
+
 
     public Integer getIdTermosDePagamento() {
         return idTermosDePagamento;
@@ -62,7 +65,6 @@ public class TermosDePagamento {
         this.dataCriacao = dataCriacao;
         this.dataAtualizacao = dataAtualizacao;
     }
-
 
     @UpdateTimestamp
     @Column(name = "dataAtualizacao")
