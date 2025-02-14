@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErpServicesASP.API</name>
+    </assembly>
+    <members>
+        <member name="M:ErpServicesASP.API.Controllers.CargoController.ListarCargos">
+            <summary>
+            Obtém uma lista com todos os cargos.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.CargoController.GetCargoPorId(System.Int32)">
+            <summary>
+            Obtém um cargo pelo ID.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.CargoController.CriarCargo(ErpServicesASP.API.Dto.Cargo.CargoCreateDto)">
+            <summary>
+            Cria um cargo.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.CargoController.CriarCargo(ErpServicesASP.API.Model.CargoModel)">
+            <summary>
+            Altera o nome do cargo pelo ID.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.CargoController.DeletarCargoPorId(System.Int32)">
+            <summary>
+            Deleta um cargo pelo ID.
+            </summary>
+        </member>
+        <member name="T:ErpServicesASP.API.Migrations.CriandoDB">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.CriandoDB.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.CriandoDB.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.CriandoDB.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
