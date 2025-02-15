@@ -21,7 +21,7 @@ public class TermosDePagamentoServices {
 
         var paymentTerms = new TermosDePagamento(
                 null,
-                termosDePagamentosDTOS.nome().name(),
+                termosDePagamentosDTOS.nome(),
                 null,
                 null);
 
