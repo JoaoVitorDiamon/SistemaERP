@@ -1,4 +1,5 @@
-﻿using ErpServicesASP.API.Data;
+﻿using Azure;
+using ErpServicesASP.API.Data;
 using ErpServicesASP.API.Dto.Cargo;
 using ErpServicesASP.API.Model;
 using ErpServicesASP.API.Repositories.Interfaces;
@@ -12,21 +13,22 @@ namespace ErpServicesASP.API.Repositories
         private readonly AppDbContext _context;
         public CargoRepository(AppDbContext context) { _context = context; }
 
-        public async Task<ResponseModel<CargoModel?>> AtualizarCargo(CargoModel cargo)
+        public async Task<ResponseModel<CargoModel?>> AtualizarCargo(CargoModel atualizacaoCargo)
         {
             ResponseModel<CargoModel?> response = new ResponseModel<CargoModel?>();
             try
             {
-                var cargoAntigo = await _context.Cargos.FindAsync(cargo.idCargo);
-                if (cargoAntigo == null) 
+                var cargo = await BuscarCargoPorId(atualizacaoCargo.idCargo);
+                if (cargo == null) 
                 {
                     response.Mensagem = "Não foi possivel localizar esse cargo";
                     response.Status = false;
                     return response;
                 }
-                cargoAntigo.Name = cargo.Name;
+
+                cargo.Name = atualizacaoCargo.Name;
                 await _context.SaveChangesAsync();
-                response.Valor = cargo;
+                response.Valor = atualizacaoCargo;
                 return response;
             }
             catch (Exception ex)
@@ -54,7 +56,6 @@ namespace ErpServicesASP.API.Repositories
                 await _context.Cargos.AddAsync(cargo);
                 await _context.SaveChangesAsync();
                 response.Valor = cargo;
-                response.Mensagem = "Criado com sucesso";
                 return response;
             }
             catch (Exception ex)
@@ -70,7 +71,7 @@ namespace ErpServicesASP.API.Repositories
             ResponseModel<List<CargoModel>> response = new ResponseModel<List<CargoModel>>();
             try
             {
-                var cargo = await _context.Cargos.FindAsync(id);
+                var cargo = await BuscarCargoPorId(id);
                 if(cargo == null)
                 {
                     response.Mensagem = "Cargo não foi encontrado";
@@ -95,7 +96,7 @@ namespace ErpServicesASP.API.Repositories
             ResponseModel<CargoModel?> response = new ResponseModel<CargoModel?>();
             try
             {
-                var cargo = await _context.Cargos.FindAsync(id);
+                var cargo = await BuscarCargoPorId(id);
                 if (cargo == null)
                 {
                     response.Mensagem = "Não foi possivel encontrar esse cargo";
@@ -127,6 +128,11 @@ namespace ErpServicesASP.API.Repositories
                 response.Status = false;
                 return response;
             }
+        }
+
+        private async Task<CargoModel?> BuscarCargoPorId(int id)
+        {
+            return await _context.Cargos.FindAsync(id);
         }
     }
 }
