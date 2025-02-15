@@ -33,21 +33,24 @@ namespace ErpServicesASP.API.Repositories
         {
             var emailCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => novoUsuario.Email == usuario.Email);
             var cpfCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => novoUsuario.CPF == usuario.CPF);
-            if(emailCadastrado != null && cpfCadastrado != null)
+            if(emailCadastrado != null || cpfCadastrado != null)
             {
                 return true;
             }
             return false;
         }
 
-        public Task<List<UsuarioModel>> DeletarUsuarioPorId(int id)
+        public async Task<List<UsuarioModel>> DeletarUsuario(UsuarioModel usuario)
         {
-            throw new NotImplementedException();
+            _context.Remove(usuario);
+            await _context.SaveChangesAsync();
+            return await ListarUsuarios();
         }
 
-        public Task<UsuarioModel> getUsuarioPorId(int id)
+        public async Task<UsuarioModel?> GetUsuarioPorId(int id)
         {
-            throw new NotImplementedException();
+            var usuario = await _context.Usuarios.FindAsync(id);
+            return usuario;
         }
 
         public async Task<List<UsuarioModel>> ListarUsuarios()

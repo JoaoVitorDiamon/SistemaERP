@@ -16,9 +16,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<ICargoRepository, CargoRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IValidacaoEmailRepository, ValidacaoEmailRepository>();
-builder.Services.AddScoped<MailService>();
-builder.Services.AddScoped<IUsuarioService, UsuarioService> ();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IValidacaoEmailService, ValidacaoEmailService>();
+builder.Services.AddScoped<MailService>();
 
 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);

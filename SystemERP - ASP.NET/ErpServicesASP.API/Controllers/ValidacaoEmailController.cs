@@ -16,6 +16,10 @@ namespace ErpServicesASP.API.Controllers
         {
             _service = service;
         }
+
+        /// <summary>
+        /// Valida o email do usuário.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<ResponseModel<string>>> ValidarEmail(ValidacaoEmailDto dadosRequisicao)
         {

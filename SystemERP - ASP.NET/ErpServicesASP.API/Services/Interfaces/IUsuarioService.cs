@@ -7,7 +7,7 @@ namespace ErpServicesASP.API.Services.Interfaces
     {
         Task<ResponseModel<UsuarioModel>> CriarUsuario(UsuarioCreateDto novoUsuario);
         Task<ResponseModel<List<UsuarioModel>>> ListarUsuarios();
-        Task<ResponseModel<UsuarioModel>> getUsuarioPorId(int id);
+        Task<ResponseModel<UsuarioModel>> GetUsuarioPorId(int id);
         Task<ResponseModel<List<UsuarioModel>>> DeletarUsuarioPorId(int id);
     }
 }

@@ -170,6 +170,58 @@
     ]
   },
   {
+    "ContainingType": "ErpServicesASP.API.Controllers.UsuarioController",
+    "Method": "GetUsuarioPorId",
+    "RelativePath": "api/Usuario/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.UsuarioModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.UsuarioController",
+    "Method": "DeletarUsuarioPorId",
+    "RelativePath": "api/Usuario/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.UsuarioModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ErpServicesASP.API.Controllers.ValidacaoEmailController",
     "Method": "ValidarEmail",
     "RelativePath": "api/ValidacaoEmail",
@@ -178,14 +230,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
-        "Type": "System.String",
+        "Name": "dadosRequisicao",
+        "Type": "ErpServicesASP.API.Dto.ValidacaoEmailDto",
         "IsRequired": true
-      },
-      {
-        "Name": "codigo",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": [

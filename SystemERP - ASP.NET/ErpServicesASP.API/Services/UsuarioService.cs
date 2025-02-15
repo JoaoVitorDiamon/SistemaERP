@@ -2,6 +2,7 @@
 using ErpServicesASP.API.Model;
 using ErpServicesASP.API.Repositories.Interfaces;
 using ErpServicesASP.API.Services.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace ErpServicesASP.API.Services
 {
@@ -44,22 +45,62 @@ namespace ErpServicesASP.API.Services
                 response.setErro("Erro:" + ex.Message);
                 return response;
             }
-            
         }
 
-        public Task<ResponseModel<List<UsuarioModel>>> DeletarUsuarioPorId(int id)
+        public async Task<ResponseModel<List<UsuarioModel>>> DeletarUsuarioPorId(int id)
         {
-            throw new NotImplementedException();
+            ResponseModel<List<UsuarioModel>> response = new ResponseModel<List<UsuarioModel>>();
+            try
+            {
+                var usuario = await _usuarioRepository.GetUsuarioPorId(id);
+                if (usuario == null)
+                {
+                    response.setErro("Usuário não encontrado");
+                    return response;
+                }
+                var lista = await _usuarioRepository.DeletarUsuario(usuario);
+                response.Valor = lista;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
         }
 
-        public Task<ResponseModel<UsuarioModel>> getUsuarioPorId(int id)
+        public async Task<ResponseModel<UsuarioModel>> GetUsuarioPorId(int id)
         {
-            throw new NotImplementedException();
+            ResponseModel<UsuarioModel> response = new ResponseModel<UsuarioModel>();
+            try
+            {
+                var usuario = await _usuarioRepository.GetUsuarioPorId(id);
+                if (usuario == null)
+                    response.setErro("Usuário não encontrado");
+                response.Valor = usuario;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
         }
 
-        public Task<ResponseModel<List<UsuarioModel>>> ListarUsuarios()
+        public async Task<ResponseModel<List<UsuarioModel>>> ListarUsuarios()
         {
-            throw new NotImplementedException();
+            ResponseModel<List<UsuarioModel>> response = new ResponseModel<List<UsuarioModel>>();
+            try
+            {
+                var lista = await _usuarioRepository.ListarUsuarios();
+                response.Valor = lista;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
         }
     }
 }

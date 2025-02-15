@@ -29,6 +29,31 @@
             Deleta um cargo pelo ID.
             </summary>
         </member>
+        <member name="M:ErpServicesASP.API.Controllers.UsuarioController.ListarUsuarios">
+            <summary>
+            Obtém uma lista com todos os usuários.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.UsuarioController.CriarUsuario(ErpServicesASP.API.Dto.UsuarioCreateDto)">
+            <summary>
+            Adiciona um usuário no banco de dados.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.UsuarioController.GetUsuarioPorId(System.Int32)">
+            <summary>
+            Obtém um usuário pelo ID.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.UsuarioController.DeletarUsuarioPorId(System.Int32)">
+            <summary>
+            Deleta um usuário pelo ID.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.ValidacaoEmailController.ValidarEmail(ErpServicesASP.API.Dto.ValidacaoEmailDto)">
+            <summary>
+            Valida o email do usuário.
+            </summary>
+        </member>
         <member name="T:ErpServicesASP.API.Migrations.CriandoDBMYSQL">
             <inheritdoc />
         </member>
