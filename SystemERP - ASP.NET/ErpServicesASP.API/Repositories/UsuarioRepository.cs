@@ -10,7 +10,7 @@ namespace ErpServicesASP.API.Repositories
     {
         private readonly AppDbContext _context;
         public UsuarioRepository(AppDbContext context) { _context = context; }
-        public async Task<UsuarioModel> CriarUsuario(UsuarioCreateDto novoUsuario)
+        public async Task<UsuarioModel?> CriarUsuario(UsuarioCreateDto novoUsuario)
         {
             var usuario = new UsuarioModel(
                 novoUsuario.Name,
