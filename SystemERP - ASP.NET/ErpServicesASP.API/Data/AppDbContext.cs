@@ -11,5 +11,6 @@ namespace ErpServicesASP.API.Data
         public DbSet<TipoDeEmpresaModel> TipoDeEmpresa { get; set; }
         public DbSet<EmpresaModel> Empresas { get; set; }
         public DbSet<MembroModel> Membros { get; set; }
+        public DbSet<ValidacaoEmailModel> ValidacoesDeEmails { get; set; }
     }
 }

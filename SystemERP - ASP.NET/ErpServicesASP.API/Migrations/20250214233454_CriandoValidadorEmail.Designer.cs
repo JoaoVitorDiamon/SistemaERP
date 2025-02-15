@@ -4,6 +4,7 @@ using ErpServicesASP.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ErpServicesASP.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250214233454_CriandoValidadorEmail")]
+    partial class CriandoValidadorEmail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -160,11 +163,11 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime(6)");
+                    b.Property<DateOnly>("DataCriacao")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime(6)");
+                    b.Property<DateOnly>("DataNascimento")
+                        .HasColumnType("date");
 
                     b.Property<string>("Email")
                         .IsRequired()

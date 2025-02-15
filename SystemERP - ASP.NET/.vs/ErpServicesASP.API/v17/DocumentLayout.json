@@ -3,40 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\interfaces\\icargorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\interfaces\\icargorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\controllers\\validacaoemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\controllers\\validacaoemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\model\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\cargorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\cargorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\validacaoemailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\validacaoemailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\controllers\\cargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\controllers\\cargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\model\\validacaoemailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\validacaoemailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\erpservicesasp.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\erpservicesasp.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\interfaces\\ivalidacaoemailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\interfaces\\ivalidacaoemailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\dto\\cargo\\cargocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\dto\\cargo\\cargocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\model\\cargomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\cargomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1086,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,118 +54,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CargoController.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\CargoController.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Controllers\\CargoController.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\CargoController.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Controllers\\CargoController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADoAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T02:16:19.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CargoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\CargoRepository.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\CargoRepository.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\CargoRepository.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Repositories\\CargoRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T01:44:39.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ResponseModel.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\ResponseModel.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\ResponseModel.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\ResponseModel.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Model\\ResponseModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T01:30:07.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ICargoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\Interfaces\\ICargoRepository.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\Interfaces\\ICargoRepository.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\Interfaces\\ICargoRepository.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Repositories\\Interfaces\\ICargoRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Title": "ValidacaoEmailController.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\ValidacaoEmailController.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Controllers\\ValidacaoEmailController.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\ValidacaoEmailController.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Controllers\\ValidacaoEmailController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T01:28:22.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CargoModel.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\CargoModel.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\CargoModel.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\CargoModel.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Model\\CargoModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T23:23:24.334Z",
+              "WhenOpened": "2025-02-15T01:10:59.499Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Program.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Program.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Program.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA+AAAA",
+              "Title": "ValidacaoEmailModel.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\ValidacaoEmailModel.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\ValidacaoEmailModel.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\ValidacaoEmailModel.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Model\\ValidacaoEmailModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T23:09:53.408Z",
+              "WhenOpened": "2025-02-15T00:28:41.835Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ErpServicesASP.API",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\ErpServicesASP.API.csproj",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\ErpServicesASP.API.csproj",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\ErpServicesASP.API.csproj",
-              "RelativeToolTip": "ErpServicesASP.API\\ErpServicesASP.API.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-13T02:37:52.051Z",
+              "DocumentIndex": 3,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAnwE4AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T21:11:57.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CargoCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\Cargo\\CargoCreateDto.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Dto\\Cargo\\CargoCreateDto.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\Cargo\\CargoCreateDto.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Dto\\Cargo\\CargoCreateDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "DocumentIndex": 1,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAADwvxEAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T01:37:52.456Z",
+              "WhenOpened": "2025-02-14T23:53:17.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T23:09:48.192Z",
+              "WhenOpened": "2025-02-14T21:03:09.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MailService.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\MailService.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\MailService.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\MailService.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Services\\MailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T23:16:11.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T23:39:57.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IValidacaoEmailRepository.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\Interfaces\\IValidacaoEmailRepository.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\Interfaces\\IValidacaoEmailRepository.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\Interfaces\\IValidacaoEmailRepository.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Repositories\\Interfaces\\IValidacaoEmailRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T22:54:38.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ValidacaoEmailRepository.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\ValidacaoEmailRepository.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\ValidacaoEmailRepository.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\ValidacaoEmailRepository.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Repositories\\ValidacaoEmailRepository.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T23:03:33.937Z",
               "EditorCaption": ""
             }
           ]
