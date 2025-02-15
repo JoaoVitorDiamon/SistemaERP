@@ -2,6 +2,7 @@ using ErpServicesASP.API.Data;
 using ErpServicesASP.API.Repositories;
 using ErpServicesASP.API.Repositories.Interfaces;
 using ErpServicesASP.API.Services;
+using ErpServicesASP.API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -16,7 +17,8 @@ builder.Services.AddScoped<ICargoRepository, CargoRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IValidacaoEmailRepository, ValidacaoEmailRepository>();
 builder.Services.AddScoped<MailService>();
-builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService> ();
+builder.Services.AddScoped<IValidacaoEmailService, ValidacaoEmailService>();
 
 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);

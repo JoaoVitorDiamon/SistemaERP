@@ -1,36 +1,38 @@
 ﻿using ErpServicesASP.API.Data;
+using ErpServicesASP.API.Dto;
 using ErpServicesASP.API.Model;
 using ErpServicesASP.API.Repositories.Interfaces;
 using ErpServicesASP.API.Services;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace ErpServicesASP.API.Repositories
 {
     public class ValidacaoEmailRepository : IValidacaoEmailRepository
     {
         private readonly AppDbContext _context;
-        private readonly MailService _mailService;
-        public ValidacaoEmailRepository(AppDbContext context, MailService mailService)
+        public ValidacaoEmailRepository(AppDbContext context)
         {
-            _context = context; _mailService = mailService;
+            _context = context;
         }
-        public async Task<ResponseModel<string>> EnviarEmailValidacao(UsuarioModel usuario)
+
+        public async Task<ValidacaoEmailModel> BuscarValidacaoPorEmail(string email)
         {
-            try
-            {
-                if (ValidacaoJaEnviada(usuario).Result)
-                    return new ResponseModel<string>() { Mensagem = "Erro ao enviar", Status = false };
-                var validacao = new ValidacaoEmailModel() { Usuario = usuario };
-                validacao.GerarCodigo();
-                await _context.ValidacoesDeEmails.AddAsync(validacao);
-                await _context.SaveChangesAsync();
-                _mailService.EnviarEmail(usuario.Email, "SISTEMA ERP - VERIFICAÇÃO", "Código: " + validacao.Codigo);
-                return new ResponseModel<string>() { Mensagem = "sucesso" };
-            }
-            catch(Exception ex)
-            {
-                return new ResponseModel<string>() { Mensagem = "Erro ao enviar", Status = false };
-            }
+            var validacao = await _context.ValidacoesDeEmails.Join(
+                _context.Usuarios.Where(usuario => usuario.Email == email),
+                validacoes => validacoes.Usuario,
+                usuario => usuario,
+                (validacoes, usuario) => validacoes).FirstOrDefaultAsync();
+            return validacao;
+        }
+
+        public async Task<ValidacaoEmailModel> CriarValidacao(UsuarioModel usuario)
+        {
+            var novaValidacao = new ValidacaoEmailModel() { Usuario = usuario };
+            novaValidacao.GerarCodigo();
+            await _context.ValidacoesDeEmails.AddAsync(novaValidacao);
+            await _context.SaveChangesAsync();
+            return novaValidacao;
         }
 
         public async Task<bool> ValidacaoJaEnviada(UsuarioModel usuario)
@@ -41,26 +43,12 @@ namespace ErpServicesASP.API.Repositories
             return true;
         }
 
-        public async Task<ResponseModel<string>> ValidarEmail(string email, string codigo)
+        public async Task<ValidacaoEmailModel> ValidarEmail(ValidacaoEmailModel validacao)
         {
-            var usuario = await _context.ValidacoesDeEmails.Join(
-                _context.Usuarios.Where(usuario => usuario.Email == email),
-                validacoes => validacoes.Usuario,
-                usuario => usuario,
-                (validacoes, usuario) => validacoes).FirstOrDefaultAsync();
-            if(usuario == null)
-            {
-                return new ResponseModel<string>() { Mensagem = "erro", Status = false };
-            }
-            if (usuario.Codigo == codigo)
-            {
-                usuario.Validado = true;
-                _context.ValidacoesDeEmails.Update(usuario);
-                await _context.SaveChangesAsync();
-                return new ResponseModel<string>() { Mensagem = "Sucesso"};
-            }
-            return new ResponseModel<string>() { Mensagem = "Codigo errado", Status = false };
-
+            validacao.Validado = true;
+            _context.ValidacoesDeEmails.Update(validacao);
+            await _context.SaveChangesAsync();
+            return validacao;
         }
     }
 }

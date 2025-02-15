@@ -7,5 +7,11 @@ namespace ErpServicesASP.API.Model
         public T? Valor { get; set; }
         public string Mensagem { get; set; }
         public bool Status { get; set; } = true;
+
+        public void setErro(string erro)
+        {
+            Mensagem = erro;
+            Status = false;
+        }
     }
 }

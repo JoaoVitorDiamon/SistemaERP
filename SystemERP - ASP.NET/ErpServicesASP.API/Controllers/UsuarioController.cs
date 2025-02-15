@@ -11,24 +11,29 @@ namespace ErpServicesASP.API.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly IUsuarioRepository _repository;
         private readonly UsuarioService _service;
-        public UsuarioController(IUsuarioRepository repository, UsuarioService service)
+        public UsuarioController(UsuarioService service)
         {
-            _repository = repository;
             _service = service;
         }
 
         [HttpGet]
         public async Task<ActionResult<ResponseModel<List<UsuarioModel>>>> ListarUsuarios()
         {
-            var lista = await _repository.ListarUsuarios();
+            var lista = await _service.ListarUsuarios();
             return Ok(lista);
         }
         [HttpPost]
         public async Task<ActionResult<ResponseModel<UsuarioModel>>> CriarUsuario(UsuarioCreateDto novoUsuario)
         {
+            if (novoUsuario == null)
+                return BadRequest("Dados inválidos");
+
             var response = await _service.CriarUsuario(novoUsuario);
+            if (response.Mensagem == "Email ou CPF já cadastrados")
+                return Conflict(response);
+            if (!response.Status)
+                return BadRequest(response);
             return Ok(response);
         }
 
