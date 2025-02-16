@@ -1,6 +1,9 @@
-package com.system.SystemERP.Enum.TermosDePagamentos;
+package com.system.SystemERP.Enum.PaymentTerms;
 
-public enum TermosDePagamentoEnum {
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(hidden = true)
+public enum PaymentTermsEnum {
     Apos_o_Recebimento,
     Trinta_dias,
     Trinta_dias_depois_do_fim_do_mes,

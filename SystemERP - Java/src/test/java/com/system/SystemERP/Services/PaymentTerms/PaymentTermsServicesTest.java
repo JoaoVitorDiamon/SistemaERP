@@ -1,8 +1,10 @@
-package com.system.SystemERP.Services;
+package com.system.SystemERP.Services.PaymentTerms;
 
-import com.system.SystemERP.Dtos.TermosDePagamentos.TermosDePagamentosDTOS;
-import com.system.SystemERP.Entity.TermosDePagamentos.TermosDePagamento;
-import com.system.SystemERP.Repository.TermosDePagamento.TermosDePagamentoRepository;
+import com.system.SystemERP.Dtos.PaymentTerms.PaymentTermsDTOS;
+import com.system.SystemERP.Entity.PaymentTerms.PaymentTerms;
+import com.system.SystemERP.Enum.PaymentTerms.PaymentTermsEnum;
+import com.system.SystemERP.Repository.PaymentTerms.PaymentTermsRepository;
+import com.system.SystemERP.Services.PaymentTerms.PaymentTermsServices;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -22,16 +24,16 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class TermosDePagamentoServicesTest {
+class PaymentTermsServicesTest {
 
     @Mock
-    private TermosDePagamentoRepository termosDePagamentoRepository;
+    private PaymentTermsRepository paymentTermsRepository;
 
     @InjectMocks
-    private TermosDePagamentoServices termosDePagamentoServices;
+    private PaymentTermsServices paymentTermsServices;
 
     @Captor
-    private ArgumentCaptor<TermosDePagamento> termsPaymentArgumentCaptor;
+    private ArgumentCaptor<PaymentTerms> termsPaymentArgumentCaptor;
 
     @Captor
     private ArgumentCaptor<Integer> idArgumentCaptor;
@@ -41,49 +43,51 @@ class TermosDePagamentoServicesTest {
         @Test
         @DisplayName("Should create a Terms of Payment with success")
         void shouldCreateATermsOfPaymentWithSuccess() {
-            var termsPayment = new TermosDePagamento(1,
+            var termsPaymentDTO = new PaymentTermsDTOS(PaymentTermsEnum.Apos_o_Recebimento);
+            var termsPayment = new PaymentTerms(1,
                     "cinquenta_cinquenta",
                     Instant.now(),
                     Instant.now());
 
-            var termsPaymentDTO = new TermosDePagamentosDTOS("cinquenta_cinquenta");
+
+
 
             doReturn(termsPayment)
-                    .when(termosDePagamentoRepository)
+                    .when(paymentTermsRepository)
                     .save(any());
-            var input = termosDePagamentoServices.createTermosDePagamento(termsPaymentDTO);
+            var input = paymentTermsServices.createPaymentTerms(termsPaymentDTO);
             assertNotNull(input);
         }
 
         @Test
         @DisplayName("Should Throw Exception When Error Occurs")
         void shouldThrowExceptionWhenErrorOccurs() {
-            var input = new TermosDePagamentosDTOS("cinquenta_cinquenta");
+            var input = new PaymentTermsDTOS(PaymentTermsEnum.Apos_o_Recebimento);
 
-            doReturn(new RuntimeException()).when(termosDePagamentoRepository).save(any());
-            assertThrows(RuntimeException.class, () -> termosDePagamentoServices.createTermosDePagamento(input));
+            doReturn(new RuntimeException()).when(paymentTermsRepository).save(any());
+            assertThrows(RuntimeException.class, () -> paymentTermsServices.createPaymentTerms(input));
         }
 
 
         @Test
         @DisplayName("Should Throw Exception When Argument Captor")
         void shouldThrowExceptionWhenArgumentCaptor() {
-            var termsPayment = new TermosDePagamento(1,
+            var termsPayment = new PaymentTerms(1,
                     "cinquenta_cinquenta",
                     Instant.now(),
                     Instant.now());
-            var termsPaymentDTO = new TermosDePagamentosDTOS("cinquenta_cinquenta");
+            var termsPaymentDTO = new PaymentTermsDTOS(PaymentTermsEnum.Apos_o_Recebimento);
 
             doReturn(termsPayment)
-                    .when(termosDePagamentoRepository)
+                    .when(paymentTermsRepository)
                     .save(termsPaymentArgumentCaptor.capture());
 
-            var input = termosDePagamentoServices.createTermosDePagamento(termsPaymentDTO);
+            var input = paymentTermsServices.createPaymentTerms(termsPaymentDTO);
 
             assertNotNull(input);
 
             var termsPaymentCapture = termsPaymentArgumentCaptor.getValue();
-            assertEquals(termsPaymentDTO.nome(), termsPaymentCapture.getNomeTermosDePagamentos());
+            assertEquals(termsPaymentDTO.nome().name(), termsPaymentCapture.getNamePaymentTerms());
 
         }
 
@@ -97,18 +101,18 @@ class TermosDePagamentoServicesTest {
         @DisplayName("Should Get Terms Of Payment By Id With Success When OptionalIs Present")
         void shouldGetTermsOfPaymentByIdWithSuccessWhenOptionalIsPresent() {
 
-            var termsPayment = new TermosDePagamento(1,
+            var termsPayment = new PaymentTerms(1,
                     "cinquenta_cinquenta",
                     Instant.now(),
                     Instant.now());
             doReturn(Optional.of(termsPayment))
-                    .when(termosDePagamentoRepository)
+                    .when(paymentTermsRepository)
                     .findById(idArgumentCaptor.capture());
 
-            var output = termosDePagamentoServices.getbyIDTermosDePagamento(termsPayment.getIdTermosDePagamento());
+            var output = paymentTermsServices.findByIDPaymentTerms(termsPayment.getIdPaymentTerms());
 
             assertTrue(output.isPresent());
-            assertEquals(termsPayment.getIdTermosDePagamento(), idArgumentCaptor.getValue());
+            assertEquals(termsPayment.getIdPaymentTerms(), idArgumentCaptor.getValue());
         }
 
 
@@ -116,17 +120,17 @@ class TermosDePagamentoServicesTest {
         @DisplayName("Should Get Terms Of Payment By Id With Success When OptionalIs Empty")
         void shouldGetTermsOfPaymentByIdWithSuccessWhenOptionalIsEmpty() {
 
-            var termsPayment = new TermosDePagamento(1,
+            var termsPayment = new PaymentTerms(1,
                     "cinquenta_cinquenta",
                     Instant.now(),
                     Instant.now());
 
             var termsPaymentID = 44;
             doReturn(Optional.empty())
-                    .when(termosDePagamentoRepository)
+                    .when(paymentTermsRepository)
                     .findById(idArgumentCaptor.capture());
 
-            var output = termosDePagamentoServices.getbyIDTermosDePagamento(termsPaymentID);
+            var output = paymentTermsServices.findByIDPaymentTerms(termsPaymentID);
 
             assertTrue(output.isEmpty());
             assertEquals(termsPaymentID, idArgumentCaptor.getValue());
@@ -137,20 +141,20 @@ class TermosDePagamentoServicesTest {
     class getAll {
 
         @Test
-        @DisplayName("Should return all users with success")
+        @DisplayName("Should return all Payment Terms with success")
         void shouldReturnAllTermsOfPaymentWithSuccess() {
 
-            var termsPayment = new TermosDePagamento(1,
+            var termsPayment = new PaymentTerms(1,
                     "cinquenta_cinquenta",
                     Instant.now(),
                     Instant.now());
 
             var listTermsPayments = List.of(termsPayment);
             doReturn(listTermsPayments)
-                    .when(termosDePagamentoRepository)
+                    .when(paymentTermsRepository)
                     .findAll();
 
-            var output = termosDePagamentoServices.getAll();
+            var output = paymentTermsServices.getAll();
 
             assertNotNull(output);
             assertEquals(listTermsPayments.size(), output.size());
@@ -164,40 +168,40 @@ class TermosDePagamentoServicesTest {
 
         @Test
         @DisplayName("Should delete user with success when user exists")
-        void shouldDeleteUserWithSuccessWhenUserExists(){
+        void shouldDeleteUserWithSuccessWhenUserExists() {
 
-            doReturn(true).when(termosDePagamentoRepository).existsById(idArgumentCaptor.capture());
+            doReturn(true).when(paymentTermsRepository).existsById(idArgumentCaptor.capture());
             doNothing()
-                    .when(termosDePagamentoRepository)
+                    .when(paymentTermsRepository)
                     .deleteById(idArgumentCaptor.capture());
 
             var termsOfPaymentID = 55;
 
-            termosDePagamentoServices.delete(termsOfPaymentID);
+            paymentTermsServices.delete(termsOfPaymentID);
 
             var idList = idArgumentCaptor.getAllValues();
 
             assertEquals(termsOfPaymentID, idList.get(0));
             assertEquals(termsOfPaymentID, idList.get(1));
 
-            verify(termosDePagamentoRepository, times(1)).existsById(idList.get(0));
-            verify(termosDePagamentoRepository, times(1)).deleteById(idList.get(1));
+            verify(paymentTermsRepository, times(1)).existsById(idList.get(0));
+            verify(paymentTermsRepository, times(1)).deleteById(idList.get(1));
         }
 
         @Test
         @DisplayName("Should not delete terms of payment when user NOT exists")
-        void shouldNotDeleteTermsOfPaymentWhenUserNotExists(){
+        void shouldNotDeleteTermsOfPaymentWhenUserNotExists() {
 
-            doReturn(false).when(termosDePagamentoRepository).existsById(idArgumentCaptor.capture());
+            doReturn(false).when(paymentTermsRepository).existsById(idArgumentCaptor.capture());
 
             var termsOfPaymentID = 55;
 
-            termosDePagamentoServices.delete(termsOfPaymentID);
+            paymentTermsServices.delete(termsOfPaymentID);
 
             assertEquals(termsOfPaymentID, idArgumentCaptor.getValue());
 
-            verify(termosDePagamentoRepository, times(1)).existsById(idArgumentCaptor.getValue());
-            verify(termosDePagamentoRepository, times(0)).deleteById(any());
+            verify(paymentTermsRepository, times(1)).existsById(idArgumentCaptor.getValue());
+            verify(paymentTermsRepository, times(0)).deleteById(any());
         }
     }
 
