@@ -77,9 +77,8 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("TipoDeEmpresaidTipoDeEmpresa")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("TipoDeEmpresaidTipoDeEmpresa")
+                        .HasColumnType("int");
 
                     b.HasKey("idEmpresa");
 
@@ -128,8 +127,11 @@ namespace ErpServicesASP.API.Migrations
 
             modelBuilder.Entity("ErpServicesASP.API.Model.TipoDeEmpresaModel", b =>
                 {
-                    b.Property<string>("idTipoDeEmpresa")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("idTipoDeEmpresa")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idTipoDeEmpresa"));
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -1,19 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ErpServicesASP.API.Model;
 
-namespace ErpServicesASP.API.Model
+namespace ErpServicesASP.API.Dto
 {
-    public class EmpresaModel
+    public class EmpresaCreateDto
     {
-        [Key]
-        public int idEmpresa { get; set; }
         public string Name { get; set; }
         public string NomeFantasia { get; set; }
-        public UsuarioModel Dono { get; set; }
+        public int idDono { get; set; }
         public string CNPJ { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
         public string Endereco { get; set; }
-        public TipoDeEmpresaModel TipoDeEmpresa { get; set; }
+        public int idTipoDeEmpresa { get; set; }
         public DateTime DataCriacao { get; set; }
     }
 }

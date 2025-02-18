@@ -18,6 +18,10 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IValidacaoEmailRepository, ValidacaoEmailRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IValidacaoEmailService, ValidacaoEmailService>();
+builder.Services.AddScoped<ITipoDeEmpresaRepository, TipoDeEmpresaRepository>();
+builder.Services.AddScoped<ITipoDeEmpresaService, TipoDeEmpresaService>();
+builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+builder.Services.AddScoped<IEmpresaService, EmpresaService>();
 builder.Services.AddScoped<MailService>();
 
 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
