@@ -12,26 +12,32 @@ import java.util.Optional;
 public class ProdutosServices {
     private ProdutosRepository produtosRepository;
 
-    public ProdutosServices(ProdutosRepository produtosRepository){
+    public ProdutosServices(ProdutosRepository produtosRepository) {
         this.produtosRepository = produtosRepository;
     }
 
-    public Integer CreateProducts(ProdutosDTO produtosDTO){
+    public Integer CreateProducts(ProdutosDTO produtosDTO) {
 
         var products = new Produto(null, produtosDTO.nome());
         var savedProduct = produtosRepository.save(products);
         return savedProduct.getIdProduto();
     }
 
-    public Optional<Produto> getById(Integer id){
+    public Optional<Produto> getById(Integer id) {
         return produtosRepository.findById(id);
     }
 
-    public List<Produto> getAll(){
+    public List<Produto> getAll() {
         return produtosRepository.findAll();
     }
 
-    public void delete(Integer id){
-        produtosRepository.deleteById(id);
+    public void delete(Integer id) {
+        var exists = produtosRepository.existsById(id);
+
+        if (exists) {
+
+            produtosRepository.deleteById(id);
+        }
+
     }
 }
