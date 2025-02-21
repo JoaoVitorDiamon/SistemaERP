@@ -22,6 +22,8 @@ builder.Services.AddScoped<ITipoDeEmpresaRepository, TipoDeEmpresaRepository>();
 builder.Services.AddScoped<ITipoDeEmpresaService, TipoDeEmpresaService>();
 builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
 builder.Services.AddScoped<IEmpresaService, EmpresaService>();
+builder.Services.AddScoped<IMembroRepository, MembroRepository>();
+builder.Services.AddScoped<IMembroService, MembroService>();
 builder.Services.AddScoped<MailService>();
 
 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

@@ -7,7 +7,7 @@ namespace ErpServicesASP.API.Repositories.Interfaces
     {
         Task<ResponseModel<CargoModel>> CriarCargo(CargoCreateDto novoCargo);
         Task<ResponseModel<List<CargoModel>>> ListarCargos();
-        Task<ResponseModel<CargoModel?>> GetCargoPorId(int id);
+        Task<ResponseModel<CargoModel>> GetCargoPorId(int id);
         Task<ResponseModel<CargoModel?>> AtualizarCargo(CargoModel cargo);
         Task<ResponseModel<List<CargoModel>>> DeletarCargoPorId(int id);
     }

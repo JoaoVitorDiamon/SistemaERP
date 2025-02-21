@@ -11,5 +11,12 @@ namespace ErpServicesASP.API.Model
         public CargoModel Cargo { get; set; }
         public string NaturezaMembro { get; set; }
         public string EmailDaEmpresa { get; set; }
+
+        public void SalvarChaves(UsuarioModel usuario, EmpresaModel empresa, CargoModel cargo)
+        {
+            Empresa = empresa;
+            Usuario = usuario;
+            Cargo = cargo;
+        }
     }
 }
