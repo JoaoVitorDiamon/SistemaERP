@@ -4,8 +4,6 @@ import com.system.SystemERP.Dtos.Products.ProdutosDTO;
 import com.system.SystemERP.Entity.Products.Produto;
 import com.system.SystemERP.Services.Products.ProdutosServices;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -54,4 +52,6 @@ public class ProdutosController {
         produtosServices.delete(idProduto);
         return ResponseEntity.noContent().build();
     }
+
+
 }
