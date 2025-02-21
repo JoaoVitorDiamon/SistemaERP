@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ErpServicesASP.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250214185324_CriandoDBMYSQL")]
-    partial class CriandoDBMYSQL
+    [Migration("20250217213141_CriandoDbMysql")]
+    partial class CriandoDbMysql
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,9 +80,8 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("TipoDeEmpresaidTipoDeEmpresa")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("TipoDeEmpresaidTipoDeEmpresa")
+                        .HasColumnType("int");
 
                     b.HasKey("idEmpresa");
 
@@ -131,8 +130,11 @@ namespace ErpServicesASP.API.Migrations
 
             modelBuilder.Entity("ErpServicesASP.API.Model.TipoDeEmpresaModel", b =>
                 {
-                    b.Property<string>("idTipoDeEmpresa")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("idTipoDeEmpresa")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idTipoDeEmpresa"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -159,11 +161,15 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("DataCriacao")
-                        .HasColumnType("date");
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("DataNascimento")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -181,6 +187,10 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -188,6 +198,31 @@ namespace ErpServicesASP.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.ValidacaoEmailModel", b =>
+                {
+                    b.Property<int>("idValidacaoEmail")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idValidacaoEmail"));
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Validado")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("idValidacaoEmail");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("ValidacoesDeEmails");
                 });
 
             modelBuilder.Entity("ErpServicesASP.API.Model.EmpresaModel", b =>
@@ -232,6 +267,17 @@ namespace ErpServicesASP.API.Migrations
                     b.Navigation("Cargo");
 
                     b.Navigation("Empresa");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.ValidacaoEmailModel", b =>
+                {
+                    b.HasOne("ErpServicesASP.API.Model.UsuarioModel", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Usuario");
                 });

@@ -29,6 +29,21 @@
             Deleta um cargo pelo ID.
             </summary>
         </member>
+        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.ListarEmpresas">
+            <summary>
+            Obtém uma lista com todos as empresas.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.CriarEmpresa(ErpServicesASP.API.Dto.EmpresaCreateDto)">
+            <summary>
+            Cria uma empresa.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.GetEmpresaPeloId(System.Int32)">
+            <summary>
+            Obtém uma empresa com base no id.
+            </summary>
+        </member>
         <member name="M:ErpServicesASP.API.Controllers.UsuarioController.ListarUsuarios">
             <summary>
             Obtém uma lista com todos os usuários.
@@ -54,40 +69,16 @@
             Valida o email do usuário.
             </summary>
         </member>
-        <member name="T:ErpServicesASP.API.Migrations.CriandoDBMYSQL">
+        <member name="T:ErpServicesASP.API.Migrations.CriandoDbMysql">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoDBMYSQL.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.CriandoDbMysql.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoDBMYSQL.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.CriandoDbMysql.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoDBMYSQL.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:ErpServicesASP.API.Migrations.CriandoValidadorEmail">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoValidadorEmail.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoValidadorEmail.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoValidadorEmail.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:ErpServicesASP.API.Migrations.AtualizandoUsuario">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.AtualizandoUsuario.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.AtualizandoUsuario.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.AtualizandoUsuario.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.CriandoDbMysql.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>
