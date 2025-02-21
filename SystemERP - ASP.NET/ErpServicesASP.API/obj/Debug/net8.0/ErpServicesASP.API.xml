@@ -29,6 +29,21 @@
             Deleta um cargo pelo ID.
             </summary>
         </member>
+        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.ListarEmpresas">
+            <summary>
+            Obtém uma lista com todos as empresas.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.CriarEmpresa(ErpServicesASP.API.Dto.EmpresaCreateDto)">
+            <summary>
+            Cria uma empresa.
+            </summary>
+        </member>
+        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.GetEmpresaPeloId(System.Int32)">
+            <summary>
+            Obtém uma empresa com base no id.
+            </summary>
+        </member>
         <member name="M:ErpServicesASP.API.Controllers.UsuarioController.ListarUsuarios">
             <summary>
             Obtém uma lista com todos os usuários.

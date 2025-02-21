@@ -91,9 +91,9 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<CargoModel?>> GetCargoPorId(int id)
+        public async Task<ResponseModel<CargoModel>> GetCargoPorId(int id)
         {
-            ResponseModel<CargoModel?> response = new ResponseModel<CargoModel?>();
+            ResponseModel<CargoModel> response = new ResponseModel<CargoModel>();
             try
             {
                 var cargo = await BuscarCargoPorId(id);
