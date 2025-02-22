@@ -15,7 +15,6 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer idProduto;
-
     private String nomeProduto;
 
 
