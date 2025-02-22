@@ -3,7 +3,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<InputProps> = ({ ...props }) => {
-  return <input {...props} required className="w-full p-2 border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300"/>;
+  return <input {...props} className="w-full p-2 border border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300"/>;
 };
 
 export default Input;

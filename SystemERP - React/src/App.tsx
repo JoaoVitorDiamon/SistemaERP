@@ -1,11 +1,7 @@
-import { useState } from 'react';
-
-import PaginaDoFormularioAindaVouArruma from './components/PaginaDoFormularioAindaVouArruma';
-
 function App() {
   return (
     <div>
-      <PaginaDoFormularioAindaVouArruma/>
+      <p>Hello Word!</p>
     </div>
   )
 }
