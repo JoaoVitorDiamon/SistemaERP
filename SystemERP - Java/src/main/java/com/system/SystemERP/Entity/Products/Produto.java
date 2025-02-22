@@ -32,13 +32,12 @@ public class Produto {
 //    private double volume = comprimento * altura * largura;
 //    private double area = comprimento * largura;
 //    private String codigoAlfandegaria;
-//    private String pais;
-//    private String estado;
 //    private String nota;
 //    private double preco;
 //    private double precominimo;
 //    private double icms;
 //    private double taxaICMSP;
+//    private Integer endereco_idEndereco;(fk)
 
 
     public Produto(Integer idProduto, String nomeProduto /*String etiqueta, boolean venda, boolean compra, String codigoDeBarras, String descricao, int estoqueAlerta, int estoqueDesejado, double peso, double comprimento, double altura, double largura, double volume, double area, String codigoAlfandegaria, String pais, String estado, String nota, double preco, double precominimo, double icms, double taxaICMSP) */){
