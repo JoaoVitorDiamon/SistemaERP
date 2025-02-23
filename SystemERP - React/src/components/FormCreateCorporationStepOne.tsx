@@ -1,32 +1,15 @@
 import InputPersonalized from "./InputPersonalized";
 import {EmpresaCreateDto} from "../../models/EmpresaCreateDto"
-import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-function FormCreateCorporative() {
-    let empresa : EmpresaCreateDto
-    const [nome, setNome] = useState("");
-    const [cnpj, setCNPJ] = useState("");
-    const [email, setEmail] = useState("");
-
+import { useNavigate } from "react-router";
+function FormCreateCorporationStepOne() {
+    const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
-    const onSubmit: SubmitHandler<EmpresaCreateDto> = data => console.log(data);
-
-    function criarConta(){
-        if(nome.length < 3){
-            console.log("Nome em branco")
-        }
-        else if(email.length < 3){
-            console.log("Email inválido")
-        }
-        else{
-            empresa = {
-                name: nome,
-                cnpj: cnpj,
-                email: email
-            }
-            console.log(empresa.name)
-        }
-    }
+    const onSubmit: SubmitHandler<EmpresaCreateDto> = data => {
+        console.log(data)
+        localStorage.setItem("data", JSON.stringify(data))  
+        navigate("/CriarDetalhes")
+    };
     return (
         <div className="h-screen bg-white w-2xl xl:min-w-3xl md:min-w-xl flex justify-center  items-center">
             <div className="w-full max-w-md p-9 md:p-0">
@@ -37,9 +20,9 @@ function FormCreateCorporative() {
                 <div className="">
                     <form onSubmit={handleSubmit(onSubmit)} className="sm:mt-10 mt-6 space-y-4 text-gray-600">
                         <div>
-                            <p>Nome Da Empresa</p>
-                            <InputPersonalized type="text" {...register("name", {required: true})}/>
-                            {errors?.name?.type === "required" && <p className="text-red-600 text-sm">Nome da empresa está vázio.</p>}
+                            <p>Nome Fantasia Da Empresa</p>
+                            <InputPersonalized type="text" {...register("nomeFantasia", {required: true})}/>
+                            {errors?.nomeFantasia?.type === "required" && <p className="text-red-600 text-sm">Nome da empresa está vázio.</p>}
                         </div>
                         <div>
                             <p>CNPJ</p>
@@ -65,4 +48,4 @@ function FormCreateCorporative() {
         </div>
     )
 }
-export default FormCreateCorporative;
+export default FormCreateCorporationStepOne;

@@ -4,8 +4,9 @@ import './index.css'
 import App from './App.tsx'
 import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router-dom'
-import CreateCorporationPage from './Pages/CreateCorporationPage.tsx'
+import CreateCorporationStepOnePage from './Pages/CreateCorporationStepOnePage.tsx'
 import LoginPage from './Pages/LoginPage.tsx'
+import CreateCorporationStepTwoPage from './Pages/CreateCorporationStepTwo.tsx'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,11 @@ const router = createBrowserRouter([
   },
   {
     path: "CriarEmpresa",
-    element: <CreateCorporationPage/>
+    element: <CreateCorporationStepOnePage/>
+  },
+  {
+    path: "CriarDetalhes",
+    element: <CreateCorporationStepTwoPage/>
   },
   {
     path: "Login",

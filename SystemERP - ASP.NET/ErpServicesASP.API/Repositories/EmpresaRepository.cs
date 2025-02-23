@@ -19,6 +19,7 @@ namespace ErpServicesASP.API.Repositories
         {
             var dono = await _context.Usuarios.FindAsync(novaEmpresa.idDono);
             var tipoEmpresa = await _context.TipoDeEmpresa.FindAsync(novaEmpresa.idTipoDeEmpresa);
+            var setor = await _context.Setores.FindAsync(novaEmpresa.idSetor);
             EmpresaModel empresa = new EmpresaModel()
             {
                 Name = novaEmpresa.Name,
@@ -29,6 +30,7 @@ namespace ErpServicesASP.API.Repositories
                 Telefone = novaEmpresa.Telefone,
                 Endereco = novaEmpresa.Endereco,
                 TipoDeEmpresa = tipoEmpresa,
+                Setor = setor,
                 DataCriacao = novaEmpresa.DataCriacao
             };
             await _context.Empresas.AddAsync(empresa);

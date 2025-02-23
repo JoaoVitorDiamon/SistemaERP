@@ -63,7 +63,15 @@ namespace ErpServicesASP.API.Services
                 response.setErro("Empresa não encontrado");
                 return response;
             }
-            response.Valor = new MembroModel() { NaturezaMembro = novoMembro.NaturezaMembro, EmailDaEmpresa = novoMembro.EmailDaEmpresa};
+            response.Valor = new MembroModel() {
+                NaturezaMembro = novoMembro.NaturezaMembro,
+                Telefone = novoMembro.Telefone,
+                Genero = novoMembro.Genero,
+                Senha = novoMembro.Senha,
+                CEP = novoMembro.CEP,
+                DataNascimento = novoMembro.DataNascimento,
+                AssociacaoPublica = novoMembro.AssociacaoPublica
+            };
             response.Valor.SalvarChaves(usuario, empresa, cargo.Valor);
             return response;
         }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var MyAllowSpecificOrigins = "_MyAllowSubdomainPolicy";
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -20,11 +20,21 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IValidacaoEmailService, ValidacaoEmailService>();
 builder.Services.AddScoped<ITipoDeEmpresaRepository, TipoDeEmpresaRepository>();
 builder.Services.AddScoped<ITipoDeEmpresaService, TipoDeEmpresaService>();
+builder.Services.AddScoped<ISetorEmpresaRepository, SetorEmpresaRepository>();
+builder.Services.AddScoped<ISetorEmpresaService, SetorDeEmpresaService>();
 builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
 builder.Services.AddScoped<IEmpresaService, EmpresaService>();
 builder.Services.AddScoped<IMembroRepository, MembroRepository>();
 builder.Services.AddScoped<IMembroService, MembroService>();
 builder.Services.AddScoped<MailService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        });
+});
 
 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -46,7 +56,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(MyAllowSpecificOrigins);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

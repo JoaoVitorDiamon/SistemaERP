@@ -4,6 +4,7 @@ using ErpServicesASP.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ErpServicesASP.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250223124609_atualizando")]
+    partial class atualizando
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,9 +76,6 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("SetoridSetor")
-                        .HasColumnType("int");
-
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -86,8 +86,6 @@ namespace ErpServicesASP.API.Migrations
                     b.HasKey("idEmpresa");
 
                     b.HasIndex("DonoId");
-
-                    b.HasIndex("SetoridSetor");
 
                     b.HasIndex("TipoDeEmpresaidTipoDeEmpresa");
 
@@ -147,23 +145,6 @@ namespace ErpServicesASP.API.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Membros");
-                });
-
-            modelBuilder.Entity("ErpServicesASP.API.Model.SetorModel", b =>
-                {
-                    b.Property<int>("idSetor")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idSetor"));
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("idSetor");
-
-                    b.ToTable("Setores");
                 });
 
             modelBuilder.Entity("ErpServicesASP.API.Model.TipoDeEmpresaModel", b =>
@@ -244,12 +225,6 @@ namespace ErpServicesASP.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ErpServicesASP.API.Model.SetorModel", "Setor")
-                        .WithMany()
-                        .HasForeignKey("SetoridSetor")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ErpServicesASP.API.Model.TipoDeEmpresaModel", "TipoDeEmpresa")
                         .WithMany()
                         .HasForeignKey("TipoDeEmpresaidTipoDeEmpresa")
@@ -257,8 +232,6 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired();
 
                     b.Navigation("Dono");
-
-                    b.Navigation("Setor");
 
                     b.Navigation("TipoDeEmpresa");
                 });
