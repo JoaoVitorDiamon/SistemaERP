@@ -2,14 +2,49 @@ import InputPersonalized from "./InputPersonalized";
 import {EmpresaCreateDto} from "../../models/EmpresaCreateDto"
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 function FormCreateCorporationStepOne() {
     const navigate = useNavigate()
-    const { register, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
-    const onSubmit: SubmitHandler<EmpresaCreateDto> = data => {
-        console.log(data)
-        localStorage.setItem("data", JSON.stringify(data))  
-        navigate("/CriarDetalhes")
+    const { register, setValue, setFocus, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
+    const onSubmit: SubmitHandler<EmpresaCreateDto> = async (data) => {
+        if(await jaExisteCNPJ(data.cnpj)){
+            setFocus("cnpj")
+            setValue("cnpj", "")
+        }
+        else if(await jaExisteEmail(data.email)){
+            setFocus("email")
+            setValue("email", "")
+        }
+        else{
+            console.log(data)
+            localStorage.setItem("data", JSON.stringify(data))  
+            navigate("/CriarDetalhes")
+        }    
     };
+    async function jaExisteCNPJ(cnpj="") : Promise<boolean>{
+        let cnpje = await fetch(`https://localhost:7106/api/Empresa/CNPJ/${cnpj}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const data = await cnpje.json();
+        return data.valor === "Usado";
+    }
+    useEffect(()=>{
+
+    }, [])
+    async function jaExisteEmail(email="") : Promise<boolean>{
+        let emailExiste = await fetch(`https://localhost:7106/api/Empresa/Email/${email}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const data = await emailExiste.json();
+        console.log(data.valor);
+        return data.valor === "Usado";
+    }
     return (
         <div className="h-screen bg-white w-2xl xl:min-w-3xl md:min-w-xl flex justify-center  items-center">
             <div className="w-full max-w-md p-9 md:p-0">

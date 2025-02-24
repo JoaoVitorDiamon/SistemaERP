@@ -10,5 +10,7 @@ namespace ErpServicesASP.API.Services.Interfaces
         Task<ResponseModel<List<EmpresaModel>>> ListarEmpresas();
         Task<ResponseModel<EmpresaModel>> AtualizarEmpresa(EmpresaModel empresaAtualizada);
         Task<ResponseModel<List<EmpresaModel>>> DeletarEmpresaPeloId(int id);
+        Task<ResponseModel<string>> CnpjJaUsado(string cnpj);
+        Task<ResponseModel<string>> EmailJaUsado(string email);
     }
 }

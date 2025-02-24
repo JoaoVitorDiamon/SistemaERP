@@ -3,26 +3,32 @@ import {EmpresaCreateDto} from "../../models/EmpresaCreateDto"
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
+import { useNavigate } from "react-router-dom";
 function FormCreateCorporationStepTwo() {
+    const navigate = useNavigate()
+    const empresa = localStorage.getItem("data")
     const [tiposdeempresa, setTiposDeEmpresa] = useState({'valor':[{'idTipoDeEmpresa':1, 'name':null}], 'mensagem':null, 'status':true})
     const [setores, setSetores] = useState({'valor':[{'idSetor':1, 'nome':null}], 'mensagem':null, 'status':true})
-
     const { register, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
     const onSubmit: SubmitHandler<EmpresaCreateDto> = data => {
         console.log(data)
-        let empresa = localStorage.getItem("data")
         let name = data.name
         let setor = data.setor
         let idTipoDeEmpresa = data.idTipoDeEmpresa
         if(empresa != null){
-            let teste = JSON.parse(empresa)
-            Object.assign(teste, {name, idTipoDeEmpresa, setor})
-            console.log(teste)
+            let empresaLocalStorage = JSON.parse(empresa)
+            Object.assign(empresaLocalStorage, {name, idTipoDeEmpresa, setor})
+            console.log(empresaLocalStorage)
+            localStorage.setItem("data", JSON.stringify(empresaLocalStorage))
+            navigate("/EmpresaEndereco")  
         }
     };
     useEffect(()=>{
         CarregandoSetores()
         CarregandoTipos()
+        if(!empresa){
+            navigate("/CriarEmpresa")
+        }
     }, [])
     function CarregandoTipos(){
         fetch('https://localhost:7106/api/TipoDeEmpresa', {

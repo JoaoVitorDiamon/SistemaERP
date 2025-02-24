@@ -13,6 +13,7 @@ namespace ErpServicesASP.API.Model
         public string Email { get; set; }
         public string Telefone { get; set; }
         public string Endereco { get; set; }
+        public string CEP { get; set; }
         public TipoDeEmpresaModel TipoDeEmpresa { get; set; }
         public SetorModel Setor { get; set; }
         public DateTime DataCriacao { get; set; }

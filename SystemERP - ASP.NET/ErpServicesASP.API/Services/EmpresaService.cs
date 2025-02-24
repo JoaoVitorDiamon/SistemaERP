@@ -15,6 +15,45 @@ namespace ErpServicesASP.API.Services
             throw new NotImplementedException();
         }
 
+        public async Task<ResponseModel<string>> CnpjJaUsado(string cnpj)
+        {
+            ResponseModel<string> response = new ResponseModel<string>();
+            try
+            {
+                if(await _repository.CnpjJaUsado(cnpj))
+                {
+                    response.Valor = "Usado";
+                    return response;
+                }
+                response.Valor = "Não usado";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
+        }
+        public async Task<ResponseModel<string>> EmailJaUsado(string email)
+        {
+            ResponseModel<string> response = new ResponseModel<string>();
+            try
+            {
+                if (await _repository.EmailJaUsado(email))
+                {
+                    response.Valor = "Usado";
+                    return response;
+                }
+                response.Valor = "Não usado";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
+        }
+
         public async Task<ResponseModel<EmpresaModel>> CriarEmpresa(EmpresaCreateDto novaEmpresa)
         {
             ResponseModel<EmpresaModel> response = new ResponseModel<EmpresaModel>();

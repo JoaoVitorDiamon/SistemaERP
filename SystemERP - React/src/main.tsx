@@ -8,6 +8,7 @@ import CreateCorporationStepOnePage from './Pages/CreateCorporationStepOnePage.t
 import LoginPage from './Pages/LoginPage.tsx'
 import CreateCorporationStepTwoPage from './Pages/CreateCorporationStepTwo.tsx'
 import CreateCorporationStepEndereco from './Pages/CreateCorporationStepEndereco.tsx'
+import CreateCorporationStepThreePage from './Pages/CreateCorporationStepThreePage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "EmpresaEndereco",
     element: <CreateCorporationStepEndereco/>
+  },
+  {
+    path: "CadastroRepresentante",
+    element: <CreateCorporationStepThreePage/>
   },
   {
     path: "Login",

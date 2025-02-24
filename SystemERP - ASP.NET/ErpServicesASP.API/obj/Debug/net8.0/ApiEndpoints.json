@@ -212,6 +212,58 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
+    "Method": "CnpjJaUsado",
+    "RelativePath": "api/Empresa/CNPJ/{cnpj}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cnpj",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
+    "Method": "EmailJaUsado",
+    "RelativePath": "api/Empresa/Email/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ErpServicesASP.API.Controllers.MembroController",
     "Method": "ListarMembros",
     "RelativePath": "api/Membro",
