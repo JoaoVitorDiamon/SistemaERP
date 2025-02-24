@@ -45,5 +45,14 @@ namespace ErpServicesASP.API.Controllers
             else if (!response.Status) return BadRequest(response);
             return Ok(response);
         }
+        [HttpGet("cep/{cep}")]
+        public async Task<ActionResult> getCep(string cep)
+        {
+            using (HttpClient client = new HttpClient()) { 
+                string url = $"https://viacep.com.br/ws/{cep}/json/";
+                var response = await client.GetStringAsync(url);
+                return Content(response, "application/json");
+            }
+        }
     }
 }

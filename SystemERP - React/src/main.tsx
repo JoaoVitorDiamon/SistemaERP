@@ -7,6 +7,7 @@ import { RouterProvider } from 'react-router-dom'
 import CreateCorporationStepOnePage from './Pages/CreateCorporationStepOnePage.tsx'
 import LoginPage from './Pages/LoginPage.tsx'
 import CreateCorporationStepTwoPage from './Pages/CreateCorporationStepTwo.tsx'
+import CreateCorporationStepEndereco from './Pages/CreateCorporationStepEndereco.tsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "CriarDetalhes",
     element: <CreateCorporationStepTwoPage/>
+  },
+  {
+    path: "EmpresaEndereco",
+    element: <CreateCorporationStepEndereco/>
   },
   {
     path: "Login",

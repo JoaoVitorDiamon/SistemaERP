@@ -196,6 +196,22 @@
     ]
   },
   {
+    "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
+    "Method": "getCep",
+    "RelativePath": "api/Empresa/cep/{cep}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cep",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ErpServicesASP.API.Controllers.MembroController",
     "Method": "ListarMembros",
     "RelativePath": "api/Membro",
