@@ -1,1 +1,12 @@
 @import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+  --color-landing: #060b27;
+  --color-button: #7214FF;
+  --color-nav: #8F9BB7;
+  --color-borderButton: #282D45;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+
