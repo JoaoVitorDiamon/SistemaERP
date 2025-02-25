@@ -11,5 +11,7 @@ namespace ErpServicesASP.API.Repositories.Interfaces
         Task<EmpresaModel> AtualizarEmpresa(EmpresaModel empresaAtualizada);
         Task<bool> empresaJaExiste(EmpresaCreateDto novaEmpresa);
         Task<List<EmpresaModel>> DeletarEmpresaPeloId(EmpresaModel empresa);
+        Task<bool> CnpjJaUsado(string cnpj);
+        Task<bool> EmailJaUsado(string email);
     }
 }

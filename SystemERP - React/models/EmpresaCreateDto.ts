@@ -4,6 +4,7 @@ export interface EmpresaCreateDto {
     idDono?: number
     cnpj: string
     email: string
+    setor?: string
     telefone?: string
     endereco?: string
     idTipoDeEmpresa?: number

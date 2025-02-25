@@ -32,7 +32,6 @@ namespace ErpServicesASP.API.Repositories
 
             var membroGet = new MembroGetIdDto() { 
                 Cargo_idCargo = membro.Cargo.idCargo,
-                EmailDaEmpresa = membro.EmailDaEmpresa,
                 Empresa_idEmpresa = membro.Empresa.idEmpresa,
                 Usuario_idUsuario = membro.Usuario.Id,
                 idMembro = membro.idMembro,
@@ -43,14 +42,17 @@ namespace ErpServicesASP.API.Repositories
 
         public async Task<List<MembroGetIdDto>> ListarMembros()
         {
-            var lista = await _context.Membros.ToListAsync();
+            var lista = await _context.Membros
+                .Include(mem => mem.Cargo)
+                .Include(mem => mem.Empresa)
+                .Include(mem => mem.Usuario)
+                .ToListAsync();
             var listaMembroGet = new List<MembroGetIdDto>();
             foreach (MembroModel membro in lista)
             {
                 var membroGet = new MembroGetIdDto()
                 {
                     Cargo_idCargo = membro.Cargo.idCargo,
-                    EmailDaEmpresa = membro.EmailDaEmpresa,
                     Empresa_idEmpresa = membro.Empresa.idEmpresa,
                     Usuario_idUsuario = membro.Usuario.Id,
                     idMembro = membro.idMembro,

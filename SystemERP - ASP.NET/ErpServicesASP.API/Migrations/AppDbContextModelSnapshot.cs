@@ -47,12 +47,16 @@ namespace ErpServicesASP.API.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idEmpresa"));
 
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("CNPJ")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("DataCriacao")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("DonoId")
                         .HasColumnType("int");
@@ -73,6 +77,9 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("SetoridSetor")
+                        .HasColumnType("int");
+
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -83,6 +90,8 @@ namespace ErpServicesASP.API.Migrations
                     b.HasKey("idEmpresa");
 
                     b.HasIndex("DonoId");
+
+                    b.HasIndex("SetoridSetor");
 
                     b.HasIndex("TipoDeEmpresaidTipoDeEmpresa");
 
@@ -97,17 +106,36 @@ namespace ErpServicesASP.API.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idMembro"));
 
+                    b.Property<string>("AssociacaoPublica")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<int>("CargoidCargo")
                         .HasColumnType("int");
 
-                    b.Property<string>("EmailDaEmpresa")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("EmpresaidEmpresa")
                         .HasColumnType("int");
 
+                    b.Property<string>("Genero")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("NaturezaMembro")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -123,6 +151,23 @@ namespace ErpServicesASP.API.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Membros");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.SetorModel", b =>
+                {
+                    b.Property<int>("idSetor")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idSetor"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("idSetor");
+
+                    b.ToTable("Setores");
                 });
 
             modelBuilder.Entity("ErpServicesASP.API.Model.TipoDeEmpresaModel", b =>
@@ -150,14 +195,6 @@ namespace ErpServicesASP.API.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AssociacaoPublica")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("CPF")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -165,30 +202,11 @@ namespace ErpServicesASP.API.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Genero")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -230,6 +248,12 @@ namespace ErpServicesASP.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ErpServicesASP.API.Model.SetorModel", "Setor")
+                        .WithMany()
+                        .HasForeignKey("SetoridSetor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ErpServicesASP.API.Model.TipoDeEmpresaModel", "TipoDeEmpresa")
                         .WithMany()
                         .HasForeignKey("TipoDeEmpresaidTipoDeEmpresa")
@@ -237,6 +261,8 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired();
 
                     b.Navigation("Dono");
+
+                    b.Navigation("Setor");
 
                     b.Navigation("TipoDeEmpresa");
                 });

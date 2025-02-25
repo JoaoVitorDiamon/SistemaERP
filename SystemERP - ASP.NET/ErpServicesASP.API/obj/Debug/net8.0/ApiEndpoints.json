@@ -196,6 +196,74 @@
     ]
   },
   {
+    "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
+    "Method": "getCep",
+    "RelativePath": "api/Empresa/cep/{cep}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cep",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
+    "Method": "CnpjJaUsado",
+    "RelativePath": "api/Empresa/CNPJ/{cnpj}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cnpj",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
+    "Method": "EmailJaUsado",
+    "RelativePath": "api/Empresa/Email/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ErpServicesASP.API.Controllers.MembroController",
     "Method": "ListarMembros",
     "RelativePath": "api/Membro",
@@ -258,6 +326,130 @@
     "ReturnTypes": [
       {
         "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Dto.MembroGetIdDto, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.SetorController",
+    "Method": "ListarTiposDeEmpresa",
+    "RelativePath": "api/Setor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.SetorController",
+    "Method": "CriarTipoDeEmpresa",
+    "RelativePath": "api/Setor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoSetor",
+        "Type": "ErpServicesASP.API.Dto.SetorCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.SetorController",
+    "Method": "AtualizarTipoDeEmpresa",
+    "RelativePath": "api/Setor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "setor",
+        "Type": "ErpServicesASP.API.Model.SetorModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.SetorController",
+    "Method": "DeletarTipoDeEmpresa",
+    "RelativePath": "api/Setor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.SetorController",
+    "Method": "GetTipoDeEmpresaPorId",
+    "RelativePath": "api/Setor/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

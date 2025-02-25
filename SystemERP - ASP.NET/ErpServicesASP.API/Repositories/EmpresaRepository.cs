@@ -15,10 +15,24 @@ namespace ErpServicesASP.API.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<bool> CnpjJaUsado(string cnpj)
+        {
+            var cnpjJaExiste = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.CNPJ == cnpj);
+            if (cnpjJaExiste != null) return true;
+            return false;
+        }
+        public async Task<bool> EmailJaUsado(string email)
+        {
+            var emailUsado = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.Email == email);
+            if (emailUsado != null) return true;
+            return false;
+        }
+
         public async Task<EmpresaModel> CriarEmpresa(EmpresaCreateDto novaEmpresa)
         {
             var dono = await _context.Usuarios.FindAsync(novaEmpresa.idDono);
             var tipoEmpresa = await _context.TipoDeEmpresa.FindAsync(novaEmpresa.idTipoDeEmpresa);
+            var setor = await _context.Setores.FindAsync(novaEmpresa.idSetor);
             EmpresaModel empresa = new EmpresaModel()
             {
                 Name = novaEmpresa.Name,
@@ -28,7 +42,9 @@ namespace ErpServicesASP.API.Repositories
                 Email = novaEmpresa.Email,
                 Telefone = novaEmpresa.Telefone,
                 Endereco = novaEmpresa.Endereco,
+                CEP = novaEmpresa.CEP,
                 TipoDeEmpresa = tipoEmpresa,
+                Setor = setor,
                 DataCriacao = novaEmpresa.DataCriacao
             };
             await _context.Empresas.AddAsync(empresa);
@@ -45,8 +61,6 @@ namespace ErpServicesASP.API.Repositories
 
         public async Task<bool> empresaJaExiste(EmpresaCreateDto novaEmpresa)
         {
-            var nomeJaExiste = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.Name == novaEmpresa.Name);
-            if (nomeJaExiste != null) return true;
             var cnpjJaExiste = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.CNPJ == novaEmpresa.CNPJ);
             if (cnpjJaExiste != null) return true;
             var email = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.Email == novaEmpresa.Email);

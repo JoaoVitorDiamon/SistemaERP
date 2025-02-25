@@ -45,5 +45,32 @@ namespace ErpServicesASP.API.Controllers
             else if (!response.Status) return BadRequest(response);
             return Ok(response);
         }
+        [HttpGet("cep/{cep}")]
+        public async Task<ActionResult> getCep(string cep)
+        {
+            if(cep.Contains("-")){
+                var cepe = cep.Split("-");
+                cep = cepe[0] + cepe[1];
+            }
+            using (HttpClient client = new HttpClient()) { 
+                string url = $"https://viacep.com.br/ws/{cep}/json/";
+                var response = await client.GetStringAsync(url);
+                return Content(response, "application/json");
+            }
+        }
+        [HttpGet("CNPJ/{cnpj}")]
+        public async Task<ActionResult<ResponseModel<string>>> CnpjJaUsado(string cnpj)
+        {
+            var response = await _service.CnpjJaUsado(cnpj);
+            if (!response.Status) return BadRequest(response);
+            return Ok(response);
+        }
+        [HttpGet("Email/{email}")]
+        public async Task<ActionResult<ResponseModel<string>>> EmailJaUsado(string email)
+        {
+            var response = await _service.EmailJaUsado(email);
+            if (!response.Status) return BadRequest(response);
+            return Ok(response);
+        }
     }
 }
