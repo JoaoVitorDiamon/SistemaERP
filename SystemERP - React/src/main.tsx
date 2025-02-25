@@ -26,7 +26,6 @@ const router = createBrowserRouter([
   {
     path: "CadastroRepresentante",
     element: <CreateCorporationStepThreePage/>
-    element: <CreateCorporationPage />
   },
   {
     path: "Login",
