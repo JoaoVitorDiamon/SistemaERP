@@ -11,7 +11,9 @@ namespace ErpServicesASP.API.Dto
         public string Email { get; set; }
         public string Telefone { get; set; }
         public string Endereco { get; set; }
+        public string CEP { get; set; }
         public int idTipoDeEmpresa { get; set; }
+        public int idSetor { get; set; }
         public DateTime DataCriacao { get; set; }
     }
 }

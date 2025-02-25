@@ -81,5 +81,41 @@
         <member name="M:ErpServicesASP.API.Migrations.CriandoDbMysql.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:ErpServicesASP.API.Migrations.atualizando">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ErpServicesASP.API.Migrations.atualizando2">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ErpServicesASP.API.Migrations.atualizando3">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.atualizando3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

@@ -1,31 +1,49 @@
 import InputPersonalized from "./InputPersonalized";
 import {EmpresaCreateDto} from "../../models/EmpresaCreateDto"
-import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-function FormCreateCorporative() {
-    let empresa : EmpresaCreateDto
-    const [nome, setNome] = useState("");
-    const [cnpj, setCNPJ] = useState("");
-    const [email, setEmail] = useState("");
-
-    const { register, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
-    const onSubmit: SubmitHandler<EmpresaCreateDto> = data => console.log(data);
-
-    function criarConta(){
-        if(nome.length < 3){
-            console.log("Nome em branco")
+import { useNavigate } from "react-router";
+import { useEffect } from "react";
+function FormCreateCorporationStepOne() {
+    const navigate = useNavigate()
+    const { register, setValue, setFocus, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
+    const onSubmit: SubmitHandler<EmpresaCreateDto> = async (data) => {
+        if(await jaExisteCNPJ(data.cnpj)){
+            setFocus("cnpj")
+            setValue("cnpj", "")
         }
-        else if(email.length < 3){
-            console.log("Email inválido")
+        else if(await jaExisteEmail(data.email)){
+            setFocus("email")
+            setValue("email", "")
         }
         else{
-            empresa = {
-                name: nome,
-                cnpj: cnpj,
-                email: email
-            }
-            console.log(empresa.name)
-        }
+            console.log(data)
+            localStorage.setItem("data", JSON.stringify(data))  
+            navigate("/CriarDetalhes")
+        }    
+    };
+    async function jaExisteCNPJ(cnpj="") : Promise<boolean>{
+        let cnpje = await fetch(`https://localhost:7106/api/Empresa/CNPJ/${cnpj}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const data = await cnpje.json();
+        return data.valor === "Usado";
+    }
+    useEffect(()=>{
+
+    }, [])
+    async function jaExisteEmail(email="") : Promise<boolean>{
+        let emailExiste = await fetch(`https://localhost:7106/api/Empresa/Email/${email}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const data = await emailExiste.json();
+        console.log(data.valor);
+        return data.valor === "Usado";
     }
     return (
         <div className="h-screen bg-white w-2xl xl:min-w-3xl md:min-w-xl flex justify-center  items-center">
@@ -37,9 +55,9 @@ function FormCreateCorporative() {
                 <div className="">
                     <form onSubmit={handleSubmit(onSubmit)} className="sm:mt-10 mt-6 space-y-4 text-gray-600">
                         <div>
-                            <p>Nome Da Empresa</p>
-                            <InputPersonalized type="text" {...register("name", {required: true})}/>
-                            {errors?.name?.type === "required" && <p className="text-red-600 text-sm">Nome da empresa está vázio.</p>}
+                            <p>Nome Fantasia Da Empresa</p>
+                            <InputPersonalized type="text" {...register("nomeFantasia", {required: true})}/>
+                            {errors?.nomeFantasia?.type === "required" && <p className="text-red-600 text-sm">Nome da empresa está vázio.</p>}
                         </div>
                         <div>
                             <p>CNPJ</p>
@@ -65,4 +83,4 @@ function FormCreateCorporative() {
         </div>
     )
 }
-export default FormCreateCorporative;
+export default FormCreateCorporationStepOne;

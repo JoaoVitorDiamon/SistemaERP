@@ -15,14 +15,7 @@ namespace ErpServicesASP.API.Repositories
             var usuario = new UsuarioModel(
                 novoUsuario.Name,
                 novoUsuario.CPF,
-                novoUsuario.Telefone,
-                novoUsuario.Email,
-                novoUsuario.Genero,
-                novoUsuario.Senha,
-                novoUsuario.CEP,
-                novoUsuario.Endereco,
-                novoUsuario.DataNascimento,
-                novoUsuario.AssociacaoPublica
+                novoUsuario.Email
                 );
             await _context.Usuarios.AddAsync(usuario);
             await _context.SaveChangesAsync();
