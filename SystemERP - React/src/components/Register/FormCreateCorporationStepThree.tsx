@@ -1,8 +1,8 @@
-import InputPersonalized from "./InputPersonalized";
+import InputPersonalized from "../InputPersonalized";
 import { SubmitHandler, useForm } from "react-hook-form";
-import ProgressBar from "./ProgressBar";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import ProgressBar from "./ProgressBar";
 interface Representante {
     Nome: String;
     CPF: String;

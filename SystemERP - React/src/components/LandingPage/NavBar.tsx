@@ -1,5 +1,4 @@
-import { motion } from "motion/react"
-
+import { motion } from "framer-motion";
 const hoverAnimation = {
   hover: {
     scale: 1.05,
@@ -22,7 +21,13 @@ const logoAnimation = {
 
 export default function NavBar() {
   return (
-    <div> {/*container do nav bar*/}
+    <motion.div variants={{
+      hidden: { opacity: 0, y:75},
+      visible: {opacity: 1, y:0}
+    }}
+    initial="hidden"
+    animate="visible"
+    transition={{duration:0.5, delay:0.25}}> {/*container do nav bar*/}
       <div className="flex justify-center gap-56 items-center"> {/*logo*/}
 
         <div className="py-2"> { /*logo*/}
@@ -48,7 +53,7 @@ export default function NavBar() {
           <button className="bg-button text-white px-4 py-2 rounded-4xl font-poppins  font-medium tracking-wide">Demostração</button>
         </div>
       </div>
-    </div>//fim do container do nav bar
+    </motion.div>//fim do container do nav bar
 
   )
 }

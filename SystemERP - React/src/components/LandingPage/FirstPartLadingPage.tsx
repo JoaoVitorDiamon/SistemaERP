@@ -1,8 +1,16 @@
-import { motion } from "motion/react"
+import { motion } from "framer-motion";
 
 export default function MainLadingPage() {
   return (
-    <motion.div   className="bg-gradient-to-r from-[#151934] to-[#060b27] text-white min-h-screen p-10"> {/*container do main landing page*/}
+    <motion.div variants={{
+      hidden: { opacity:0, y:75},
+      visible: {opacity: 1, y:0}
+    }}
+    initial="hidden"
+    animate="visible"
+    transition={{duration:0.5, delay:0.25}}
+
+      className="bg-gradient-to-r from-[#151934] to-[#060b27] text-white min-h-screen p-10 "> {/*container do main landing page*/}
       <div> {/*container do titulo*/}
         <h1 className="text-white text-center text-4xl font-black mt-10 tracking-normal">Transforme a Gestão da Sua Empresa com Nosso ERP Completo</h1>
       </div>

@@ -1,5 +1,5 @@
-import InputPersonalized from "./InputPersonalized";
-import {EmpresaCreateDto} from "../../models/EmpresaCreateDto"
+import InputPersonalized from "../InputPersonalized";
+import {EmpresaCreateDto} from "../../../models/EmpresaCreateDto"
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
@@ -20,7 +20,7 @@ function FormCreateCorporationStepTwo() {
             Object.assign(empresaLocalStorage, {name, idTipoDeEmpresa, setor})
             console.log(empresaLocalStorage)
             localStorage.setItem("data", JSON.stringify(empresaLocalStorage))
-            navigate("/EmpresaEndereco")  
+            navigate("/EmpresaEndereco")
         }
     };
     useEffect(()=>{
@@ -40,7 +40,7 @@ function FormCreateCorporationStepTwo() {
         .then((resp) => resp.json())
         .then((data) => setTiposDeEmpresa(data))
         .catch((error) => console.log(error))
-    } 
+    }
     function CarregandoSetores(){
         fetch('https://localhost:7106/api/Setor', {
             method: 'GET',
@@ -60,7 +60,7 @@ function FormCreateCorporationStepTwo() {
                 <ProgressBar step="STEP 2" descricao="Endereço" estado="Pendente"/>
                 <ProgressBar step="STEP 3" descricao="Payment info" estado="Pendente"/>
             </div>
-            <div className="w-full max-w-md p-9 md:p-0">    
+            <div className="w-full max-w-md p-9 md:p-0">
                 <h1 className="md:text-3xl text-2xl text-center font-semibold md:mb-1">Detalhes da empresa</h1>
                 <div className="">
                     <form onSubmit={handleSubmit(onSubmit)} className="sm:mt-10 mt-6 space-y-4 text-gray-600">
@@ -91,7 +91,7 @@ function FormCreateCorporationStepTwo() {
                         </div>
                         <button type="submit" className="w-xs mx-auto block bg-blue-700 text-white p-3 mt-12 rounded-4xl hover:bg-blue-800 font-semibold">Próximo</button>
                     </form>
-                    
+
                 </div>
             </div>
         </div>

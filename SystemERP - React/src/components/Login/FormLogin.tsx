@@ -1,4 +1,4 @@
-import InputPersonalized from "./InputPersonalized";
+import InputPersonalized from "../InputPersonalized";
 import { SubmitHandler, useForm } from "react-hook-form";
 interface IFormInput {
   Email: string;
