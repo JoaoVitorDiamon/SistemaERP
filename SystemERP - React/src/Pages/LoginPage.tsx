@@ -1,4 +1,4 @@
-import FormLogin from "../components/FormLogin"
+import FormLogin from "../components/Login/FormLogin"
 
 function LoginPage(){
     return(
@@ -7,6 +7,6 @@ function LoginPage(){
             <FormLogin />
         </div>
     )
-    
+
 }
 export default LoginPage
