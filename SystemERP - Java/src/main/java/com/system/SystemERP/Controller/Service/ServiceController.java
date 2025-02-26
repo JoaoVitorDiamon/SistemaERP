@@ -14,7 +14,7 @@ import java.net.URI;
 import java.util.List;
 
 @RequestMapping("/services")
-@Tag(name = "Services")
+@Tag(name = "Serviços")
 @Controller
 public class ServiceController {
 
@@ -49,7 +49,7 @@ public class ServiceController {
 
     @DeleteMapping("/{idServico}")
     @Operation(summary = "Deleta um Servico pelo id", description = "Deleta um Servico pelo id")
-    public ResponseEntity<Void> delete(@PathVariable Integer id){
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
         serviceServices.delete(id);
         return ResponseEntity.noContent().build();
     }

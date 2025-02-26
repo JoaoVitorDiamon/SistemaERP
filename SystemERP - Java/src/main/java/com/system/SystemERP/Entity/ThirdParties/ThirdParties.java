@@ -32,4 +32,17 @@ public class ThirdParties {
 //  private Integer empresa_idEmpresa;(fk)
 
 
+    public ThirdParties(Integer idTerceiros, String nome, String nomeEFantasia, boolean fornecedor, boolean estadoAtividade, String email, boolean impostoSobVenda, boolean segundoImposto, double capital, Integer quantidadeColaboradores, byte[] logotipo) {
+        this.idTerceiros = idTerceiros;
+        this.nome = nome;
+        this.nomeEFantasia = nomeEFantasia;
+        this.fornecedor = fornecedor;
+        this.estadoAtividade = estadoAtividade;
+        this.email = email;
+        this.impostoSobVenda = impostoSobVenda;
+        this.segundoImposto = segundoImposto;
+        this.capital = capital;
+        this.quantidadeColaboradores = quantidadeColaboradores;
+        this.logotipo = logotipo;
+    }
 }

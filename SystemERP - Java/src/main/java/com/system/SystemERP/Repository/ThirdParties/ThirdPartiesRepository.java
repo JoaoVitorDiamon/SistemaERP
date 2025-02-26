@@ -1,4 +1,7 @@
 package com.system.SystemERP.Repository.ThirdParties;
 
-public interface ThirdPartiesRepository {
+import com.system.SystemERP.Entity.ThirdParties.ThirdParties;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ThirdPartiesRepository extends JpaRepository<ThirdParties,Integer> {
 }

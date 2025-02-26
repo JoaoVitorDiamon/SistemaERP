@@ -1,4 +1,7 @@
 package com.system.SystemERP.Repository.Storage;
 
-public interface StorageRepository {
+import com.system.SystemERP.Entity.Storage.Storage;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StorageRepository extends JpaRepository<Storage, Integer> {
 }
