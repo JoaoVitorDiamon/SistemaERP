@@ -32,7 +32,7 @@ function FormCreateCorporationStepOne() {
         return data.valor === "Usado";
     }
     useEffect(()=>{
-
+        localStorage.clear()
     }, [])
     async function jaExisteEmail(email="") : Promise<boolean>{
         let emailExiste = await fetch(`https://localhost:7106/api/Empresa/Email/${email}`, {

@@ -11,10 +11,18 @@ interface Representante {
 function FormCreateCorporationStepThree() {
     const navigate = useNavigate()
     const empresa = localStorage.getItem("data")
-    const { register, handleSubmit, formState: { errors }} = useForm<Representante>();
-    const onSubmit: SubmitHandler<Representante> = data => {
+    const { register, setFocus, setValue, handleSubmit, formState: { errors }} = useForm<Representante>();
+    const onSubmit: SubmitHandler<Representante> = async (data) => {
         console.log(data)
-        if(empresa){
+        if(await VerificarCPF(data.CPF)){
+            setFocus("CPF")
+            setValue("CPF", "")
+        }
+        else if(await VerificarEmail(data.EmailRepresentante)){
+            setFocus("EmailRepresentante")
+            setValue("EmailRepresentante", "")
+        }
+        else if(empresa){
             let empresaLocalStorage = JSON.parse(empresa);
             let representante = {Nome:data.Nome, CPF:data.CPF, EmailRepresentante:data.EmailRepresentante}
             Object.assign(empresaLocalStorage, {representante})
@@ -27,6 +35,28 @@ function FormCreateCorporationStepThree() {
             navigate("/CriarEmpresa")
         }
     }, [])
+
+    async function VerificarCPF(cpf:String) : Promise<boolean>{
+        var response = await fetch(`https://localhost:7106/api/Usuario/CPF/${cpf}`,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const result = await response.json();
+        return result.valor === "Usado";
+    }
+
+    async function VerificarEmail(email:String) : Promise<boolean>{
+        var response = await fetch(`https://localhost:7106/api/Usuario/Email/${email}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const result = await response.json()
+        return result.valor === "Usado"
+    }
     return (
         <div className="h-screen rounded-4xl bg-white w-2xl xl:min-w-3xl md:min-w-xl flex flex-col justify-center items-center">
             <div className="flex mb-24">
