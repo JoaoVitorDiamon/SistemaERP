@@ -24,7 +24,6 @@ export default function MainLadingPage() {
           <img src="../../../assets/systemImage.png" alt="image" />
         </div>
       </div>
-
     </motion.div>
   )
 }

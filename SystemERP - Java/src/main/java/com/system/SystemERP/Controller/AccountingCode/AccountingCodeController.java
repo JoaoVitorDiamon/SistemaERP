@@ -4,6 +4,7 @@ package com.system.SystemERP.Controller.AccountingCode;
 import com.system.SystemERP.Dtos.AccountingCode.AccountingCodeDTO;
 import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Services.AccountingCode.AccountingCodeServices;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,8 @@ public class AccountingCodeController {
     private AccountingCodeServices accountingCodeServices;
 
     @PostMapping
-    public ResponseEntity<AccountingCode> createAccountingCode(@RequestBody  AccountingCodeDTO accountingCodeDTO) {
+    @Operation(summary = "Criar um Codigo Contabil")
+    public ResponseEntity<AccountingCode> createAccountingCode(@RequestBody AccountingCodeDTO accountingCodeDTO) {
         try {
             var saved = accountingCodeServices.createAccountingCode(accountingCodeDTO);
             return ResponseEntity.created(URI.create("/accountingCode" + saved.toString())).build();
@@ -34,6 +36,7 @@ public class AccountingCodeController {
     }
 
     @GetMapping("/{idAccountingCode}")
+    @Operation(summary = "Buscar um Codigo Contabil atraves do ID")
     public ResponseEntity<AccountingCode> findByID(@PathVariable Integer idAccountingCode) {
         var accountingCode = accountingCodeServices.findByID(idAccountingCode);
 
@@ -44,6 +47,7 @@ public class AccountingCodeController {
 
 
     @GetMapping
+    @Operation(summary = "Buscar todos os Codigo Contabil")
     public ResponseEntity<List<AccountingCode>> findAll() {
         var listsAccountingCode = accountingCodeServices.findAll();
 
@@ -51,6 +55,7 @@ public class AccountingCodeController {
     }
 
     @DeleteMapping("/{idAccountingCode}")
+    @Operation(summary = "Deletar um Codigo Contabil atraves do ID")
     public ResponseEntity<Void> deleteByID(@PathVariable Integer idAccountingCode) {
         accountingCodeServices.deleteByID(idAccountingCode);
         return ResponseEntity.noContent().build();

@@ -8,10 +8,8 @@ export default function ThirtPartLandingPage() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="bg-gradient-to-r from-[#151934] to-[#060b27] text-white min-h-screen p-10 justify-center items-center"
-    >
+      className="bg-gradient-to-r from-[#151934] to-[#060b27] text-white min-h-screen p-10 justify-center items-center">
       <h1 className="text-white font-poppins text-center ml-5 text-[40px] font-bold  tracking-normal  ">Planos e beneficios</h1>
-
       <div className="grid grid-cols-4 justify-center items-center gap-5 mt-10">
         <div className="flex flex-col justify-center items-start gap-2">
           <svg width="31" height="37" viewBox="0 0 31 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,11 +55,8 @@ export default function ThirtPartLandingPage() {
                 </svg>
               </div>
             </div>
-
-
           </div>
         </div>
-
       </div>
       <div >
         <div className="w-[1300px] h-[80px]  mt-4 rounded-4xl flex flex-row justify-end items-center gap-56 ">
@@ -69,22 +64,19 @@ export default function ThirtPartLandingPage() {
             Exportação de dados
           </h1>
           <div>
-
           </div>
           <div className="flex flex-row justify-end items-center gap-[320px] mr-32">
-
             <div>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6242 0.00771476 23.9923 5.37578 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM12.082 17.489L18.927 8.2C19.1584 7.91359 19.2137 7.52318 19.0709 7.18377C18.9281 6.84437 18.6104 6.61089 18.2438 6.57604C17.8773 6.54118 17.5212 6.71059 17.317 7.017L11.09 15.468L7.014 12.207C6.58267 11.8618 5.95318 11.9317 5.608 12.363C5.26282 12.7943 5.33267 13.4238 5.764 13.769L10.652 17.677C10.8657 17.844 11.1375 17.9182 11.4064 17.8829C11.6753 17.8475 11.9188 17.7056 12.082 17.489Z" fill="#4E2D92" />
               </svg>
-            </div>   <div>
+            </div>
+              <div>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6242 0.00771476 23.9923 5.37578 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM12.082 17.489L18.927 8.2C19.1584 7.91359 19.2137 7.52318 19.0709 7.18377C18.9281 6.84437 18.6104 6.61089 18.2438 6.57604C17.8773 6.54118 17.5212 6.71059 17.317 7.017L11.09 15.468L7.014 12.207C6.58267 11.8618 5.95318 11.9317 5.608 12.363C5.26282 12.7943 5.33267 13.4238 5.764 13.769L10.652 17.677C10.8657 17.844 11.1375 17.9182 11.4064 17.8829C11.6753 17.8475 11.9188 17.7056 12.082 17.489Z" fill="#4E2D92" />
               </svg>
             </div>
           </div>
-
-
         </div>
       </div>
       <div >
@@ -93,7 +85,6 @@ export default function ThirtPartLandingPage() {
             <h1 className="text-black font-poppins text-left w-[600px] text-[20px] font-bold tracking-normal relative left-[420px] ">
               Publicidade incluída no uso
             </h1>
-
           </div>
           <div className="flex flex-row justify-end items-center gap-[320px] mr-32">
             <div className="relative left-9">
@@ -101,7 +92,6 @@ export default function ThirtPartLandingPage() {
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6242 0.00771476 23.9923 5.37578 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM12.082 17.489L18.927 8.2C19.1584 7.91359 19.2137 7.52318 19.0709 7.18377C18.9281 6.84437 18.6104 6.61089 18.2438 6.57604C17.8773 6.54118 17.5212 6.71059 17.317 7.017L11.09 15.468L7.014 12.207C6.58267 11.8618 5.95318 11.9317 5.608 12.363C5.26282 12.7943 5.33267 13.4238 5.764 13.769L10.652 17.677C10.8657 17.844 11.1375 17.9182 11.4064 17.8829C11.6753 17.8475 11.9188 17.7056 12.082 17.489Z" fill="#4E2D92" />
               </svg>
             </div>
-
             <div>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6242 0.00771476 23.9923 5.37578 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM12.082 17.489L18.927 8.2C19.1584 7.91359 19.2137 7.52318 19.0709 7.18377C18.9281 6.84437 18.6104 6.61089 18.2438 6.57604C17.8773 6.54118 17.5212 6.71059 17.317 7.017L11.09 15.468L7.014 12.207C6.58267 11.8618 5.95318 11.9317 5.608 12.363C5.26282 12.7943 5.33267 13.4238 5.764 13.769L10.652 17.677C10.8657 17.844 11.1375 17.9182 11.4064 17.8829C11.6753 17.8475 11.9188 17.7056 12.082 17.489Z" fill="#4E2D92" />
@@ -113,8 +103,6 @@ export default function ThirtPartLandingPage() {
               </svg>
             </div>
           </div>
-
-
         </div>
       </div>
       <div >
@@ -123,7 +111,6 @@ export default function ThirtPartLandingPage() {
             Projetos/Eventos
           </h1>
           <div>
-
           </div>
           <div className="flex flex-row justify-end items-center gap-[320px] mr-[126px]">
             <div>
@@ -132,8 +119,6 @@ export default function ThirtPartLandingPage() {
               </svg>
             </div>
           </div>
-
-
         </div>
       </div>
       <div >
@@ -142,7 +127,6 @@ export default function ThirtPartLandingPage() {
             <h1 className="text-black font-poppins text-left w-[600px] text-[20px] font-bold tracking-normal relative left-[420px] ">
               Suporte via FAQ
             </h1>
-
           </div>
           <div className="flex flex-row justify-end items-center gap-[320px] mr-32">
             <div className="relative left-9">
@@ -150,7 +134,6 @@ export default function ThirtPartLandingPage() {
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6242 0.00771476 23.9923 5.37578 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM12.082 17.489L18.927 8.2C19.1584 7.91359 19.2137 7.52318 19.0709 7.18377C18.9281 6.84437 18.6104 6.61089 18.2438 6.57604C17.8773 6.54118 17.5212 6.71059 17.317 7.017L11.09 15.468L7.014 12.207C6.58267 11.8618 5.95318 11.9317 5.608 12.363C5.26282 12.7943 5.33267 13.4238 5.764 13.769L10.652 17.677C10.8657 17.844 11.1375 17.9182 11.4064 17.8829C11.6753 17.8475 11.9188 17.7056 12.082 17.489Z" fill="#4E2D92" />
               </svg>
             </div>
-
             <div>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6242 0.00771476 23.9923 5.37578 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM12.082 17.489L18.927 8.2C19.1584 7.91359 19.2137 7.52318 19.0709 7.18377C18.9281 6.84437 18.6104 6.61089 18.2438 6.57604C17.8773 6.54118 17.5212 6.71059 17.317 7.017L11.09 15.468L7.014 12.207C6.58267 11.8618 5.95318 11.9317 5.608 12.363C5.26282 12.7943 5.33267 13.4238 5.764 13.769L10.652 17.677C10.8657 17.844 11.1375 17.9182 11.4064 17.8829C11.6753 17.8475 11.9188 17.7056 12.082 17.489Z" fill="#4E2D92" />
@@ -162,8 +145,6 @@ export default function ThirtPartLandingPage() {
               </svg>
             </div>
           </div>
-
-
         </div>
       </div>
 

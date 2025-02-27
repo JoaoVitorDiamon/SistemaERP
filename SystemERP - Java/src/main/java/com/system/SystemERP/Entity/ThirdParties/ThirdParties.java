@@ -15,6 +15,7 @@ public class ThirdParties {
     private Integer idTerceiros;
     private String nome;
     private String nomeEFantasia;
+
     //    private Integer tipoCliente_idTipoCliente;(fk)
     private boolean fornecedor;
     private boolean estadoAtividade;
