@@ -3,8 +3,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import ProgressBar from "./ProgressBar";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { ResponsePostDto } from "../../models/ResponsePostDto"
+import { EmpresaCreateDto } from "../../models/EmpresaCreateDto";
 interface Representante {
-    Nome: String;
+    Name: String;
     CPF: String;
     EmailRepresentante: String;
   }
@@ -24,8 +26,24 @@ function FormCreateCorporationStepThree() {
         }
         else if(empresa){
             let empresaLocalStorage = JSON.parse(empresa);
-            let representante = {Nome:data.Nome, CPF:data.CPF, EmailRepresentante:data.EmailRepresentante}
-            Object.assign(empresaLocalStorage, {representante})
+            console.log(empresaLocalStorage)
+            let representante = {Name:data.Name, CPF:data.CPF, EmailRepresentante:data.EmailRepresentante}
+            let idDono = (await CriarRepresentante(representante)).valor.id
+            console.log(idDono)
+            let empresa_dto : EmpresaCreateDto = {
+                "name": empresaLocalStorage.name,
+                "nomeFantasia" : empresaLocalStorage.nomeFantasia,
+                "idDono" : idDono,
+                "cnpj": empresaLocalStorage.cnpj,
+                "email" : empresaLocalStorage.email,
+                "endereco" : empresaLocalStorage.endereco,
+                "cep" : empresaLocalStorage.cep,
+                "idTipoDeEmpresa" : empresaLocalStorage.idTipoDeEmpresa,
+                "idSetor" : empresaLocalStorage.idSetor,
+                "telefone" : "123123",
+                "dataCriacao" : "2025-02-27T00:02:24.239Z"
+            }
+            await CriarEmpresa(empresa_dto)
             localStorage.setItem("data", JSON.stringify(empresaLocalStorage))
             console.log(empresaLocalStorage)
         }
@@ -46,7 +64,6 @@ function FormCreateCorporationStepThree() {
         const result = await response.json();
         return result.valor === "Usado";
     }
-
     async function VerificarEmail(email:String) : Promise<boolean>{
         var response = await fetch(`https://localhost:7106/api/Usuario/Email/${email}`, {
             method: 'GET',
@@ -56,6 +73,33 @@ function FormCreateCorporationStepThree() {
         })
         const result = await response.json()
         return result.valor === "Usado"
+    }
+    async function CriarRepresentante(representante:Representante) : Promise<ResponsePostDto>{
+        var response = await fetch(`https://localhost:7106/api/Usuario`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(
+                {
+                    Name:representante.Name, 
+                    CPF:representante.CPF, 
+                    Email:representante.EmailRepresentante
+                })
+        })
+        const result = await response.json()
+        return result
+    }
+    async function CriarEmpresa(novaEmpresa:EmpresaCreateDto){
+        var response = await fetch(`https://localhost:7106/api/Empresa`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(novaEmpresa)
+        })
+        const result = await response.json()
+        console.log(result)
     }
     return (
         <div className="h-screen rounded-4xl bg-white w-2xl xl:min-w-3xl md:min-w-xl flex flex-col justify-center items-center">
@@ -70,8 +114,8 @@ function FormCreateCorporationStepThree() {
                     <form onSubmit={handleSubmit(onSubmit)} className="sm:mt-10 mt-6 space-y-4 text-gray-600">
                         <div>
                             <label>Nome do representante</label>
-                            <InputPersonalized type="text" {...register("Nome", { required: true })}/>
-                            {errors?.Nome?.type === "required" && <p className="text-red-600 text-sm">Campo vázio</p>}
+                            <InputPersonalized type="text" {...register("Name", { required: true })}/>
+                            {errors?.Name?.type === "required" && <p className="text-red-600 text-sm">Campo vázio</p>}
                         </div>
                         <div>
                             <label>CPF do representante</label>
