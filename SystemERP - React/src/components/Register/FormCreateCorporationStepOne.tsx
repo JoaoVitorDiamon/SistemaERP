@@ -1,5 +1,5 @@
-import InputPersonalized from "./InputPersonalized";
-import {EmpresaCreateDto} from "../../models/EmpresaCreateDto"
+import InputPersonalized from "../InputPersonalized";
+import {EmpresaCreateDto} from "../../../models/EmpresaCreateDto"
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";

@@ -1,8 +1,8 @@
-import InputPersonalized from "./InputPersonalized";
+import InputPersonalized from "../InputPersonalized";
 import { SubmitHandler, useForm } from "react-hook-form";
 import ProgressBar from "./ProgressBar";
 import { useEffect, useState } from "react";
-import InputPersonalizedDisable from "./InputPersonalizedDisable";
+import InputPersonalizedDisable from "../InputPersonalizedDisable";
 import { useNavigate } from "react-router-dom";
 interface ICep {
     cep: string
@@ -74,8 +74,8 @@ function FormCreateCorporationStepEndereco() {
                                 </div>
                                 <InputPersonalized type="text" required value={cep} onChange={(event)=>setarCEP(event.target.value)}/>
                                 {errors?.cep?.type === "required" && <p className="text-red-600 text-sm">Email ou cnpj inválidos</p>}
-                            </div>  
-                            
+                            </div>
+
                             <div className="w-2/5">
                                 <label>Estado</label>
                                 <InputPersonalizedDisable type="text" {...register("estado", {disabled: true})}/>
