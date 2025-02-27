@@ -69,52 +69,28 @@
             Valida o email do usuário.
             </summary>
         </member>
-        <member name="T:ErpServicesASP.API.Migrations.CriandoDbMysql">
+        <member name="T:ErpServicesASP.API.Migrations.migrationinitial">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoDbMysql.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.migrationinitial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoDbMysql.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.migrationinitial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.CriandoDbMysql.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.migrationinitial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
-        <member name="T:ErpServicesASP.API.Migrations.atualizando">
+        <member name="T:ErpServicesASP.API.Migrations.migrationinitial2">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.migrationinitial2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.migrationinitial2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:ErpServicesASP.API.Migrations.atualizando2">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:ErpServicesASP.API.Migrations.atualizando3">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:ErpServicesASP.API.Migrations.atualizando3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:ErpServicesASP.API.Migrations.migrationinitial2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

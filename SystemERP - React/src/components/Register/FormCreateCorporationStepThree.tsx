@@ -9,6 +9,7 @@ interface Representante {
     Name: String;
     CPF: String;
     EmailRepresentante: String;
+    Senha: String;
   }
 function FormCreateCorporationStepThree() {
     const navigate = useNavigate()
@@ -27,7 +28,7 @@ function FormCreateCorporationStepThree() {
         else if(empresa){
             let empresaLocalStorage = JSON.parse(empresa);
             console.log(empresaLocalStorage)
-            let representante = {Name:data.Name, CPF:data.CPF, EmailRepresentante:data.EmailRepresentante}
+            let representante = {Name:data.Name, CPF:data.CPF, EmailRepresentante:data.EmailRepresentante, Senha:empresaLocalStorage.Senha}
             let idDono = (await CriarRepresentante(representante)).valor.id
             console.log(idDono)
             let empresa_dto : EmpresaCreateDto = {
@@ -84,7 +85,8 @@ function FormCreateCorporationStepThree() {
                 {
                     Name:representante.Name, 
                     CPF:representante.CPF, 
-                    Email:representante.EmailRepresentante
+                    Email:representante.EmailRepresentante,
+                    Senha:representante.Senha
                 })
         })
         const result = await response.json()

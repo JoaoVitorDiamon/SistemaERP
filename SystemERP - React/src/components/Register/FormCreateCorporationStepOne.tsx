@@ -1,12 +1,17 @@
 import InputPersonalized from "../InputPersonalized";
-import {EmpresaCreateDto} from "../../../models/EmpresaCreateDto"
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
+interface Representante {
+    nomeFantasia: string;
+    cnpj: string;
+    email: string;
+    Senha: string;
+  }
 function FormCreateCorporationStepOne() {
     const navigate = useNavigate()
-    const { register, setValue, setFocus, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
-    const onSubmit: SubmitHandler<EmpresaCreateDto> = async (data) => {
+    const { register, setValue, setFocus, handleSubmit, formState: { errors }} = useForm<Representante>();
+    const onSubmit: SubmitHandler<Representante> = async (data) => {
         if(await jaExisteCNPJ(data.cnpj)){
             setFocus("cnpj")
             setValue("cnpj", "")
@@ -72,7 +77,8 @@ function FormCreateCorporationStepOne() {
                         </div>
                         <div>
                             <p>Senha</p>
-                            <InputPersonalized type="password"/>
+                            <InputPersonalized type="password" {...register("Senha", { required: true })}/>
+                            {errors?.Senha?.type === "required" && <p className="text-red-600 text-sm">Senha inválida</p>}
                         </div>
                         <p className="text-sm mt-6">Ao criar essa conta você concordar com os
                         termos de uso e com as politicas de privacidade.</p>

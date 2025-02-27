@@ -45,7 +45,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseMySql(builder.Configuration.GetConnectionString("MysqlConnection"), new MySqlServerVersion(new Version(8, 0, 30)));
+    options.UseNpgsql("Host=ep-empty-fire-acy9r612-pooler.sa-east-1.aws.neon.tech;Database=sistema_erp;Username=sistema_erp_owner;Password=npg_suTi30qUQZpL");
 });
 
 var app = builder.Build();

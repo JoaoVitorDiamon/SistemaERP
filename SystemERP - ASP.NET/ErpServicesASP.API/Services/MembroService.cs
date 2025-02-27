@@ -67,7 +67,6 @@ namespace ErpServicesASP.API.Services
                 NaturezaMembro = novoMembro.NaturezaMembro,
                 Telefone = novoMembro.Telefone,
                 Genero = novoMembro.Genero,
-                Senha = novoMembro.Senha,
                 CEP = novoMembro.CEP,
                 DataNascimento = novoMembro.DataNascimento,
                 AssociacaoPublica = novoMembro.AssociacaoPublica

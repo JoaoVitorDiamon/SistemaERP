@@ -9,13 +9,15 @@ namespace ErpServicesASP.API.Model
         public string Name { get; set; }
         public string CPF { get; set; }
         public string Email { get; set; }
+        public string Senha { get; set; }
         public DateTime DataCriacao { get; set; }
-        public UsuarioModel(string name, string CPF, string email)
+        public UsuarioModel(string name, string CPF, string email, string senha)
         {
             Name = name;
             this.CPF = CPF;
             Email = email;
             DataCriacao = DateTime.Now;
+            Senha = senha;
         }
     }
 }
