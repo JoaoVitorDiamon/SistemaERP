@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZmjEAAYmfrTLQ/d0YDQUHqCA0wvUDVURUDWkfoDONCua2F5feDhTuuO0IGABKIaR3ZY3tPEwMxPG/jqLypwr5g==",
+  "dgSpecHash": "SKhxIjCKRH71FR0yC/lgv9nAHbvFzdLvYQQUZQX2SUDy8kV9u/FTa6EDoZkvkuh6jUizG7Eod0H1FCbRF0Rebg==",
   "success": true,
   "projectFilePath": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\ErpServicesASP.API.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,8 @@
     "C:\\Users\\khaleu\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
+    "C:\\Users\\khaleu\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
+    "C:\\Users\\khaleu\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.2\\npgsql.entityframeworkcore.postgresql.8.0.2.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.2\\pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",

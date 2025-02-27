@@ -3,8 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\services\\interfaces\\iempresaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\interfaces\\iempresaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\services\\empresaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\empresaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\model\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\empresarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\empresarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\dto\\usuariocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\dto\\usuariocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\dto\\membrocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\dto\\membrocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\dto\\empresacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,18 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\model\\empresamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\empresamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\dto\\membrocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\dto\\membrocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1086,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,32 +74,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EmpresaModel.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\EmpresaModel.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\EmpresaModel.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\EmpresaModel.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Model\\EmpresaModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAHAAAA",
+              "DocumentIndex": 0,
+              "Title": "IEmpresaService.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\Interfaces\\IEmpresaService.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\Interfaces\\IEmpresaService.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\Interfaces\\IEmpresaService.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Services\\Interfaces\\IEmpresaService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T23:35:48.083Z"
+              "WhenOpened": "2025-02-27T15:37:14.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "EmpresaService.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\EmpresaService.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\EmpresaService.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\EmpresaService.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Services\\EmpresaService.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T15:37:01.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioModel.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\UsuarioModel.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\UsuarioModel.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\UsuarioModel.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Model\\UsuarioModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T14:11:01.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "EmpresaRepository.cs",
               "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\EmpresaRepository.cs",
               "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\EmpresaRepository.cs",
               "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\EmpresaRepository.cs",
               "RelativeToolTip": "ErpServicesASP.API\\Repositories\\EmpresaRepository.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACoAAAAwAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T23:09:32.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "EmpresaCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\EmpresaCreateDto.cs",
               "RelativeDocumentMoniker": "ErpServicesASP.API\\Dto\\EmpresaCreateDto.cs",
@@ -87,31 +138,92 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MembroCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\MembroCreateDto.cs",
               "RelativeDocumentMoniker": "ErpServicesASP.API\\Dto\\MembroCreateDto.cs",
               "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\MembroCreateDto.cs",
               "RelativeToolTip": "ErpServicesASP.API\\Dto\\MembroCreateDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T23:09:15.646Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UsuarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
               "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
               "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
               "RelativeToolTip": "ErpServicesASP.API\\Repositories\\UsuarioRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T23:58:29.743Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Services\\UsuarioService.cs",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAACMAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T23:32:08.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmpresaModel.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\EmpresaModel.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\EmpresaModel.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\EmpresaModel.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Model\\EmpresaModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T23:35:48.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\appsettings.json",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\appsettings.json",
+              "RelativeToolTip": "ErpServicesASP.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAADOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-27T13:46:15.053Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "UsuarioCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\UsuarioCreateDto.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Dto\\UsuarioCreateDto.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\UsuarioCreateDto.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Dto\\UsuarioCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T14:10:49.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Program.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Program.cs",
+              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Program.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T13:48:40.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "ErpServicesASP.API\\Controllers\\UsuarioController.cs",
@@ -123,19 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\UsuarioService.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Services\\UsuarioService.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T23:32:08.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "IUsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\Interfaces\\IUsuarioService.cs",
               "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\Interfaces\\IUsuarioService.cs",

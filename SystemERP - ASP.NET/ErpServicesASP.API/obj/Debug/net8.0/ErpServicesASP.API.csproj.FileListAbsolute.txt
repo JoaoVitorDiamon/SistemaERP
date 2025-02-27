@@ -140,3 +140,5 @@ C:\Users\khaleu\Desktop\Projetos\sistema_erp\SystemERP - ASP.NET\ErpServicesASP.
 C:\Users\khaleu\Desktop\Projetos\sistema_erp\SystemERP - ASP.NET\ErpServicesASP.API\obj\Debug\net8.0\ErpServicesASP.API.xml
 C:\Users\khaleu\Desktop\Projetos\sistema_erp\SystemERP - ASP.NET\ErpServicesASP.API\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\khaleu\Desktop\Projetos\sistema_erp\SystemERP - ASP.NET\ErpServicesASP.API\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\khaleu\Desktop\Projetos\sistema_erp\SystemERP - ASP.NET\ErpServicesASP.API\bin\Debug\net8.0\Npgsql.dll
+C:\Users\khaleu\Desktop\Projetos\sistema_erp\SystemERP - ASP.NET\ErpServicesASP.API\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

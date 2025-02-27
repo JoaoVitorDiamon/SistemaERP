@@ -3,17 +3,17 @@ using System;
 using ErpServicesASP.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace ErpServicesASP.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250217213141_CriandoDbMysql")]
-    partial class CriandoDbMysql
+    [Migration("20250227152141_migrationinitial2")]
+    partial class migrationinitial2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,21 +21,21 @@ namespace ErpServicesASP.API.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.3")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("ErpServicesASP.API.Model.CargoModel", b =>
                 {
                     b.Property<int>("idCargo")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idCargo"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idCargo"));
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.HasKey("idCargo");
 
@@ -46,46 +46,55 @@ namespace ErpServicesASP.API.Migrations
                 {
                     b.Property<int>("idEmpresa")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idEmpresa"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idEmpresa"));
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
-                    b.Property<DateOnly>("DataCriacao")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("DonoId")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("Endereco")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("NomeFantasia")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
+
+                    b.Property<int>("SetoridSetor")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Telefone")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<int>("TipoDeEmpresaidTipoDeEmpresa")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.HasKey("idEmpresa");
 
                     b.HasIndex("DonoId");
+
+                    b.HasIndex("SetoridSetor");
 
                     b.HasIndex("TipoDeEmpresaidTipoDeEmpresa");
 
@@ -96,26 +105,41 @@ namespace ErpServicesASP.API.Migrations
                 {
                     b.Property<int>("idMembro")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idMembro"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idMembro"));
+
+                    b.Property<string>("AssociacaoPublica")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("CargoidCargo")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    b.Property<string>("EmailDaEmpresa")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("EmpresaidEmpresa")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Genero")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("NaturezaMembro")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.HasKey("idMembro");
 
@@ -128,17 +152,34 @@ namespace ErpServicesASP.API.Migrations
                     b.ToTable("Membros");
                 });
 
+            modelBuilder.Entity("ErpServicesASP.API.Model.SetorModel", b =>
+                {
+                    b.Property<int>("idSetor")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idSetor"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("idSetor");
+
+                    b.ToTable("Setores");
+                });
+
             modelBuilder.Entity("ErpServicesASP.API.Model.TipoDeEmpresaModel", b =>
                 {
                     b.Property<int>("idTipoDeEmpresa")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idTipoDeEmpresa"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idTipoDeEmpresa"));
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.HasKey("idTipoDeEmpresa");
 
@@ -149,51 +190,28 @@ namespace ErpServicesASP.API.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AssociacaoPublica")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CPF")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Genero")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -204,19 +222,19 @@ namespace ErpServicesASP.API.Migrations
                 {
                     b.Property<int>("idValidacaoEmail")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idValidacaoEmail"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idValidacaoEmail"));
 
                     b.Property<string>("Codigo")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<bool>("Validado")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.HasKey("idValidacaoEmail");
 
@@ -233,6 +251,12 @@ namespace ErpServicesASP.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ErpServicesASP.API.Model.SetorModel", "Setor")
+                        .WithMany()
+                        .HasForeignKey("SetoridSetor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ErpServicesASP.API.Model.TipoDeEmpresaModel", "TipoDeEmpresa")
                         .WithMany()
                         .HasForeignKey("TipoDeEmpresaidTipoDeEmpresa")
@@ -240,6 +264,8 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired();
 
                     b.Navigation("Dono");
+
+                    b.Navigation("Setor");
 
                     b.Navigation("TipoDeEmpresa");
                 });
