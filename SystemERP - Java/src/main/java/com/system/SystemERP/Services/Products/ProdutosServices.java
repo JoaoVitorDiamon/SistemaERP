@@ -16,12 +16,12 @@ public class ProdutosServices {
         this.produtosRepository = produtosRepository;
     }
 
-    public Integer CreateProducts(ProdutosDTO produtosDTO){
-
-        var products = new Produto(null, produtosDTO.nome());
-        var savedProduct = produtosRepository.save(products);
+    public Integer createProducts(ProdutosDTO produtosDTO) {
+        var product = produtosDTO.toEntity();
+        var savedProduct = produtosRepository.save(product);
         return savedProduct.getIdProduto();
     }
+
 
     public Optional<Produto> getById(Integer id){
         return produtosRepository.findById(id);

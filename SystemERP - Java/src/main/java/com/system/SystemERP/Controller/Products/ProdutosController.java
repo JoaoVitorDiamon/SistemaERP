@@ -26,7 +26,7 @@ public class ProdutosController {
     @PostMapping
     @Operation(summary = "Cria um Produto", description = "Cria um Produto")
     public ResponseEntity<Produto> createProduct(@RequestBody ProdutosDTO produtosDTO){
-        var created = produtosServices.CreateProducts(produtosDTO);
+        var created = produtosServices.createProducts(produtosDTO);
         return ResponseEntity.created(URI.create("/produtos/" + created.toString())).build();
     }
 
