@@ -10,5 +10,7 @@ namespace ErpServicesASP.API.Repositories.Interfaces
         Task<UsuarioModel?> GetUsuarioPorId(int id);
         Task<bool> UsuarioJaExiste(UsuarioCreateDto novoUsuario);
         Task<List<UsuarioModel>> DeletarUsuario(UsuarioModel usuario);
+        Task<bool> VerificarExistenciaCPF(string cpf);
+        Task<bool> VerificarExistenciaEmail(string email);
     }
 }

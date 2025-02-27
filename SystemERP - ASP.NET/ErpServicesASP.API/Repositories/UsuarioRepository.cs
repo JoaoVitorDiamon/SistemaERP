@@ -55,5 +55,19 @@ namespace ErpServicesASP.API.Repositories
                 (usuario, validacoes) => usuario).ToListAsync();
             return lista;
         }
+
+        public async Task<bool> VerificarExistenciaCPF(string cpf)
+        {
+            var cpfCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.CPF == cpf);
+            if (cpfCadastrado != null) return true;
+            return false;
+        }
+
+        public async Task<bool> VerificarExistenciaEmail(string email)
+        {
+            var emailCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => email == usuario.Email);
+            if (emailCadastrado != null ) return true;
+            return false;
+        }
     }
 }
