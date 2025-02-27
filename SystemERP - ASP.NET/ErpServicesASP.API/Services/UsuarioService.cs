@@ -17,6 +17,48 @@ namespace ErpServicesASP.API.Services
             _validacaoEmailService = validacaoEmailService;
         }
 
+        public async Task<ResponseModel<string>> VerificarExistenciaCPF(string cpf)
+        {
+            ResponseModel<string> response = new ResponseModel<string>();
+            try
+            {
+                var usuarioDoCPF = await _usuarioRepository.VerificarExistenciaCPF(cpf);
+                if (usuarioDoCPF)
+                {
+                    response.Valor = "Usado";
+                    return response;
+                }
+                response.Valor = "Não usado";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
+        }
+
+        public async Task<ResponseModel<string>> VerificarExistenciaEmail(string email)
+        {
+            ResponseModel<string> response = new ResponseModel<string>();
+            try
+            {
+                var usuarioDoEmail = await _usuarioRepository.VerificarExistenciaEmail(email);
+                if (usuarioDoEmail)
+                {
+                    response.Valor = "Usado";
+                    return response;
+                }
+                response.Valor = "Não usado";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
+        }
+
         public async Task<ResponseModel<UsuarioModel>> CriarUsuario(UsuarioCreateDto novoUsuario)
         {
             ResponseModel<UsuarioModel> response = new ResponseModel<UsuarioModel>();
