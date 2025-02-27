@@ -682,6 +682,58 @@
     ]
   },
   {
+    "ContainingType": "ErpServicesASP.API.Controllers.UsuarioController",
+    "Method": "VerificarExistenciaCPF",
+    "RelativePath": "api/Usuario/CPF/{cpf}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cpf",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.UsuarioController",
+    "Method": "VerificarExistenciaEmail",
+    "RelativePath": "api/Usuario/Email/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ErpServicesASP.API.Controllers.ValidacaoEmailController",
     "Method": "ValidarEmail",
     "RelativePath": "api/ValidacaoEmail",

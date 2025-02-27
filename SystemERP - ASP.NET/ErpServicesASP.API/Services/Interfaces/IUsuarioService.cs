@@ -9,5 +9,7 @@ namespace ErpServicesASP.API.Services.Interfaces
         Task<ResponseModel<List<UsuarioModel>>> ListarUsuarios();
         Task<ResponseModel<UsuarioModel>> GetUsuarioPorId(int id);
         Task<ResponseModel<List<UsuarioModel>>> DeletarUsuarioPorId(int id);
+        Task<ResponseModel<string>> VerificarExistenciaCPF(string cpf);
+        Task<ResponseModel<string>> VerificarExistenciaEmail(string cpf);
     }
 }

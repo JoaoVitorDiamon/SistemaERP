@@ -1,12 +1,13 @@
 export interface EmpresaCreateDto {
     name: string
-    nomeFantasia?: string
-    idDono?: number
+    nomeFantasia: string
+    idDono: number
     cnpj: string
     email: string
-    setor?: string
-    telefone?: string
-    endereco?: string
-    idTipoDeEmpresa?: number
-    dataCriacao?: string
+    cep: string
+    idSetor: number
+    telefone: string
+    endereco: string
+    idTipoDeEmpresa: number
+    dataCriacao: string
   }

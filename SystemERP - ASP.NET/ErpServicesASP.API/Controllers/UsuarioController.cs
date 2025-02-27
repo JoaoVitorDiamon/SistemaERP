@@ -72,5 +72,21 @@ namespace ErpServicesASP.API.Controllers
                 return BadRequest(response);
             return Ok(response);
         }
+
+        [HttpGet("CPF/{cpf}")]
+        public async Task<ActionResult<ResponseModel<string>>> VerificarExistenciaCPF(string cpf)
+        {
+            var response = await _service.VerificarExistenciaCPF(cpf);
+            if(!response.Status) return BadRequest(response);
+            return Ok(response);
+        }
+
+        [HttpGet("Email/{email}")]
+        public async Task<ActionResult<ResponseModel<string>>> VerificarExistenciaEmail(string email)
+        {
+            var response = await _service.VerificarExistenciaEmail(email);
+            if (!response.Status) return BadRequest(response);
+            return Ok(response);
+        }
     }
 }

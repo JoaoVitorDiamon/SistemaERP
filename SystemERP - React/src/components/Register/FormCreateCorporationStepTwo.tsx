@@ -13,11 +13,11 @@ function FormCreateCorporationStepTwo() {
     const onSubmit: SubmitHandler<EmpresaCreateDto> = data => {
         console.log(data)
         let name = data.name
-        let setor = data.setor
+        let idSetor = data.idSetor
         let idTipoDeEmpresa = data.idTipoDeEmpresa
         if(empresa != null){
             let empresaLocalStorage = JSON.parse(empresa)
-            Object.assign(empresaLocalStorage, {name, idTipoDeEmpresa, setor})
+            Object.assign(empresaLocalStorage, {name, idTipoDeEmpresa, idSetor})
             console.log(empresaLocalStorage)
             localStorage.setItem("data", JSON.stringify(empresaLocalStorage))
             navigate("/EmpresaEndereco")
@@ -66,13 +66,13 @@ function FormCreateCorporationStepTwo() {
                     <form onSubmit={handleSubmit(onSubmit)} className="sm:mt-10 mt-6 space-y-4 text-gray-600">
                         <div>
                             <p>Setor da Empresa</p>
-                            <select {...register("setor", {required: true})} className="w-full p-3 border mt-1 border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300">
+                            <select {...register("idSetor", {required: true})} className="w-full p-3 border mt-1 border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300">
                                 <option value=""></option>
                                 {setores.valor.map((option)=>(
                                     <option value={option.idSetor} key={option.idSetor}>{option.nome}</option>
                                 ))}
                             </select>
-                            {errors?.setor?.type === "required" && <p className="text-red-600 text-sm">Setor está vázio.</p>}
+                            {errors?.idSetor?.type === "required" && <p className="text-red-600 text-sm">Setor está vázio.</p>}
                         </div>
                         <div>
                             <p>Tipo da Empresa</p>
