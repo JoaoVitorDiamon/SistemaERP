@@ -1,6 +1,8 @@
 package com.system.SystemERP.Entity.Enterprise;
 
+import com.system.SystemERP.Entity.Adress.Adress;
 import com.system.SystemERP.Entity.EnterpriseType.EnterpriseType;
+import com.system.SystemERP.Entity.Sector.Sector;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,38 +15,43 @@ import java.time.LocalDateTime;
 public class Enterprise {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer idEmpresa;
     private String name;
     private String nomeFantasia;
-    private Integer donoId;
+
+
+//    private Integer donoId;(fk)
+
+
     private String cnpj;
     private String email;
     private String telefone;
-    private String endereco;
-    private String cep;
 
     @ManyToOne
-    @JoinColumn(name = "TipoDeEmpresaidTipoDeEmpresa", referencedColumnName = "idTipoDeEmpresa")
+    @JoinColumn(name = "idEndereco", nullable = false)
+    private Adress endereco;
+
+    @ManyToOne
+    @JoinColumn(name = "TipoDeEmpresa", referencedColumnName = "idTipoDeEmpresa", nullable = false)
     private EnterpriseType tipoDeEmpresa;
 
-//    @ManyToOne
-//    @JoinColumn(name = "SetoridSetor", referencedColumnName = "idSetor")
-//    private Setor setor;
+    @ManyToOne
+    @JoinColumn(name = "idSetor", nullable = false)
+    private Sector setor;
 
     private LocalDateTime dataCriacao;
 
-    public Enterprise(Integer idEmpresa, String name, String nomeFantasia, Integer donoId, String cnpj, String email, String telefone, String endereco, String cep, EnterpriseType tipoDeEmpresa, LocalDateTime dataCriacao) {
+    public Enterprise(Integer idEmpresa, String name, String nomeFantasia, String cnpj, String email, String telefone, Adress endereco, EnterpriseType tipoDeEmpresa, Sector setor, LocalDateTime dataCriacao) {
         this.idEmpresa = idEmpresa;
         this.name = name;
         this.nomeFantasia = nomeFantasia;
-        this.donoId = donoId;
         this.cnpj = cnpj;
         this.email = email;
         this.telefone = telefone;
         this.endereco = endereco;
-        this.cep = cep;
         this.tipoDeEmpresa = tipoDeEmpresa;
+        this.setor = setor;
         this.dataCriacao = dataCriacao;
     }
 }

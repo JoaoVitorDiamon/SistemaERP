@@ -23,6 +23,17 @@ public class User {
     private String genero;
     private Date dataCriacao;
     private String senha;
-    private String CEP;
+    private Date dataNascimento;
 
+    public User(int id, String nome, String cpf, String telefone, String email, String genero, Date dataCriacao, String senha, Date dataNascimento) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+        this.genero = genero;
+        this.dataCriacao = dataCriacao;
+        this.senha = senha;
+        this.dataNascimento = dataNascimento;
+    }
 }

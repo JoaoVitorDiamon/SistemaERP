@@ -11,7 +11,7 @@ public class Storage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer idArmazem;
+    private Integer id_armazem;
     private String nome;
     private String descricao;
     //private Integer endereco_idEndereco;(fk)
@@ -19,8 +19,8 @@ public class Storage {
     //private Integer empresa_idEmpresA;(FK)
 
 
-    public Storage(Integer idArmazem, String nome, String descricao, String telefone) {
-        this.idArmazem = idArmazem;
+    public Storage(Integer id_armazem, String nome, String descricao, String telefone) {
+        this.id_armazem = id_armazem;
         this.nome = nome;
         this.descricao = descricao;
         this.telefone = telefone;

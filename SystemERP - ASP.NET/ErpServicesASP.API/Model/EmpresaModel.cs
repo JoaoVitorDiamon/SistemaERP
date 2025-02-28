@@ -11,7 +11,7 @@ namespace ErpServicesASP.API.Model
         public UsuarioModel Dono { get; set; }
         public string CNPJ { get; set; }
         public string Email { get; set; }
-       public string Telefone { get; set; }
+        public string Telefone { get; set; }
         public string Endereco { get; set; }
         public string CEP { get; set; }
         public TipoDeEmpresaModel TipoDeEmpresa { get; set; }
