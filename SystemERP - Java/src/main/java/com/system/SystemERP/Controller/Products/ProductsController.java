@@ -15,18 +15,18 @@ import java.util.List;
 @RequestMapping("/produtos")
 @Tag(name = "Produtos")
 @Controller
-public class ProdutosController {
+public class ProductsController {
 
     private ProdutosServices produtosServices;
 
-    public ProdutosController(ProdutosServices produtosServices) {
+    public ProductsController(ProdutosServices produtosServices) {
         this.produtosServices = produtosServices;
     }
 
     @PostMapping
     @Operation(summary = "Cria um Produto", description = "Cria um Produto")
-    public ResponseEntity<Produto> createProduct(@RequestBody ProdutosDTO produtosDTO) {
-        var created = produtosServices.CreateProducts(produtosDTO);
+    public ResponseEntity<Produto> createProduct(@RequestBody ProdutosDTO produtosDTO){
+        var created = produtosServices.createProducts(produtosDTO);
         return ResponseEntity.created(URI.create("/produtos/" + created.toString())).build();
     }
 

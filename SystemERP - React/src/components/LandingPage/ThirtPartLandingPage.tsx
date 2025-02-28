@@ -147,10 +147,6 @@ export default function ThirtPartLandingPage() {
           </div>
         </div>
       </div>
-
-
-
-
     </motion.div>
 
   )

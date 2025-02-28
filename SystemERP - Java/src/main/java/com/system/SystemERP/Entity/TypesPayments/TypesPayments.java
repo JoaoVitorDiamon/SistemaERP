@@ -1,6 +1,5 @@
 package com.system.SystemERP.Entity.TypesPayments;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -10,7 +9,7 @@ import java.time.Instant;
 
 @Entity
 @Data
-@Table(name = "tipo_pagamentos")
+@Table(name = "\"tipo_pagamentos\"")
 public class TypesPayments {
 
     @Id
@@ -25,6 +24,7 @@ public class TypesPayments {
 
     @UpdateTimestamp
     private Instant dateUpdate;
+
 
     public TypesPayments() {
     }
