@@ -32,7 +32,7 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<TipoDeEmpresaModel>> CriarTipoDeEmpresa(TipoDeEmpresaCreateDto novoTipoDeEmpresa)
+        public async Task<ResponseModel<TipoDeEmpresaModel>> CriarTipoDeEmpresa(EnterpriseTypeCreateDto novoTipoDeEmpresa)
         {
             ResponseModel<TipoDeEmpresaModel> response = new ResponseModel<TipoDeEmpresaModel>();
             try

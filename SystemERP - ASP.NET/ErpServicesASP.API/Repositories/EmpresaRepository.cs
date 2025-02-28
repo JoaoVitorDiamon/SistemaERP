@@ -28,7 +28,7 @@ namespace ErpServicesASP.API.Repositories
             return false;
         }
 
-        public async Task<EmpresaModel> CriarEmpresa(EmpresaCreateDto novaEmpresa)
+        public async Task<EmpresaModel> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
         {
             var dono = await _context.Usuarios.FindAsync(novaEmpresa.idDono);
             var tipoEmpresa = await _context.TipoDeEmpresa.FindAsync(novaEmpresa.idTipoDeEmpresa);
@@ -59,7 +59,7 @@ namespace ErpServicesASP.API.Repositories
             return await ListarEmpresas();
         }
 
-        public async Task<bool> empresaJaExiste(EmpresaCreateDto novaEmpresa)
+        public async Task<bool> empresaJaExiste(EnterpriseCreateDto novaEmpresa)
         {
             var cnpjJaExiste = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.CNPJ == novaEmpresa.CNPJ);
             if (cnpjJaExiste != null) return true;

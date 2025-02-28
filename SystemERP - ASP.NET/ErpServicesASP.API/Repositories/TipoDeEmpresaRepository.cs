@@ -18,7 +18,7 @@ namespace ErpServicesASP.API.Repositories
             return tipoDeEmpresa;
         }
 
-        public async Task<TipoDeEmpresaModel> CriarTipoDeEmpresa(TipoDeEmpresaCreateDto novoTipoDeEmpresa)
+        public async Task<TipoDeEmpresaModel> CriarTipoDeEmpresa(EnterpriseTypeCreateDto novoTipoDeEmpresa)
         {
             var tipoDeEmpresa = new TipoDeEmpresaModel() { Name = novoTipoDeEmpresa.Name};
             await _context.TipoDeEmpresa.AddAsync(tipoDeEmpresa);

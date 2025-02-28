@@ -13,13 +13,13 @@ namespace ErpServicesASP.API.Controllers
         private readonly IMembroService _service;
         public MembroController(IMembroService service) { _service  = service; }
         [HttpGet]
-        public async Task<ActionResult<ResponseModel<List<MembroGetIdDto>>>> ListarMembros()
+        public async Task<ActionResult<ResponseModel<List<MemberGetIdDto>>>> ListarMembros()
         {
             var lista = await _service.ListarMembros();
             return Ok(lista);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<ResponseModel<MembroGetIdDto>>> GetMembroPorId(int id)
+        public async Task<ActionResult<ResponseModel<MemberGetIdDto>>> GetMembroPorId(int id)
         {
             var response = await _service.GetMembroPorId(id);
             if (response.Mensagem == "Membro não encontrado") return NotFound(response);
@@ -27,7 +27,7 @@ namespace ErpServicesASP.API.Controllers
             return Ok(response);
         }
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<MembroModel>>> CriarMembro(MembroCreateDto novoMembro)
+        public async Task<ActionResult<ResponseModel<MembroModel>>> CriarMembro(MemberCreateDto novoMembro)
         {
             var response = await _service.CriarMembro(novoMembro);
             if (response.Mensagem != null) 

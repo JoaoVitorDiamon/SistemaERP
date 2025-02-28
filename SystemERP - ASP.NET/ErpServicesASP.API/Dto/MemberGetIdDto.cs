@@ -2,7 +2,7 @@
 
 namespace ErpServicesASP.API.Dto
 {
-    public class MembroGetIdDto
+    public class MemberGetIdDto
     {
         [Key]
         public int idMembro { get; set; }

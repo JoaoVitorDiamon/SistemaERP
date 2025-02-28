@@ -7,7 +7,7 @@ namespace ErpServicesASP.API.Repositories.Interfaces
     {
         Task<SetorModel> GetSetorEmpresaPorID(int id);
         Task<List<SetorModel>> ListarSetoresEmpresa();
-        Task<SetorModel> CriarSetorEmpresa(SetorCreateDto novoSetor);
+        Task<SetorModel> CriarSetorEmpresa(SectorCreateDto novoSetor);
         Task<List<SetorModel>> DeletarSetorEmpresa(SetorModel setor);
         Task<SetorModel> AtualizarSetorEmpresa(SetorModel setor);
         Task<bool> SetorEmpresaJaExiste(string nomeSetor);

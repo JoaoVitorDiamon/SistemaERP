@@ -5,7 +5,7 @@ namespace ErpServicesASP.API.Services.Interfaces
 {
     public interface IEmpresaService
     {
-        Task<ResponseModel<EmpresaModel>> CriarEmpresa(EmpresaCreateDto novaEmpresa);
+        Task<ResponseModel<EmpresaModel>> CriarEmpresa(EnterpriseCreateDto novaEmpresa);
         Task<ResponseModel<EmpresaModel>> GetEmpresaPeloId(int id);
         Task<ResponseModel<List<EmpresaModel>>> ListarEmpresas();
         Task<ResponseModel<EmpresaModel>> AtualizarEmpresa(EmpresaModel empresaAtualizada);

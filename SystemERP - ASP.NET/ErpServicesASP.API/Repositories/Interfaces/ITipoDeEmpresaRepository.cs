@@ -7,7 +7,7 @@ namespace ErpServicesASP.API.Repositories.Interfaces
     {
         Task<TipoDeEmpresaModel> GetTipoDeEmpresaPorID(int id);
         Task<List<TipoDeEmpresaModel>> ListarTiposDeEmpresa();
-        Task<TipoDeEmpresaModel> CriarTipoDeEmpresa(TipoDeEmpresaCreateDto novoTipoDeEmpresa);
+        Task<TipoDeEmpresaModel> CriarTipoDeEmpresa(EnterpriseTypeCreateDto novoTipoDeEmpresa);
         Task<List<TipoDeEmpresaModel>> DeletarTipoDeEmpresa(TipoDeEmpresaModel tipoDeEmpresa);
         Task<TipoDeEmpresaModel> AtualizarTipoDeEmpresa(TipoDeEmpresaModel tipoDeEmpresa);
         Task<bool> tipoJaExiste(string nomeTipoDeEmpresa);

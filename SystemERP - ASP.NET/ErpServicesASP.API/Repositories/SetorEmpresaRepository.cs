@@ -18,7 +18,7 @@ namespace ErpServicesASP.API.Repositories
             return setor;
         }
 
-        public async Task<SetorModel> CriarSetorEmpresa(SetorCreateDto novoSetor)
+        public async Task<SetorModel> CriarSetorEmpresa(SectorCreateDto novoSetor)
         {
             var setor = new SetorModel() { Nome = novoSetor.Nome};
             await _context.Setores.AddAsync(setor);

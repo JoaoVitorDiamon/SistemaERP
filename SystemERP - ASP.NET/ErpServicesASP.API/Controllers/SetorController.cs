@@ -32,7 +32,7 @@ namespace ErpServicesASP.API.Controllers
             return Ok(response);
         }
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<SetorModel>>> CriarTipoDeEmpresa(SetorCreateDto novoSetor)
+        public async Task<ActionResult<ResponseModel<SetorModel>>> CriarTipoDeEmpresa(SectorCreateDto novoSetor)
         {
             var response = await _service.CriarSetorEmpresa(novoSetor);
             if (response.Status == false)

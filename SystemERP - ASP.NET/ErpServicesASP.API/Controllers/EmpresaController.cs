@@ -28,7 +28,7 @@ namespace ErpServicesASP.API.Controllers
         /// Cria uma empresa.
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<EmpresaModel>>> CriarEmpresa(EmpresaCreateDto novaEmpresa)
+        public async Task<ActionResult<ResponseModel<EmpresaModel>>> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
         {
             var response = await _service.CriarEmpresa(novaEmpresa);
             if (!response.Status) return BadRequest(response);

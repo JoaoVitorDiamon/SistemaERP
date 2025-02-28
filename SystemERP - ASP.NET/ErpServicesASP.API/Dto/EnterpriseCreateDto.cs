@@ -2,7 +2,7 @@
 
 namespace ErpServicesASP.API.Dto
 {
-    public class EmpresaCreateDto
+    public class EnterpriseCreateDto
     {
         public string Name { get; set; }
         public string NomeFantasia { get; set; }
