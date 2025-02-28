@@ -37,16 +37,16 @@ public class Enterprise {
     private String CEP;
 
     @ManyToOne
-    @JoinColumn(name = "idEndereco", nullable = false)
+    @JoinColumn(name = "idEndereco")
     private Adress endereco;
 
 
     @ManyToOne
-    @JoinColumn(name = "idSetor", nullable = false)
+    @JoinColumn(name = "\"SetoridSetor\"")
     private Sector setor;
 
     @ManyToOne
-    @JoinColumn(name = "TipoDeEmpresa_idTipoDeEmpresa")
+    @JoinColumn(name = "\"TipoDeEmpresaidTipoDeEmpresa\"")
     private EnterpriseType TipoDeEmpresaidTipoDeEmpresa;
 
     private LocalDateTime DataCriacao;

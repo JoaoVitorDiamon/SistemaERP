@@ -10,20 +10,14 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Setores")
+@Table(name = "\"Setores\"")
 public class Sector {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer idSetor;
-    private String nome;
+    @Column(name = "\"Nome\"")
+    private String Nome;
 
-    @OneToMany(mappedBy = "setor")
-    private List<Enterprise> empresas;
 
-    public Sector(Integer idSetor, String nome, List<Enterprise> empresas) {
-        this.idSetor = idSetor;
-        this.nome = nome;
-        this.empresas = empresas;
-    }
 }
