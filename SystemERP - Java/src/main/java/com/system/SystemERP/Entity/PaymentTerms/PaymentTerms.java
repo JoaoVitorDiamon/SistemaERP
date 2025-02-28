@@ -9,7 +9,7 @@ import java.time.Instant;
 
 @Data
 @Entity
-@Table(name = "termos_de_pagamento")
+@Table(name = "\"termos_de_pagamento\"")
 public class PaymentTerms {
     @Id
     @Column(name = "idTermosDePagamento")

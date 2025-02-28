@@ -24,7 +24,7 @@ public class StorageServices {
                 storageDTO.getTelefone()
         );
         var savedStorage = storageRepository.save(storage);
-        return savedStorage.getIdArmazem();
+        return savedStorage.getId_armazem();
     }
 
     public Optional<Storage> getById(Integer id) {

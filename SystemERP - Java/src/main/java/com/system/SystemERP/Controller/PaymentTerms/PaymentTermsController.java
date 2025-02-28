@@ -38,8 +38,7 @@ public class PaymentTermsController {
         try {
             var created = paymentTermsServices.createPaymentTerms(paymentTermsDTOS);
             return ResponseEntity.created(URI.create("/paymentTerms/" + created.toString())).build();
-        }
-        catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body("Erro: Dados inválidos para criar os termos de pagamento.");
         }
     }

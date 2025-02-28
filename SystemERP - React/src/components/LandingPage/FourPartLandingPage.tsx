@@ -21,7 +21,6 @@ export default function () {
       <div className="flex flex-row gap-9 justify-center mt-10">
         <div className="w-[343px] h-[235px] bg-cards border border-cardsStroke rounded-2xl justify-center items-center  ">
           <div className="flex flex-col justify-center items-center mt-4 ">
-
             <div className="flex flex-row justify-center items-center mt-3 gap-6">
               <img src="../../../assets/Avatar.png" alt="" />
               <div className="flex flex-col justify-center items-center">
