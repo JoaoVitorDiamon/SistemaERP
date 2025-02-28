@@ -16,21 +16,7 @@ public class ServiceServices {
     public ServiceServices(ServiceRepository serviceRepository){this.serviceRepository = serviceRepository;}
 
     public Integer CreateService(ServiceDTO serviceDTO){
-        var service = new Servicos(
-                null,
-                serviceDTO.nome(),
-                serviceDTO.etiqueta(),
-                serviceDTO.venda(),
-                serviceDTO.compra(),
-                serviceDTO.codigoDeBarras(),
-                serviceDTO.descricao(),
-                serviceDTO.notas(),
-                serviceDTO.getDuracao(),
-                serviceDTO.preco(),
-                serviceDTO.precoMinimo(),
-                serviceDTO.icms(),
-                serviceDTO.taxaCMSP()
-        );
+        var service = serviceDTO.toEntity();
         var savedService = serviceRepository.save(service);
         return savedService.getIdServico();
     }

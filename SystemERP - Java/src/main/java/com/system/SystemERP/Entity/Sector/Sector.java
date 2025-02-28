@@ -18,6 +18,4 @@ public class Sector {
     private Integer idSetor;
     @Column(name = "\"Nome\"")
     private String Nome;
-
-
 }

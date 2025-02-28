@@ -17,19 +17,7 @@ public class ThirdPartiesServices {
     }
 
     public Integer createThirdParty(ThirdPartiesDTO thirdPartiesDTO) {
-        var thirdParty = new ThirdParties(
-                null,
-                thirdPartiesDTO.getNome(),
-                thirdPartiesDTO.getNomeEFantasia(),
-                thirdPartiesDTO.isFornecedor(),
-                thirdPartiesDTO.isEstadoAtividade(),
-                thirdPartiesDTO.getEmail(),
-                thirdPartiesDTO.isImpostoSobVenda(),
-                thirdPartiesDTO.isSegundoImposto(),
-                thirdPartiesDTO.getCapital(),
-                thirdPartiesDTO.getQuantidadeColaboradores(),
-                thirdPartiesDTO.getLogotipo()
-        );
+        var thirdParty = thirdPartiesDTO.toEntity();
         var savedThirdParty = thirdPartiesRepository.save(thirdParty);
         return savedThirdParty.getIdTerceiros();
     }
