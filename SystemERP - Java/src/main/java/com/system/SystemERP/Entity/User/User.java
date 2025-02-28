@@ -10,30 +10,21 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Empresas")
+@Table(name = "\"Usuarios\"")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String nome;
-    private String cpf;
-    private String telefone;
-    private String email;
-    private String genero;
-    private Date dataCriacao;
-    private String senha;
-    private Date dataNascimento;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int Id;
+    @Column(name = "\"Nome\"", length = 255)
+    private String Nome;
+    @Column(name = "\"CPF\"", length = 255)
+    private String CPF;
+    @Column(name = "\"Email\"", length = 255)
+    private String Email;
+    @Column(name = "\"DataCriacao\"", length = 255)
+    private Date DataCriacao;
+    @Column(name = "\"Senha\"")
+    private String Senha;
 
-    public User(int id, String nome, String cpf, String telefone, String email, String genero, Date dataCriacao, String senha, Date dataNascimento) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.email = email;
-        this.genero = genero;
-        this.dataCriacao = dataCriacao;
-        this.senha = senha;
-        this.dataNascimento = dataNascimento;
-    }
 }

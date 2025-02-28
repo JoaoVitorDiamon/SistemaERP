@@ -9,7 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.Instant;
 @Data
 @Entity
-@Table(name = "tipos_de_faturas")
+@Table(name = "\"tipos_de_faturas\"")
 public class InvoiceTypes {
 
     @Id

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "produtos")
+@Table(name = "\"produtos\"")
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

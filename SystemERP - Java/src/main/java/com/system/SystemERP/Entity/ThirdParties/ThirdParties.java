@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "terceiros")
+@Table(name = "\"terceiros\"")
 public class ThirdParties {
     public ThirdParties() {
     }

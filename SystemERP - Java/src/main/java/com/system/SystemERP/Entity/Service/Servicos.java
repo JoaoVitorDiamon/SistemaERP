@@ -7,7 +7,7 @@ import java.time.LocalTime;
 
     @Entity
     @Data
-    @Table(name = "servicos")
+    @Table(name = "\"servicos\"")
     public class Servicos{
 
         public Servicos(){}

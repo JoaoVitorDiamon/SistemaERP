@@ -15,11 +15,11 @@ import java.util.List;
 @RequestMapping("/produtos")
 @Tag(name = "Produtos")
 @Controller
-public class ProdutosController {
+public class ProductsController {
 
     private ProdutosServices produtosServices;
 
-    public ProdutosController(ProdutosServices produtosServices) {
+    public ProductsController(ProdutosServices produtosServices) {
         this.produtosServices = produtosServices;
     }
 
@@ -32,7 +32,7 @@ public class ProdutosController {
 
     @GetMapping("/{idProduto}")
     @Operation(summary = "Busca um produto pelo id", description = "Busca um produto pelo id")
-    public ResponseEntity<Produto> findById(@PathVariable Integer idProduto){
+    public ResponseEntity<Produto> findById(@PathVariable Integer idProduto) {
         var exist = produtosServices.getById(idProduto);
         return exist.isPresent()
                 ? ResponseEntity.ok(exist.get())
@@ -41,14 +41,14 @@ public class ProdutosController {
 
     @GetMapping
     @Operation(summary = "Busca todos os produtos", description = "Busca todos os produtos")
-    public ResponseEntity<List<Produto>> findAll(){
+    public ResponseEntity<List<Produto>> findAll() {
         var listProduct = produtosServices.getAll();
         return ResponseEntity.ok(listProduct);
     }
 
     @DeleteMapping("/{idProduto}")
     @Operation(summary = "Deleta um produto pelo id", description = "Deleta um produto pelo id")
-    public ResponseEntity<Void> delete(@PathVariable Integer idProduto){
+    public ResponseEntity<Void> delete(@PathVariable Integer idProduto) {
         produtosServices.delete(idProduto);
         return ResponseEntity.noContent().build();
     }
