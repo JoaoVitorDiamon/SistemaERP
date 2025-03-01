@@ -9,28 +9,32 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.Instant;
 @Data
 @Entity
-@Table(name = "\"tipos_de_faturas\"")
+@Table(name = "\"InvoiceTypes\"")
 public class InvoiceTypes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer idInvoiceTypes;
+    @Column(name = "\"IdInvoiceTypes\"")
+    private Integer IdInvoiceTypes;
 
-    private String invoiceTypes;
+    @Column(name = "\"InvoiceTypes\"")
+    private String InvoiceTypes;
 
     @CreationTimestamp
-    private Instant dateCreation;
+    @Column(name = "\"DateCreation\"")
+    private Instant DateCreation;
 
     @UpdateTimestamp
-    private Instant dateUpdate;
+    @Column(name = "\"DateUpdate\"")
+    private Instant DateUpdate;
 
     public InvoiceTypes() {
     }
 
     public InvoiceTypes(Integer idInvoiceTypes, String invoiceTypes, Instant dateCreation, Instant dateUpdate) {
-        this.idInvoiceTypes = idInvoiceTypes;
-        this.invoiceTypes = invoiceTypes;
-        this.dateCreation = dateCreation;
-        this.dateUpdate = dateUpdate;
+        IdInvoiceTypes = idInvoiceTypes;
+        InvoiceTypes = invoiceTypes;
+        DateCreation = dateCreation;
+        DateUpdate = dateUpdate;
     }
 }

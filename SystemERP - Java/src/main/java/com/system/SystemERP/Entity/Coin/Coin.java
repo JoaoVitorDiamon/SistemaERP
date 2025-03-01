@@ -1,18 +1,19 @@
 package com.system.SystemERP.Entity.Coin;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Table(name = "\"moeda\"")
+@Table(name = "\"Coin\"")
 @Entity
 @Data
 public class Coin {
 
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "\"IdCoin\"")
+    private Integer IdCoin;
 
-    private String nome;
+    @Column(name = "\"Name\"")
+    private String Name;
 }

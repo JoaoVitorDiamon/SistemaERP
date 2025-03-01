@@ -4,24 +4,27 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "\"codigo_contabil\"")
+@Table(name = "\"AccountingCode\"")
 @Data
 
 public class AccountingCode {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+    @Column(name = "\"IdAccountingCode\"")
+    private Integer idAccountingCode;
 
-    private String accountingCode;
+    @Column(name = "\"AccountingCode\"")
+    private String AccountingCode;
 
-    private String countingCodeDescription;
+    @Column(name = "\"CountingCodeDescription\"")
+    private String CountingCodeDescription;
 
     public AccountingCode() {
     }
 
     public AccountingCode(Integer id, String accountingCode, String countingCodeDescription) {
-        this.id = id;
-        this.accountingCode = accountingCode;
-        this.countingCodeDescription = countingCodeDescription;
+        this.idAccountingCode = id;
+        this.AccountingCode = accountingCode;
+        this.CountingCodeDescription = countingCodeDescription;
     }
 }

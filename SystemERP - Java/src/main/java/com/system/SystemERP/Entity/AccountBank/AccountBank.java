@@ -3,58 +3,76 @@ import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Entity.Coin.Coin;
 import com.system.SystemERP.Entity.TypeAccount.TypeAccount;
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "\"ContasFinanceiras\"")
+@NoArgsConstructor
+@Table(name = "\"FinancialAccounts\"")
 public class AccountBank {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "idContaFinanceira")
-        private Integer id;
+        @Column(name = "\"IdFinancialAccounts\"")
+        private Integer IdFinancialAccounts;
 
-        private String rotuloBanco;
+        @Column(name = "\"LabelBank\"")
+        private String LabelBank;
 
-        private String contasFinanceiras;
-
-        @ManyToOne
-        @JoinColumn(name = "tipo_conta_id")
-        private TypeAccount tipoDeConta;
+        @Column(name = "\"FinancialAccounts\"")
+        private String FinancialAccounts;
 
         @ManyToOne
-        @JoinColumn(name = "coin_id")
-        private Coin moeda;
-
-        private Boolean estadoAtividade;
-
-        private String pais;
-
-        private String estado;
-
-        private String endereco;
-
-        private String comentario;
-
-        private Double saldoInicial;
-
-        private Date data;
-
-        private BigDecimal saldoMinimo;
-
-        private BigDecimal saldoMinimoDesejado;
-
-        private String numeroConta;
-
-        private String titular;
-
-        private String enderecoTitular;
-
-        private String cep;
+        @JoinColumn(name = "IdAccountType")
+        private TypeAccount AccountType;
 
         @ManyToOne
-        @JoinColumn(name = "codigo_contabil_id")
-        private AccountingCode codigoContabil;
+        @JoinColumn(name = "\"IdCoin\"")
+        private Coin Coin;
+
+        @Column(name = "\"StateActivity\"")
+        private Boolean StateActivity;
+
+        @Column(name = "\"Country\"")
+        private String Country;
+
+        @Column(name = "\"State\"")
+        private String State;
+
+        @Column(name = "\"Address\"")
+        private String Address;
+
+        @Column(name = "\"Comment\"")
+        private String Comment;
+
+        @Column(name = "\"InitialBalance\n\"")
+        private Double InitialBalance;
+
+        @Column(name = "\"Date\"")
+        private Date Date;
+
+        @Column(name = "\"MinimumBalance\n\"")
+        private BigDecimal MinimumBalance;
+
+        @Column(name = "\"MinimumDesiredBalance\"")
+        private BigDecimal MinimumDesiredBalance;
+
+        @Column(name = "\"AccountNumber\n\"")
+        private String AccountNumber;
+
+        @Column(name = "\"Holder\"")
+        private String Holder;
+
+        @Column(name = "\"AddressHolder\"")
+        private String AddressHolder;
+
+        @Column(name = "\"CEP\"")
+        private String Cep;
+
+        @ManyToOne
+        @JoinColumn(name = "IdAccountingCode")
+        private AccountingCode AccountingCode;
 
 }

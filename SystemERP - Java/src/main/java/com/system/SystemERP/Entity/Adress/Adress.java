@@ -1,42 +1,51 @@
 package com.system.SystemERP.Entity.Adress;
 
-import com.system.SystemERP.Entity.Enterprise.Enterprise;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Endereco")
+@Table(name = "\"Adress\"")
 public class Adress {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer idEndereco;
-    private String cep;
-    private String pais;
-    private String cidade;
-    private String bairro;
-    private String rua;
-    private String numero;
-    private String complemento;
 
-    @OneToMany(mappedBy = "endereco")
-    private List<Enterprise> empresas;
+    @Column(name = "\"IdAdress\"")
+    private Integer IdAdress;
+
+    @Column(name = "\"ZipCode\"")
+    private String ZipCode;
+
+    @Column(name = "\"Country\"")
+    private String Country;
+
+    @Column(name = "\"City\"")
+    private String City;
+
+    @Column(name = "\"Neighborhood\"")
+    private String Neighborhood;
+
+    @Column(name = "\"Street\"")
+    private String Street;
+
+    @Column(name = "\"Number\"")
+    private String Number;
+
+    @Column(name = "\"Complement\"")
+    private String Complement;
 
 
-    public Adress(Integer idEndereco, String cep, String pais, String cidade, String bairro, String rua, String numero, String complemento, List<Enterprise> empresas) {
-        this.idEndereco = idEndereco;
-        this.cep = cep;
-        this.pais = pais;
-        this.cidade = cidade;
-        this.bairro = bairro;
-        this.rua = rua;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.empresas = empresas;
+    public Adress(Integer idAdress, String CEP, String country, String city, String neighborhood, String street, String number, String complement) {
+        IdAdress = idAdress;
+        this.ZipCode = CEP;
+        Country = country;
+        City = city;
+        Neighborhood = neighborhood;
+        Street = street;
+        Number = number;
+        Complement = complement;
     }
 }

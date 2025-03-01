@@ -1,26 +1,47 @@
 package com.system.SystemERP.Entity.Storage;
 
+import com.system.SystemERP.Entity.Adress.Adress;
+import com.system.SystemERP.Entity.Enterprise.Enterprise;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "\"armazem\"")
+@Table(name = "\"Storages\"")
 public class Storage {
-    public Storage(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_armazem;
-    private String nome;
-    private String descricao;
-    private String telefone;
+    @Column(name = "\"IdStorage\"")
+    private Integer StorageId;
 
+    @Column(name = "\"Name\"")
+    private String Name;
 
-    public Storage(Integer id_armazem, String nome, String descricao, String telefone) {
-        this.id_armazem = id_armazem;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.telefone = telefone;
+    @Column(name = "\"Description\"")
+    private String Description;
+
+    @Column(name = "\"Phone\"")
+    private String Phone;
+
+    @ManyToOne
+    @JoinColumn(name = "\"IdAddress\"")
+    private Adress Address;
+
+    @ManyToOne
+    @JoinColumn(name = "\"IdEnterprise\"")
+    private Enterprise Enterprise;
+
+    public Storage(Integer StorageId, String Name, String Description, String Phone, Adress Address, Enterprise Enterprise) {
+        this.StorageId = StorageId;
+        this.Name = Name;
+        this.Description = Description;
+        this.Phone = Phone;
+        this.Address = Address;
+        this.Enterprise = Enterprise;
+    }
+
+    public Storage() {
+
     }
 }

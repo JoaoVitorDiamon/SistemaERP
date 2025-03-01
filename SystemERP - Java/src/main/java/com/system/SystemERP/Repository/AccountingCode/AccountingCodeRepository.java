@@ -1,4 +1,4 @@
-package com.system.SystemERP.Repository;
+package com.system.SystemERP.Repository.AccountingCode;
 
 import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import org.springframework.data.jpa.repository.JpaRepository;
