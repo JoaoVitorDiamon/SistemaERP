@@ -55,7 +55,7 @@ namespace ErpServicesASP.API.Test
                 novoUsuario.AssociacaoPublica
                 );
             var validacaoResponse = new ResponseModel<ValidacaoEmailModel>();
-            var resultadoEsperado = new ResponseModel<UsuarioModel>() { Valor = novoUsuarioModel, Status = true};
+            var resultadoEsperado = new ResponseModel<UserModel>() { Valor = novoUsuarioModel, Status = true};
             _usuarioRepositoryMock.Setup(repository => repository.CriarUsuario(novoUsuario)).ReturnsAsync(novoUsuarioModel);
 
             var resultado = await _service.CriarUsuario(novoUsuario);
@@ -95,8 +95,8 @@ namespace ErpServicesASP.API.Test
                 novoUsuario.AssociacaoPublica
                 );
             var validacaoResponse = new ResponseModel<ValidacaoEmailModel>();
-            var resultadoEsperado = new ResponseModel<UsuarioModel>() { Mensagem = "Erro ao criar usuário", Status = false };
-            _usuarioRepositoryMock.Setup(repository => repository.CriarUsuario(novoUsuario)).ReturnsAsync((UsuarioModel)null);
+            var resultadoEsperado = new ResponseModel<UserModel>() { Mensagem = "Erro ao criar usuário", Status = false };
+            _usuarioRepositoryMock.Setup(repository => repository.CriarUsuario(novoUsuario)).ReturnsAsync((UserModel)null);
 
             var resultado = await _service.CriarUsuario(novoUsuario);
             Assert.NotNull(resultado);
@@ -133,7 +133,7 @@ namespace ErpServicesASP.API.Test
                 novoUsuario.AssociacaoPublica
                 );
             var validacaoResponse = new ResponseModel<ValidacaoEmailModel>();
-            var resultadoEsperado = new ResponseModel<UsuarioModel>() { Mensagem = "Email ou CPF já cadastrados", Status = false };
+            var resultadoEsperado = new ResponseModel<UserModel>() { Mensagem = "Email ou CPF já cadastrados", Status = false };
             _usuarioRepositoryMock.Setup(repository => repository.UsuarioJaExiste(novoUsuario)).ReturnsAsync(true);
 
             var resultado = await _service.CriarUsuario(novoUsuario);

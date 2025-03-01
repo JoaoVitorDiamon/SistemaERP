@@ -7,18 +7,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ErpServicesASP.API.Repositories
 {
-    public class CargoRepository : ICargoRepository
+    public class RoleRepository : ICargoRepository
     {
 
         private readonly AppDbContext _context;
-        public CargoRepository(AppDbContext context) { _context = context; }
+        public RoleRepository(AppDbContext context) { _context = context; }
 
-        public async Task<ResponseModel<CargoModel?>> AtualizarCargo(CargoModel atualizacaoCargo)
+        public async Task<ResponseModel<PositionModel?>> AtualizarCargo(PositionModel atualizacaoCargo)
         {
-            ResponseModel<CargoModel?> response = new ResponseModel<CargoModel?>();
+            ResponseModel<PositionModel?> response = new ResponseModel<PositionModel?>();
             try
             {
-                var cargo = await BuscarCargoPorId(atualizacaoCargo.idCargo);
+                var cargo = await BuscarCargoPorId(atualizacaoCargo.IdPosition);
                 if (cargo == null) 
                 {
                     response.Mensagem = "Não foi possivel localizar esse cargo";
@@ -39,12 +39,12 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<CargoModel>> CriarCargo(CargoCreateDto novoCargo)
+        public async Task<ResponseModel<PositionModel>> CriarCargo(CargoCreateDto novoCargo)
         {
-            ResponseModel<CargoModel> response = new ResponseModel<CargoModel>();
+            ResponseModel<PositionModel> response = new ResponseModel<PositionModel>();
             try
             {
-                var cargoExiste = await _context.Cargos.FirstOrDefaultAsync(c => c.Name == novoCargo.Name);
+                var cargoExiste = await _context.Position.FirstOrDefaultAsync(c => c.Name == novoCargo.Name);
                 if (cargoExiste != null)
                 {
                     response.Valor = cargoExiste;
@@ -52,8 +52,8 @@ namespace ErpServicesASP.API.Repositories
                     response.Status = false;
                     return response;
                 }
-                var cargo = new CargoModel(){ Name = novoCargo.Name };
-                await _context.Cargos.AddAsync(cargo);
+                var cargo = new PositionModel(){ Name = novoCargo.Name };
+                await _context.Position.AddAsync(cargo);
                 await _context.SaveChangesAsync();
                 response.Valor = cargo;
                 return response;
@@ -66,9 +66,9 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<List<CargoModel>>> DeletarCargoPorId(int id)
+        public async Task<ResponseModel<List<PositionModel>>> DeletarCargoPorId(int id)
         {
-            ResponseModel<List<CargoModel>> response = new ResponseModel<List<CargoModel>>();
+            ResponseModel<List<PositionModel>> response = new ResponseModel<List<PositionModel>>();
             try
             {
                 var cargo = await BuscarCargoPorId(id);
@@ -78,9 +78,9 @@ namespace ErpServicesASP.API.Repositories
                     response.Status = false;
                     return response;
                 }
-                _context.Cargos.Remove(cargo);
+                _context.Position.Remove(cargo);
                 await _context.SaveChangesAsync();
-                response.Valor = await _context.Cargos.ToListAsync();
+                response.Valor = await _context.Position.ToListAsync();
                 return response;
             }
             catch (Exception ex)
@@ -91,9 +91,9 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<CargoModel>> GetCargoPorId(int id)
+        public async Task<ResponseModel<PositionModel>> GetCargoPorId(int id)
         {
-            ResponseModel<CargoModel> response = new ResponseModel<CargoModel>();
+            ResponseModel<PositionModel> response = new ResponseModel<PositionModel>();
             try
             {
                 var cargo = await BuscarCargoPorId(id);
@@ -114,12 +114,12 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<List<CargoModel>>> ListarCargos()
+        public async Task<ResponseModel<List<PositionModel>>> ListarCargos()
         {
-            ResponseModel<List<CargoModel>> response = new ResponseModel<List<CargoModel>>();
+            ResponseModel<List<PositionModel>> response = new ResponseModel<List<PositionModel>>();
             try
             {
-                response.Valor = await _context.Cargos.ToListAsync();
+                response.Valor = await _context.Position.ToListAsync();
                 return response;
             }
             catch (Exception ex)
@@ -130,9 +130,9 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        private async Task<CargoModel?> BuscarCargoPorId(int id)
+        private async Task<PositionModel?> BuscarCargoPorId(int id)
         {
-            return await _context.Cargos.FindAsync(id);
+            return await _context.Position.FindAsync(id);
         }
     }
 }

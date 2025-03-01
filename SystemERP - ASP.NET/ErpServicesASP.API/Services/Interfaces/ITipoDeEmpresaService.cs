@@ -5,10 +5,10 @@ namespace ErpServicesASP.API.Services.Interfaces
 {
     public interface ITipoDeEmpresaService
     {
-        Task<ResponseModel<TipoDeEmpresaModel>> GetTipoDeEmpresaPorID(int id);
-        Task<ResponseModel<List<TipoDeEmpresaModel>>> ListarTiposDeEmpresa();
-        Task<ResponseModel<TipoDeEmpresaModel>> CriarTipoDeEmpresa(TipoDeEmpresaCreateDto novoTipoDeEmpresa);
-        Task<ResponseModel<List<TipoDeEmpresaModel>>> DeletarTipoDeEmpresa(int id);
-        Task<ResponseModel<TipoDeEmpresaModel>> AtualizarTipoDeEmpresa(TipoDeEmpresaModel tipoDeEmpresa);
+        Task<ResponseModel<EnterpriseTypeModel>> GetTipoDeEmpresaPorID(int id);
+        Task<ResponseModel<List<EnterpriseTypeModel>>> ListarTiposDeEmpresa();
+        Task<ResponseModel<EnterpriseTypeModel>> CriarTipoDeEmpresa(EnterpriseTypeCreateDto novoTipoDeEmpresa);
+        Task<ResponseModel<List<EnterpriseTypeModel>>> DeletarTipoDeEmpresa(int id);
+        Task<ResponseModel<EnterpriseTypeModel>> AtualizarTipoDeEmpresa(EnterpriseTypeModel tipoDeEmpresa);
     }
 }

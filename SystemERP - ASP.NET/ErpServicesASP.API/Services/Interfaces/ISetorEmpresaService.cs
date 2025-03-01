@@ -5,10 +5,10 @@ namespace ErpServicesASP.API.Services.Interfaces
 {
     public interface ISetorEmpresaService
     {
-        Task<ResponseModel<SetorModel>> GetSetorEmpresaPorID(int id);
-        Task<ResponseModel<List<SetorModel>>> ListarSetoresEmpresa();
-        Task<ResponseModel<SetorModel>> CriarSetorEmpresa(SetorCreateDto novoSetor);
-        Task<ResponseModel<List<SetorModel>>> DeletarSetorEmpresa(int id);
-        Task<ResponseModel<SetorModel>> AtualizarSetorEmpresa(SetorModel setor);
+        Task<ResponseModel<SectorModel>> GetSetorEmpresaPorID(int id);
+        Task<ResponseModel<List<SectorModel>>> ListarSetoresEmpresa();
+        Task<ResponseModel<SectorModel>> CriarSetorEmpresa(SectorCreateDto novoSetor);
+        Task<ResponseModel<List<SectorModel>>> DeletarSetorEmpresa(int id);
+        Task<ResponseModel<SectorModel>> AtualizarSetorEmpresa(SectorModel setor);
     }
 }

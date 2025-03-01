@@ -14,7 +14,7 @@ namespace ErpServicesASP.API.Controllers
         private readonly ISetorEmpresaService _service;
         public SetorController(ISetorEmpresaService service) { _service = service; }
         [HttpGet]
-        public async Task<ActionResult<ResponseModel<List<SetorModel>>>> ListarTiposDeEmpresa()
+        public async Task<ActionResult<ResponseModel<List<SectorModel>>>> ListarTiposDeEmpresa()
         {
             var response = await _service.ListarSetoresEmpresa();
             if (response.Status == false)
@@ -22,7 +22,7 @@ namespace ErpServicesASP.API.Controllers
             return Ok(response);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<ResponseModel<SetorModel>>> GetTipoDeEmpresaPorId(int id)
+        public async Task<ActionResult<ResponseModel<SectorModel>>> GetTipoDeEmpresaPorId(int id)
         {
             var response = await _service.GetSetorEmpresaPorID(id);
             if (response.Mensagem == "Tipo de empresa não existe")
@@ -32,7 +32,7 @@ namespace ErpServicesASP.API.Controllers
             return Ok(response);
         }
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<SetorModel>>> CriarTipoDeEmpresa(SetorCreateDto novoSetor)
+        public async Task<ActionResult<ResponseModel<SectorModel>>> CriarTipoDeEmpresa(SectorCreateDto novoSetor)
         {
             var response = await _service.CriarSetorEmpresa(novoSetor);
             if (response.Status == false)
@@ -40,7 +40,7 @@ namespace ErpServicesASP.API.Controllers
             return Ok(response);
         }
         [HttpPut]
-        public async Task<ActionResult<ResponseModel<SetorModel>>> AtualizarTipoDeEmpresa(SetorModel setor)
+        public async Task<ActionResult<ResponseModel<SectorModel>>> AtualizarTipoDeEmpresa(SectorModel setor)
         {
             var response = await _service.AtualizarSetorEmpresa(setor);
             if (response.Mensagem == "Tipo de empresa não existe")
@@ -50,7 +50,7 @@ namespace ErpServicesASP.API.Controllers
             return Ok(response);
         }
         [HttpDelete]
-        public async Task<ActionResult<ResponseModel<SetorModel>>> DeletarTipoDeEmpresa(int id)
+        public async Task<ActionResult<ResponseModel<SectorModel>>> DeletarTipoDeEmpresa(int id)
         {
             var response = await _service.DeletarSetorEmpresa(id);
             if (response.Mensagem == "Tipo de empresa não existe")

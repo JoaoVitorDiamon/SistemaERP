@@ -2,10 +2,10 @@
 
 namespace ErpServicesASP.API.Model
 {
-    public class CargoModel
+    public class EnterpriseTypeModel
     {
         [Key]
-        public int idCargo { get; set; }
+        public int IdEnterpriseType { get; set; }
         public string Name { get; set; }
     }
 }

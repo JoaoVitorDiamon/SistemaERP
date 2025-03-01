@@ -5,11 +5,11 @@ namespace ErpServicesASP.API.Services.Interfaces
 {
     public interface IEmpresaService
     {
-        Task<ResponseModel<EmpresaModel>> CriarEmpresa(EmpresaCreateDto novaEmpresa);
-        Task<ResponseModel<EmpresaModel>> GetEmpresaPeloId(int id);
-        Task<ResponseModel<List<EmpresaModel>>> ListarEmpresas();
-        Task<ResponseModel<EmpresaModel>> AtualizarEmpresa(EmpresaModel empresaAtualizada);
-        Task<ResponseModel<List<EmpresaModel>>> DeletarEmpresaPeloId(int id);
+        Task<ResponseModel<EnterpriseModel>> CriarEmpresa(EnterpriseCreateDto novaEmpresa);
+        Task<ResponseModel<EnterpriseModel>> GetEmpresaPeloId(int id);
+        Task<ResponseModel<List<EnterpriseModel>>> ListarEmpresas();
+        Task<ResponseModel<EnterpriseModel>> AtualizarEmpresa(EnterpriseModel empresaAtualizada);
+        Task<ResponseModel<List<EnterpriseModel>>> DeletarEmpresaPeloId(int id);
         Task<ResponseModel<string>> CnpjJaUsado(string cnpj);
         Task<ResponseModel<string>> EmailJaUsado(string email);
     }

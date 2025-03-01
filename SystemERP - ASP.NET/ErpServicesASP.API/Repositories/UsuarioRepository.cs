@@ -10,23 +10,23 @@ namespace ErpServicesASP.API.Repositories
     {
         private readonly AppDbContext _context;
         public UsuarioRepository(AppDbContext context) { _context = context; }
-        public async Task<UsuarioModel?> CriarUsuario(UsuarioCreateDto novoUsuario)
+        public async Task<UserModel?> CriarUsuario(UsuarioCreateDto novoUsuario)
         {
-            var usuario = new UsuarioModel(
+            var usuario = new UserModel(
                 novoUsuario.Name,
                 novoUsuario.CPF,
                 novoUsuario.Email,
                 novoUsuario.Senha
                 );
-            await _context.Usuarios.AddAsync(usuario);
+            await _context.Users.AddAsync(usuario);
             await _context.SaveChangesAsync();
             return usuario;
         }
 
         public async Task<bool> UsuarioJaExiste(UsuarioCreateDto novoUsuario)
         {
-            var emailCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => novoUsuario.Email == usuario.Email);
-            var cpfCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => novoUsuario.CPF == usuario.CPF);
+            var emailCadastrado = await _context.Users.FirstOrDefaultAsync(usuario => novoUsuario.Email == usuario.Email);
+            var cpfCadastrado = await _context.Users.FirstOrDefaultAsync(usuario => novoUsuario.CPF == usuario.CPF);
             if(emailCadastrado != null || cpfCadastrado != null)
             {
                 return true;
@@ -34,39 +34,35 @@ namespace ErpServicesASP.API.Repositories
             return false;
         }
 
-        public async Task<List<UsuarioModel>> DeletarUsuario(UsuarioModel usuario)
+        public async Task<List<UserModel>> DeletarUsuario(UserModel usuario)
         {
             _context.Remove(usuario);
             await _context.SaveChangesAsync();
             return await ListarUsuarios();
         }
 
-        public async Task<UsuarioModel?> GetUsuarioPorId(int id)
+        public async Task<UserModel?> GetUsuarioPorId(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = await _context.Users.FindAsync(id);
             return usuario;
         }
 
-        public async Task<List<UsuarioModel>> ListarUsuarios()
+        public async Task<List<UserModel>> ListarUsuarios()
         {
-            var lista = await _context.Usuarios.Join(
-                _context.ValidacoesDeEmails.Where(val => val.Validado == true),
-                usuario => usuario,
-                validacoes => validacoes.Usuario,
-                (usuario, validacoes) => usuario).ToListAsync();
+            var lista = await _context.Users.ToListAsync();
             return lista;
         }
 
         public async Task<bool> VerificarExistenciaCPF(string cpf)
         {
-            var cpfCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.CPF == cpf);
+            var cpfCadastrado = await _context.Users.FirstOrDefaultAsync(usuario => usuario.CPF == cpf);
             if (cpfCadastrado != null) return true;
             return false;
         }
 
         public async Task<bool> VerificarExistenciaEmail(string email)
         {
-            var emailCadastrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => email == usuario.Email);
+            var emailCadastrado = await _context.Users.FirstOrDefaultAsync(usuario => email == usuario.Email);
             if (emailCadastrado != null ) return true;
             return false;
         }

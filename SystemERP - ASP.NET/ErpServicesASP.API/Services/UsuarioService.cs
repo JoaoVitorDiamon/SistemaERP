@@ -9,12 +9,12 @@ namespace ErpServicesASP.API.Services
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
-        private readonly IValidacaoEmailService _validacaoEmailService;
+     //   private readonly IValidacaoEmailService _validacaoEmailService;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository, IValidacaoEmailService validacaoEmailService)
+        public UsuarioService(IUsuarioRepository usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
-            _validacaoEmailService = validacaoEmailService;
+         //   _validacaoEmailService = validacaoEmailService;
         }
 
         public async Task<ResponseModel<string>> VerificarExistenciaCPF(string cpf)
@@ -59,9 +59,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<UsuarioModel>> CriarUsuario(UsuarioCreateDto novoUsuario)
+        public async Task<ResponseModel<UserModel>> CriarUsuario(UsuarioCreateDto novoUsuario)
         {
-            ResponseModel<UsuarioModel> response = new ResponseModel<UsuarioModel>();
+            ResponseModel<UserModel> response = new ResponseModel<UserModel>();
             try
             {
                 var usuarioExiste = await _usuarioRepository.UsuarioJaExiste(novoUsuario);
@@ -78,7 +78,7 @@ namespace ErpServicesASP.API.Services
                     return response;
                 }
 
-                await _validacaoEmailService.EnviarEmailValidacao(usuario);
+              //  await _validacaoEmailService.EnviarEmailValidacao(usuario);
                 response.Valor = usuario;
                 return response;
             }
@@ -89,9 +89,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<UsuarioModel>>> DeletarUsuarioPorId(int id)
+        public async Task<ResponseModel<List<UserModel>>> DeletarUsuarioPorId(int id)
         {
-            ResponseModel<List<UsuarioModel>> response = new ResponseModel<List<UsuarioModel>>();
+            ResponseModel<List<UserModel>> response = new ResponseModel<List<UserModel>>();
             try
             {
                 var usuario = await _usuarioRepository.GetUsuarioPorId(id);
@@ -111,9 +111,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<UsuarioModel>> GetUsuarioPorId(int id)
+        public async Task<ResponseModel<UserModel>> GetUsuarioPorId(int id)
         {
-            ResponseModel<UsuarioModel> response = new ResponseModel<UsuarioModel>();
+            ResponseModel<UserModel> response = new ResponseModel<UserModel>();
             try
             {
                 var usuario = await _usuarioRepository.GetUsuarioPorId(id);
@@ -129,9 +129,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<UsuarioModel>>> ListarUsuarios()
+        public async Task<ResponseModel<List<UserModel>>> ListarUsuarios()
         {
-            ResponseModel<List<UsuarioModel>> response = new ResponseModel<List<UsuarioModel>>();
+            ResponseModel<List<UserModel>> response = new ResponseModel<List<UserModel>>();
             try
             {
                 var lista = await _usuarioRepository.ListarUsuarios();

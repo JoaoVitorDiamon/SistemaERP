@@ -2,10 +2,10 @@
 
 namespace ErpServicesASP.API.Model
 {
-    public class SetorModel
+    public class CoinModel
     {
         [Key]
-        public int idSetor { get; set; }
-        public string Nome { get; set; }
+        public int IdCoin { get; set; }
+        public string Name { get; set; }
     }
 }

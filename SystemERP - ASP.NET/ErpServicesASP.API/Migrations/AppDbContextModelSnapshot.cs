@@ -22,6 +22,61 @@ namespace ErpServicesASP.API.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ErpServicesASP.API.Model.AddressModel", b =>
+                {
+                    b.Property<int>("IdAdress")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdAdress"));
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Complement")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("EnterpriseIdEmpresa")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Neighborhood")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ThirdidTerceiros")
+                        .HasColumnType("integer");
+
+                    b.HasKey("IdAdress");
+
+                    b.HasIndex("EnterpriseIdEmpresa");
+
+                    b.HasIndex("ThirdidTerceiros");
+
+                    b.ToTable("Addresses");
+                });
+
             modelBuilder.Entity("ErpServicesASP.API.Model.CargoModel", b =>
                 {
                     b.Property<int>("idCargo")
@@ -39,33 +94,29 @@ namespace ErpServicesASP.API.Migrations
                     b.ToTable("Cargos");
                 });
 
-            modelBuilder.Entity("ErpServicesASP.API.Model.EmpresaModel", b =>
+            modelBuilder.Entity("ErpServicesASP.API.Model.EnterpriseModel", b =>
                 {
-                    b.Property<int>("idEmpresa")
+                    b.Property<int>("IdEmpresa")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idEmpresa"));
-
-                    b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdEmpresa"));
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("DataCriacao")
+                    b.Property<DateTime>("CreationDate")
                         .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("DonoId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Endereco")
+                    b.Property<int>("EnterpriseTypeidTipoDeEmpresa")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("FantasyName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -73,100 +124,24 @@ namespace ErpServicesASP.API.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("NomeFantasia")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("SetoridSetor")
+                    b.Property<int>("OwnerId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("TipoDeEmpresaidTipoDeEmpresa")
+                    b.Property<int>("SectoridSetor")
                         .HasColumnType("integer");
 
-                    b.HasKey("idEmpresa");
+                    b.HasKey("IdEmpresa");
 
-                    b.HasIndex("DonoId");
+                    b.HasIndex("EnterpriseTypeidTipoDeEmpresa");
 
-                    b.HasIndex("SetoridSetor");
+                    b.HasIndex("OwnerId");
 
-                    b.HasIndex("TipoDeEmpresaidTipoDeEmpresa");
+                    b.HasIndex("SectoridSetor");
 
-                    b.ToTable("Empresas");
+                    b.ToTable("Enterprises");
                 });
 
-            modelBuilder.Entity("ErpServicesASP.API.Model.MembroModel", b =>
-                {
-                    b.Property<int>("idMembro")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idMembro"));
-
-                    b.Property<string>("AssociacaoPublica")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("CargoidCargo")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("EmpresaidEmpresa")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Genero")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("NaturezaMembro")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("idMembro");
-
-                    b.HasIndex("CargoidCargo");
-
-                    b.HasIndex("EmpresaidEmpresa");
-
-                    b.HasIndex("UsuarioId");
-
-                    b.ToTable("Membros");
-                });
-
-            modelBuilder.Entity("ErpServicesASP.API.Model.SetorModel", b =>
-                {
-                    b.Property<int>("idSetor")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idSetor"));
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("idSetor");
-
-                    b.ToTable("Setores");
-                });
-
-            modelBuilder.Entity("ErpServicesASP.API.Model.TipoDeEmpresaModel", b =>
+            modelBuilder.Entity("ErpServicesASP.API.Model.EnterpriseTypeModel", b =>
                 {
                     b.Property<int>("idTipoDeEmpresa")
                         .ValueGeneratedOnAdd()
@@ -180,10 +155,187 @@ namespace ErpServicesASP.API.Migrations
 
                     b.HasKey("idTipoDeEmpresa");
 
-                    b.ToTable("TipoDeEmpresa");
+                    b.ToTable("EnterpriseTypes");
                 });
 
-            modelBuilder.Entity("ErpServicesASP.API.Model.UsuarioModel", b =>
+            modelBuilder.Entity("ErpServicesASP.API.Model.MemberModel", b =>
+                {
+                    b.Property<int>("idMembro")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idMembro"));
+
+                    b.Property<int>("AddressIdAdress")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("AssociacaoPublica")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("CargoidCargo")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("EmpresaIdEmpresa")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Genero")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("NaturezaMembro")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("idMembro");
+
+                    b.HasIndex("AddressIdAdress");
+
+                    b.HasIndex("CargoidCargo");
+
+                    b.HasIndex("EmpresaIdEmpresa");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Members");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.SectorModel", b =>
+                {
+                    b.Property<int>("idSetor")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idSetor"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("idSetor");
+
+                    b.ToTable("Sectors");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.StorageModel", b =>
+                {
+                    b.Property<int>("id_armazem")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id_armazem"));
+
+                    b.Property<string>("descricao")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("nome")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("telefone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id_armazem");
+
+                    b.ToTable("armazem");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.TelephoneModel", b =>
+                {
+                    b.Property<int>("IdTelephone")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdTelephone"));
+
+                    b.Property<int>("EnterpriseIdEmpresa")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MemberidMembro")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Storageid_armazem")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ThirdidTerceiros")
+                        .HasColumnType("integer");
+
+                    b.HasKey("IdTelephone");
+
+                    b.HasIndex("EnterpriseIdEmpresa");
+
+                    b.HasIndex("MemberidMembro");
+
+                    b.HasIndex("Storageid_armazem");
+
+                    b.HasIndex("ThirdidTerceiros");
+
+                    b.ToTable("Telephones");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.ThirdPartiesModel", b =>
+                {
+                    b.Property<int>("idTerceiros")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idTerceiros"));
+
+                    b.Property<double>("capital")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<bool>("estadoAtividade")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("fornecedor")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("impostoSobVenda")
+                        .HasColumnType("boolean");
+
+                    b.Property<byte[]>("logotipo")
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("nome")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("nomeEFantasia")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<int>("quantidadeColaboradores")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("segundoImposto")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("idTerceiros");
+
+                    b.ToTable("terceiros");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.UserModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -212,80 +364,82 @@ namespace ErpServicesASP.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ErpServicesASP.API.Model.ValidacaoEmailModel", b =>
+            modelBuilder.Entity("ErpServicesASP.API.Model.AddressModel", b =>
                 {
-                    b.Property<int>("idValidacaoEmail")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idValidacaoEmail"));
-
-                    b.Property<string>("Codigo")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("Validado")
-                        .HasColumnType("boolean");
-
-                    b.HasKey("idValidacaoEmail");
-
-                    b.HasIndex("UsuarioId");
-
-                    b.ToTable("ValidacoesDeEmails");
-                });
-
-            modelBuilder.Entity("ErpServicesASP.API.Model.EmpresaModel", b =>
-                {
-                    b.HasOne("ErpServicesASP.API.Model.UsuarioModel", "Dono")
+                    b.HasOne("ErpServicesASP.API.Model.EnterpriseModel", "Enterprise")
                         .WithMany()
-                        .HasForeignKey("DonoId")
+                        .HasForeignKey("EnterpriseIdEmpresa")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ErpServicesASP.API.Model.SetorModel", "Setor")
+                    b.HasOne("ErpServicesASP.API.Model.ThirdPartiesModel", "Third")
                         .WithMany()
-                        .HasForeignKey("SetoridSetor")
+                        .HasForeignKey("ThirdidTerceiros")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ErpServicesASP.API.Model.TipoDeEmpresaModel", "TipoDeEmpresa")
-                        .WithMany()
-                        .HasForeignKey("TipoDeEmpresaidTipoDeEmpresa")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Enterprise");
 
-                    b.Navigation("Dono");
-
-                    b.Navigation("Setor");
-
-                    b.Navigation("TipoDeEmpresa");
+                    b.Navigation("Third");
                 });
 
-            modelBuilder.Entity("ErpServicesASP.API.Model.MembroModel", b =>
+            modelBuilder.Entity("ErpServicesASP.API.Model.EnterpriseModel", b =>
                 {
+                    b.HasOne("ErpServicesASP.API.Model.EnterpriseTypeModel", "EnterpriseType")
+                        .WithMany()
+                        .HasForeignKey("EnterpriseTypeidTipoDeEmpresa")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ErpServicesASP.API.Model.UserModel", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ErpServicesASP.API.Model.SectorModel", "Sector")
+                        .WithMany()
+                        .HasForeignKey("SectoridSetor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EnterpriseType");
+
+                    b.Navigation("Owner");
+
+                    b.Navigation("Sector");
+                });
+
+            modelBuilder.Entity("ErpServicesASP.API.Model.MemberModel", b =>
+                {
+                    b.HasOne("ErpServicesASP.API.Model.AddressModel", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressIdAdress")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ErpServicesASP.API.Model.CargoModel", "Cargo")
                         .WithMany()
                         .HasForeignKey("CargoidCargo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ErpServicesASP.API.Model.EmpresaModel", "Empresa")
+                    b.HasOne("ErpServicesASP.API.Model.EnterpriseModel", "Empresa")
                         .WithMany()
-                        .HasForeignKey("EmpresaidEmpresa")
+                        .HasForeignKey("EmpresaIdEmpresa")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ErpServicesASP.API.Model.UsuarioModel", "Usuario")
+                    b.HasOne("ErpServicesASP.API.Model.UserModel", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Address");
 
                     b.Navigation("Cargo");
 
@@ -294,15 +448,39 @@ namespace ErpServicesASP.API.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("ErpServicesASP.API.Model.ValidacaoEmailModel", b =>
+            modelBuilder.Entity("ErpServicesASP.API.Model.TelephoneModel", b =>
                 {
-                    b.HasOne("ErpServicesASP.API.Model.UsuarioModel", "Usuario")
+                    b.HasOne("ErpServicesASP.API.Model.EnterpriseModel", "Enterprise")
                         .WithMany()
-                        .HasForeignKey("UsuarioId")
+                        .HasForeignKey("EnterpriseIdEmpresa")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Usuario");
+                    b.HasOne("ErpServicesASP.API.Model.MemberModel", "Member")
+                        .WithMany()
+                        .HasForeignKey("MemberidMembro")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ErpServicesASP.API.Model.StorageModel", "Storage")
+                        .WithMany()
+                        .HasForeignKey("Storageid_armazem")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ErpServicesASP.API.Model.ThirdPartiesModel", "Third")
+                        .WithMany()
+                        .HasForeignKey("ThirdidTerceiros")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Enterprise");
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Storage");
+
+                    b.Navigation("Third");
                 });
 #pragma warning restore 612, 618
         }

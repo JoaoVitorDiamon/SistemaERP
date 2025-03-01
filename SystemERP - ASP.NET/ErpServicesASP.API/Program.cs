@@ -13,18 +13,18 @@ var MyAllowSpecificOrigins = "_MyAllowSubdomainPolicy";
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<ICargoRepository, CargoRepository>();
+builder.Services.AddScoped<ICargoRepository, RoleRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-builder.Services.AddScoped<IValidacaoEmailRepository, ValidacaoEmailRepository>();
+//builder.Services.AddScoped<IValidacaoEmailRepository, ValidacaoEmailRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-builder.Services.AddScoped<IValidacaoEmailService, ValidacaoEmailService>();
+//builder.Services.AddScoped<IValidacaoEmailService, ValidacaoEmailService>();
 builder.Services.AddScoped<ITipoDeEmpresaRepository, TipoDeEmpresaRepository>();
 builder.Services.AddScoped<ITipoDeEmpresaService, TipoDeEmpresaService>();
 builder.Services.AddScoped<ISetorEmpresaRepository, SetorEmpresaRepository>();
 builder.Services.AddScoped<ISetorEmpresaService, SetorDeEmpresaService>();
 builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
 builder.Services.AddScoped<IEmpresaService, EmpresaService>();
-builder.Services.AddScoped<IMembroRepository, MembroRepository>();
+builder.Services.AddScoped<IMembroRepository, MemberRepository>();
 builder.Services.AddScoped<IMembroService, MembroService>();
 builder.Services.AddScoped<MailService>();
 builder.Services.AddCors(options =>
