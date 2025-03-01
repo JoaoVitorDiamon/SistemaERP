@@ -7,35 +7,43 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "\"Membros\"")
+@Table(name = "\"Members\"")
 @Data
 public class Members {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer idMembro;
+    @Column(name = "\"IdMembers\"")
+    private Integer IdMembers;
 
     @ManyToOne
-    @JoinColumn(name = "Empresas_idEmpresa")
-    private Enterprise EmpresaidEmpresa;
+    @JoinColumn(name = "IdEnterprise")
+    private Enterprise Enterprise;
 
     @ManyToOne
-    @JoinColumn(name = "Usuarios_Id")
-    private User UsuarioId;
+    @JoinColumn(name = "IdUser")
+    private User User;
 
     @ManyToOne
-    @JoinColumn(name = "\"Cargos_idCargo\"")
-    private Position CargoidCargo;
+    @JoinColumn(name = "\"IdPosition\"")
+    private Position Position;
 
-    private String NaturezaMembro;
+    @Column(name = "\"NatureMember\"")
+    private String NatureMember;
 
-    private String Genero;
+    @Column(name = "\"Gender\"")
+    private String Gender;
 
-    private String Telefone;
+    @Column(name = "\"Telephone\"")
+    private String Telephone;
 
-    private String CEP;
+    @Column(name = "\"ZipCode\"")
+    private String ZipCode;
 
-    private String DataNascimento;
+    @Column(name = "\"DateOfBirth\"")
+    private String DateOfBirth;
 
-    private String AssociacaoPublica;
+    @Column(name = "\"PublicAssociation\"")
+    private String PublicAssociation
+    ;
 }

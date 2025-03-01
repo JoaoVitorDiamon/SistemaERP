@@ -1,5 +1,5 @@
 package com.system.SystemERP.Dtos.Products;
-import com.system.SystemERP.Entity.Products.Produto;
+import com.system.SystemERP.Entity.Products.Product;
 
 public record ProdutosDTO(
         Integer idProduto,
@@ -29,8 +29,8 @@ public record ProdutosDTO(
         area = comprimento * largura;
     }
 
-    public Produto toEntity() {
-        return new Produto(
+    public Product toEntity() {
+        return new Product(
                 idProduto,
                 nomeProduto,
                 etiqueta,

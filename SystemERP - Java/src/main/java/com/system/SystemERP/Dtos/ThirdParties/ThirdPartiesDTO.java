@@ -4,7 +4,7 @@ import com.system.SystemERP.Entity.Adress.Adress;
 import com.system.SystemERP.Entity.ClientType.ClientType;
 import com.system.SystemERP.Entity.Coin.Coin;
 import com.system.SystemERP.Entity.Enterprise.Enterprise;
-import com.system.SystemERP.Entity.ThirdParties.ThirdParties;
+import com.system.SystemERP.Entity.ThirdParties.ThirdParty;
 import lombok.Data;
 
 @Data
@@ -25,8 +25,8 @@ public class ThirdPartiesDTO {
     private byte[] logotipo;
     private Enterprise idEnterprise;
 
-    public ThirdParties toEntity() {
-        return new ThirdParties(
+    public ThirdParty toEntity() {
+        return new ThirdParty(
                 idTerceiros,
                 nome,
                 nomeEFantasia,

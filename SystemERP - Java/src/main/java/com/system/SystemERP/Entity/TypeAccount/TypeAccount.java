@@ -1,19 +1,20 @@
 package com.system.SystemERP.Entity.TypeAccount;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "\"tipo_conta\"")
+@Table(name = "\"TypeAccount\"")
 public class TypeAccount {
 
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "IdTypeAccount")
+    private Integer IdTypeAccount;
 
+    @Column(name = "Name")
     private String nome;
 
 }

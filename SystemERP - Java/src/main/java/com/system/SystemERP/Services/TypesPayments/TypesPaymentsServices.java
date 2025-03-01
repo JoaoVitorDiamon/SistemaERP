@@ -25,7 +25,7 @@ public class TypesPaymentsServices {
                 null);
 
         var typePaymentSaved = typesPaymentsRepository.save(typePayment);
-        return typePaymentSaved.getId();
+        return typePaymentSaved.getIdTypesPayments();
 
     }
 

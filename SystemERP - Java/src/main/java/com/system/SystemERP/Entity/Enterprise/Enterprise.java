@@ -6,50 +6,49 @@ import com.system.SystemERP.Entity.Sector.Sector;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "\"Empresas\"")
+@Table(name = "\"Enterprise\"")
 public class Enterprise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "\"idEmpresa\"")
-    private Integer idEmpresa;
+    @Column(name = "\"IdEnterprise\"")
+    private Integer IdEnterprise;
     @Column(name = "\"Name\"")
     private String Name;
-    @Column(name = "\"NomeFantasia\"")
-    private String NomeFantasia;
-    @Column(name = "\"DonoId\"")
-    private Integer DonoId;
+    @Column(name = "\"NameFantasy\"")
+    private String NameFantasy;
+    @Column(name = "\"OwnerId\"")
+    private Integer OwnerId;
     @Column(name = "\"CNPJ\"")
     private String CNPJ;
     @Column(name = "\"Email\"")
     private String Email;
-    @Column(name = "\"Telefone\"")
-    private String Telefone;
-    @Column(name = "\"Endereco\"")
-    private String Endereco;
-    @Column(name = "\"CEP\"")
-    private String CEP;
+    @Column(name = "\"Telephone\"")
+    private String Telephone;
 
     @ManyToOne
-    @JoinColumn(name = "idEndereco")
-    private Adress endereco;
+    @JoinColumn(name = "IdAddress")
+    private Adress Address;
 
 
     @ManyToOne
-    @JoinColumn(name = "\"SetoridSetor\"")
-    private Sector setor;
+    @JoinColumn(name = "\"IdSector\"")
+    private Sector Sector;
 
     @ManyToOne
-    @JoinColumn(name = "\"TipoDeEmpresaidTipoDeEmpresa\"")
-    private EnterpriseType TipoDeEmpresaidTipoDeEmpresa;
+    @JoinColumn(name = "\"IdCompanyType\"")
+    private EnterpriseType CompanyType;
 
-    private LocalDateTime DataCriacao;
+    @CreationTimestamp
+    @Column(name = "\"CreationDate\"")
+    private Instant CreationDate;
 
 
 }

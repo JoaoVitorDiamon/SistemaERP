@@ -12,7 +12,9 @@ public class SerialNumberControl {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idSerialNumberControl;
-    private String name;
+    @Column(name = "IdSerialNumberControl")
+    private Integer IdSerialNumberControl;
+    @Column(name = "Name")
+    private String Name;
 
 }

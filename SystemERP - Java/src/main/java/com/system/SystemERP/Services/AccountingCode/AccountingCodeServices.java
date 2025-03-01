@@ -2,7 +2,7 @@ package com.system.SystemERP.Services.AccountingCode;
 
 import com.system.SystemERP.Dtos.AccountingCode.AccountingCodeDTO;
 import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
-import com.system.SystemERP.Repository.AccountingCodeRepository;
+import com.system.SystemERP.Repository.AccountingCode.AccountingCodeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class AccountingCodeServices {
 
         var created = accountingCodeRepository.save(conversionAccountingCode);
 
-        return created.getId();
+        return created.getIdAccountingCode();
     }
 
     public Optional<AccountingCode> findByID(Integer id) {

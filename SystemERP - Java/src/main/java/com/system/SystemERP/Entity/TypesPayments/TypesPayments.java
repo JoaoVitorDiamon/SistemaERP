@@ -9,30 +9,33 @@ import java.time.Instant;
 
 @Entity
 @Data
-@Table(name = "\"tipo_pagamentos\"")
+@Table(name = "\"TypesPayments\"")
 public class TypesPayments {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+    @Column(name = "\"IdTypesPayments\"")
+    private Integer IdTypesPayments;
 
-    @Column(name = "tipo_de_pagamento")
+    @Column(name = "\"TypePayment\"")
     private String typePayment;
 
     @CreationTimestamp
-    private Instant dateCreation;
+    @Column(name = "\"DateCreation\"")
+    private Instant DateCreation;
 
     @UpdateTimestamp
-    private Instant dateUpdate;
+    @Column(name = "\"DateUpdate\"")
+    private Instant DateUpdate;
 
 
     public TypesPayments() {
     }
 
     public TypesPayments(Integer id, String typePayment, Instant dateCreation, Instant dateUpdate) {
-        this.id = id;
+        this.IdTypesPayments = id;
         this.typePayment = typePayment;
-        this.dateCreation = dateCreation;
-        this.dateUpdate = dateUpdate;
+        this.DateCreation = dateCreation;
+        this.DateUpdate = dateUpdate;
     }
 }

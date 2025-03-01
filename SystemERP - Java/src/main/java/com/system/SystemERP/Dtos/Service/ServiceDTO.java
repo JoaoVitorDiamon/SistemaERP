@@ -5,8 +5,9 @@ import com.system.SystemERP.Entity.Adress.Adress;
 import com.system.SystemERP.Entity.BarCodeType.BarCodeType;
 import com.system.SystemERP.Entity.Enterprise.Enterprise;
 import com.system.SystemERP.Entity.SerialNumberControl.SerialNumberControl;
-import com.system.SystemERP.Entity.Service.Servicos;
+import com.system.SystemERP.Entity.Service.Service;
 import lombok.Data;
+
 import java.time.LocalTime;
 
 @Data
@@ -33,8 +34,8 @@ public class ServiceDTO {
     private Enterprise idEnterprise;
     private Adress idAdress;
 
-    public Servicos toEntity() {
-        return new Servicos(
+    public Service toEntity() {
+        return new Service(
                 idServico,
                 refProduto,
                 etiqueta,

@@ -2,7 +2,7 @@ package com.system.SystemERP.Controller.Service;
 
 
 import com.system.SystemERP.Dtos.Service.ServiceDTO;
-import com.system.SystemERP.Entity.Service.Servicos;
+import com.system.SystemERP.Entity.Service.Service;
 import com.system.SystemERP.Services.Service.ServiceServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,14 +26,14 @@ public class ServiceController {
 
     @PostMapping
     @Operation(summary = "Cria um serviço", description = "Cria um serviço")
-    public ResponseEntity<Servicos> createService(@RequestBody ServiceDTO serviceDTO){
+    public ResponseEntity<Service> createService(@RequestBody ServiceDTO serviceDTO){
         var created = serviceServices.CreateService(serviceDTO);
         return ResponseEntity.created(URI.create("/servicos/" + created.toString())).build();
     }
 
     @GetMapping("/{idServico}")
     @Operation(summary = "Busca um serviço pelo id", description = "Busca um serviço pelo id")
-    public ResponseEntity<Servicos> findById(@PathVariable Integer idServico){
+    public ResponseEntity<Service> findById(@PathVariable Integer idServico){
         var exist = serviceServices.getById(idServico);
         return exist.isPresent()
                 ? ResponseEntity.ok(exist.get())
@@ -42,7 +42,7 @@ public class ServiceController {
 
     @GetMapping
     @Operation(summary = "Busca todos os serviços", description = "Busca todos os serviços")
-    public ResponseEntity<List<Servicos>> findAll(){
+    public ResponseEntity<List<Service>> findAll(){
         var listServices = serviceServices.getAll();
         return ResponseEntity.ok(listServices);
     }

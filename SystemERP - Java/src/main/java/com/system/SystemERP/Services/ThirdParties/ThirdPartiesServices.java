@@ -1,7 +1,7 @@
 package com.system.SystemERP.Services.ThirdParties;
 
 import com.system.SystemERP.Dtos.ThirdParties.ThirdPartiesDTO;
-import com.system.SystemERP.Entity.ThirdParties.ThirdParties;
+import com.system.SystemERP.Entity.ThirdParties.ThirdParty;
 import com.system.SystemERP.Repository.ThirdParties.ThirdPartiesRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +19,14 @@ public class ThirdPartiesServices {
     public Integer createThirdParty(ThirdPartiesDTO thirdPartiesDTO) {
         var thirdParty = thirdPartiesDTO.toEntity();
         var savedThirdParty = thirdPartiesRepository.save(thirdParty);
-        return savedThirdParty.getIdTerceiros();
+        return savedThirdParty.getThirdPartyId();
     }
 
-    public Optional<ThirdParties> getById(Integer id) {
+    public Optional<ThirdParty> getById(Integer id) {
         return thirdPartiesRepository.findById(id);
     }
 
-    public List<ThirdParties> getAll() {
+    public List<ThirdParty> getAll() {
         return thirdPartiesRepository.findAll();
     }
 

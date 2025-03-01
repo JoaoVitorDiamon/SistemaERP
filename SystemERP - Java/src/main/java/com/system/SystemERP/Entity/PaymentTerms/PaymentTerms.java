@@ -9,22 +9,22 @@ import java.time.Instant;
 
 @Data
 @Entity
-@Table(name = "\"termos_de_pagamento\"")
+@Table(name = "\"PaymentTerms\"")
 public class PaymentTerms {
     @Id
-    @Column(name = "idTermosDePagamento")
+    @Column(name = "\"IdPaymentTerms\"")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer idPaymentTerms;
 
-    @Column(name = "nomeTermosDePagamentos")
+    @Column(name = "\"NamePaymentTerms\"")
     private String namePaymentTerms;
 
     @CreationTimestamp
-    @Column(name = "dataCriacao")
+    @Column(name = "\"DateCreation\"")
     private Instant dateCreation;
 
     @UpdateTimestamp
-    @Column(name = "dataAtualizacao")
+    @Column(name = "\"DateUpdate\"")
     private Instant dateUpdate;
 
     public PaymentTerms() {

@@ -7,31 +7,41 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "\"armazem\"")
+@Table(name = "\"Storages\"")
 public class Storage {
-    public Storage(Integer idArmazem, String nome, String descricao, String telefone, Adress endereco, Enterprise empresa){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_armazem;
-    private String nome;
-    private String descricao;
-    private String telefone;
+    @Column(name = "\"IdStorage\"")
+    private Integer StorageId;
 
+    @Column(name = "\"Name\"")
+    private String Name;
+
+    @Column(name = "\"Description\"")
+    private String Description;
+
+    @Column(name = "\"Phone\"")
+    private String Phone;
 
     @ManyToOne
-    @JoinColumn(name = "\"idEndereco\"")
-    private Adress endereco;
+    @JoinColumn(name = "\"IdAddress\"")
+    private Adress Address;
 
     @ManyToOne
-    @JoinColumn(name = "\"idEmpresa\"")
-    private Enterprise empresa;
+    @JoinColumn(name = "\"IdEnterprise\"")
+    private Enterprise Enterprise;
 
-    public Storage(Integer id_armazem, String nome, String descricao, String telefone, Adress endereco) {
-        this.id_armazem = id_armazem;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.telefone = telefone;
-        this.endereco = endereco;
+    public Storage(Integer StorageId, String Name, String Description, String Phone, Adress Address, Enterprise Enterprise) {
+        this.StorageId = StorageId;
+        this.Name = Name;
+        this.Description = Description;
+        this.Phone = Phone;
+        this.Address = Address;
+        this.Enterprise = Enterprise;
+    }
+
+    public Storage() {
+
     }
 }

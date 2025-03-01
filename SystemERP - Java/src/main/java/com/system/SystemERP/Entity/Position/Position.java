@@ -4,12 +4,13 @@ import lombok.Data;
 
 
 @Entity
-@Table(name = "\"Cargos\"")
+@Table(name = "\"Position\"")
 @Data
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer idCargo;
+    @Column(name = "\"IdPosition\"")
+    private Integer IdPosition;
 
     @Column(name = "\"Name\"")
     private String Name;

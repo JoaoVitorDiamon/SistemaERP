@@ -19,7 +19,7 @@ public class StorageServices {
     public Integer createStorage(StorageDTO storageDTO) {
         var storage = storageDTO.toEntity();
         var savedStorage = storageRepository.save(storage);
-        return savedStorage.getId_armazem();
+        return savedStorage.getStorageId();
     }
 
     public Optional<Storage> getById(Integer id) {

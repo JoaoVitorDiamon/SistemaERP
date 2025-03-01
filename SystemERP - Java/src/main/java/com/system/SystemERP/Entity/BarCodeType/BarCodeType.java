@@ -7,11 +7,14 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "BarCodeType")
+@Table(name = "\"BarCodeType\"")
 public class BarCodeType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idBarCodeType;
-    private String name;
+    @Column(name = "\"IdBarCodeType\"")
+    private Integer IdBarCodeType;
+
+    @Column(name = "\"Name\"")
+    private String Name;
 }

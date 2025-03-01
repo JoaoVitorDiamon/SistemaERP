@@ -12,6 +12,9 @@ public class ClientType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdTipoCliente;
-    private String Nome;
+    @Column(name = "\"IdClientType\"")
+    private Integer IdClientType;
+
+    @Column(name = "\"Name\"")
+    private String Name;
 }
