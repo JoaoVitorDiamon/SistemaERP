@@ -23,7 +23,7 @@ public class Salary {
     private Integer IdSalary;
 
     @ManyToOne
-    @JoinColumn(name = "IdMembers")
+    @JoinColumn(name = "IdMembers",foreignKey = @ForeignKey(name = "\"FK_IdMembers_Salary\""))
     private Members Members;
 
     @Column(name = "\"Label\"")
@@ -36,11 +36,11 @@ public class Salary {
     private Double Value;
 
     @ManyToOne
-    @JoinColumn(name = "IdAccountBank")
+    @JoinColumn(name = "IdAccountBank",foreignKey = @ForeignKey(name = "\"FK_IdAccountBank_Salary\""))
     private AccountBank AccountBank;
 
     @ManyToOne
-    @JoinColumn(name = "IdTypePayment", nullable = false)
+    @JoinColumn(name = "IdTypePayment", nullable = false, foreignKey = @ForeignKey(name = "\"FK_IdTypePayment_Salary\""))
     private TypesPayments TypePayment;
 
     @Column(name = "\"PaymentDate\"")

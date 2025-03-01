@@ -25,11 +25,11 @@ public class AccountBank {
         private String FinancialAccounts;
 
         @ManyToOne
-        @JoinColumn(name = "IdAccountType")
+        @JoinColumn(name = "IdAccountType", foreignKey = @ForeignKey(name = "\"FK_IdAccountType_AccountBank\""))
         private TypeAccount AccountType;
 
         @ManyToOne
-        @JoinColumn(name = "\"IdCoin\"")
+        @JoinColumn(name = "\"IdCoin\"", foreignKey = @ForeignKey(name = "\"FK_IdCoin_AccountBank\""))
         private Coin Coin;
 
         @Column(name = "\"StateActivity\"")
@@ -72,7 +72,7 @@ public class AccountBank {
         private String Cep;
 
         @ManyToOne
-        @JoinColumn(name = "IdAccountingCode")
+        @JoinColumn(name = "IdAccountingCode", foreignKey = @ForeignKey(name = "\"FK_IdAccountingCode_AccountBank\""))
         private AccountingCode AccountingCode;
 
 }

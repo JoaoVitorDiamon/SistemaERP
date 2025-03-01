@@ -37,11 +37,11 @@ public class Service {
     private boolean Purchase;
 
     @OneToOne
-    @JoinColumn(name = "\"IdSerialNumberControl\"")
+    @JoinColumn(name = "\"IdSerialNumberControl\"", foreignKey = @ForeignKey(name = "\"FK_IdSerialNumberControl_Service\""))
     private SerialNumberControl SerialNumberControl;
 
     @OneToOne
-    @JoinColumn(name = "\"IdBarCodeType\"")
+    @JoinColumn(name = "\"IdBarCodeType\"", foreignKey = @ForeignKey(name = "\"FK_IdBarCodeType_Service\""))
     private BarCodeType BarCodeType;
 
     @Column(name = "\"Barcode\"")
@@ -69,26 +69,26 @@ public class Service {
     private double TaxCMSP;
 
     @OneToOne
-    @JoinColumn(name = "\"IdSalesCode\"")
+    @JoinColumn(name = "\"IdSalesCode\"", foreignKey = @ForeignKey(name = "\"FK_IdSalesCode_Service\""))
     private AccountingCode SalesCode;
 
     @OneToOne
-    @JoinColumn(name = "\"IdExportCode\"")
+    @JoinColumn(name = "\"IdExportCode\"", foreignKey = @ForeignKey(name = "\"FK_IdExportCode_Service\""))
     private AccountingCode ExportCode;
 
     @OneToOne
-    @JoinColumn(name = "\"IdImportCode\"")
+    @JoinColumn(name = "\"IdImportCode\"", foreignKey = @ForeignKey(name = "\"FK_IdImportCode_Service\""))
     private AccountingCode ImportCode;
 
     @OneToOne
-    @JoinColumn(name = "\"IdPurchaseCode\"")
+    @JoinColumn(name = "\"IdPurchaseCode\"", foreignKey = @ForeignKey(name = "\"FK_IdPurchaseCode_Service\""))
     private AccountingCode PurchaseCode;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdEnterprise\"")
+    @JoinColumn(name = "\"IdEnterprise\"", foreignKey = @ForeignKey(name = "\"FK_IdEnterprise_Service\""))
     private Enterprise Enterprise;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdAddress\"")
+    @JoinColumn(name = "\"IdAddress\"", foreignKey = @ForeignKey(name = "\"FK_IdAddress_Service\""))
     private Adress Adress;
 }

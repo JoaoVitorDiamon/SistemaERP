@@ -25,11 +25,11 @@ public class Storage {
     private String Phone;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdAddress\"")
+    @JoinColumn(name = "\"IdAddress\"" , foreignKey = @ForeignKey(name = "\"FK_IdAddress_Storage\""))
     private Adress Address;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdEnterprise\"")
+    @JoinColumn(name = "\"IdEnterprise\"", foreignKey = @ForeignKey(name = "\"FK_IdEnterprise_Storage\""))
     private Enterprise Enterprise;
 
     public Storage(Integer StorageId, String Name, String Description, String Phone, Adress Address, Enterprise Enterprise) {
