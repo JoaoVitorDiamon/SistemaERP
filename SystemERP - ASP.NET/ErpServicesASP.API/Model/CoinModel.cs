@@ -5,7 +5,7 @@ namespace ErpServicesASP.API.Model
     public class CoinModel
     {
         [Key]
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int IdCoin { get; set; }
+        public string Name { get; set; }
     }
 }

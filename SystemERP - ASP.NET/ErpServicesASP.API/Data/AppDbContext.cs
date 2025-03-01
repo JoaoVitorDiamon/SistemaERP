@@ -11,15 +11,16 @@ namespace ErpServicesASP.API.Data
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
         public DbSet<UserModel> Users { get; set; }
-        public DbSet<CargoModel> Cargos { get; set; }
-        public DbSet<EnterpriseTypeModel> EnterpriseTypes { get; set; }
-        public DbSet<EnterpriseModel> Enterprises { get; set; }
+        public DbSet<PositionModel> Position { get; set; }
+        public DbSet<EnterpriseTypeModel> EnterpriseType { get; set; }
+        public DbSet<EnterpriseModel> Enterprise { get; set; }
         public DbSet<MemberModel> Members { get; set; }
         //public DbSet<ValidacaoEmailModel> ValidacoesDeEmails { get; set; }
-        public DbSet<SectorModel> Sectors { get; set; }
-        public DbSet<AddressModel> Addresses { get; set; }
-        public DbSet<ThirdPartiesModel> terceiros { get; set; }
+        public DbSet<SectorModel> Sector { get; set; }
+        public DbSet<AddressModel> Adress { get; set; }
+        public DbSet<ThirdPartiesModel> terceiro { get; set; }
         public DbSet<StorageModel> armazem { get; set; }
-        public DbSet<TelephoneModel> Telephones { get; set; }
+        public DbSet<TelephoneModel> Telephone { get; set; }
     }
+
 }

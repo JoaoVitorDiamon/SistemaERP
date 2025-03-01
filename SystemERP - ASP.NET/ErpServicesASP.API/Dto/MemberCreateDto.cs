@@ -7,10 +7,11 @@ namespace ErpServicesASP.API.Dto
         public int Empresa_idEmpresa { get; set; }
         public int Usuario_idUsuario { get; set; }
         public int Cargo_idCargo { get; set; }
-        public string NaturezaMembro { get; set; }
-        public string Genero { get; set; }
-        public AddressCreateDto Address { get; set; }
-        public DateTime DataNascimento { get; set; }
-        public string AssociacaoPublica { get; set; }
+        public string NatureMember { get; set; }
+        public string Gender { get; set; }
+        public string ZipCode { get; set; }
+        public string DateOfBirth { get; set; }
+        public string Telephone { get; set; }
+        public string PublicAssociation { get; set; }
     }
 }

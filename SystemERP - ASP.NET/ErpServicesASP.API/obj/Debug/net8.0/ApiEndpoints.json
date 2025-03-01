@@ -1,5 +1,57 @@
 [
   {
+    "ContainingType": "ErpServicesASP.API.Controllers.AddressController",
+    "Method": "CreateAddress",
+    "RelativePath": "api/Address",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newAdress",
+        "Type": "ErpServicesASP.API.Dto.AddressCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.AddressModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ErpServicesASP.API.Controllers.AddressController",
+    "Method": "GetAdressById",
+    "RelativePath": "api/Address/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.AddressModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ErpServicesASP.API.Controllers.CargoController",
     "Method": "ListarCargos",
     "RelativePath": "api/Cargo",
@@ -9,7 +61,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.PositionModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -35,7 +87,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.PositionModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -55,13 +107,13 @@
     "Parameters": [
       {
         "Name": "cargo",
-        "Type": "ErpServicesASP.API.Model.CargoModel",
+        "Type": "ErpServicesASP.API.Model.PositionModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.PositionModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -87,7 +139,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.PositionModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -113,7 +165,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.CargoModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.PositionModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -133,7 +185,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.EmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.EnterpriseModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -153,13 +205,13 @@
     "Parameters": [
       {
         "Name": "novaEmpresa",
-        "Type": "ErpServicesASP.API.Dto.EmpresaCreateDto",
+        "Type": "ErpServicesASP.API.Dto.EnterpriseCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EnterpriseModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -185,7 +237,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EnterpriseModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -273,7 +325,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Dto.MembroGetIdDto, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Dto.MemberGetIdDto, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -293,13 +345,13 @@
     "Parameters": [
       {
         "Name": "novoMembro",
-        "Type": "ErpServicesASP.API.Dto.MembroCreateDto",
+        "Type": "ErpServicesASP.API.Dto.MemberCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.MembroModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.MemberModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -325,7 +377,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Dto.MembroGetIdDto, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Dto.MemberGetIdDto, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -345,7 +397,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.SectorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -365,13 +417,13 @@
     "Parameters": [
       {
         "Name": "novoSetor",
-        "Type": "ErpServicesASP.API.Dto.SetorCreateDto",
+        "Type": "ErpServicesASP.API.Dto.SectorCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SectorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -391,13 +443,13 @@
     "Parameters": [
       {
         "Name": "setor",
-        "Type": "ErpServicesASP.API.Model.SetorModel",
+        "Type": "ErpServicesASP.API.Model.SectorModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SectorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -423,7 +475,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SectorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -449,7 +501,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SetorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.SectorModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -469,7 +521,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.TipoDeEmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.EnterpriseTypeModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -489,13 +541,13 @@
     "Parameters": [
       {
         "Name": "novoTipoDeEmpresa",
-        "Type": "ErpServicesASP.API.Dto.TipoDeEmpresaCreateDto",
+        "Type": "ErpServicesASP.API.Dto.EnterpriseTypeCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.TipoDeEmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EnterpriseTypeModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -515,13 +567,13 @@
     "Parameters": [
       {
         "Name": "tipoDeEmpresa",
-        "Type": "ErpServicesASP.API.Model.TipoDeEmpresaModel",
+        "Type": "ErpServicesASP.API.Model.EnterpriseTypeModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.TipoDeEmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EnterpriseTypeModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -547,7 +599,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.TipoDeEmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EnterpriseTypeModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -573,7 +625,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.TipoDeEmpresaModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.EnterpriseTypeModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -593,7 +645,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.UsuarioModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.UserModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -619,7 +671,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.UsuarioModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.UserModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -645,7 +697,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.UsuarioModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[ErpServicesASP.API.Model.UserModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -671,7 +723,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.UsuarioModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[ErpServicesASP.API.Model.UserModel, ErpServicesASP.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -718,32 +770,6 @@
       {
         "Name": "email",
         "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ErpServicesASP.API.Model.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ErpServicesASP.API.Controllers.ValidacaoEmailController",
-    "Method": "ValidarEmail",
-    "RelativePath": "api/ValidacaoEmail",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dadosRequisicao",
-        "Type": "ErpServicesASP.API.Dto.ValidacaoEmailDto",
         "IsRequired": true
       }
     ],

@@ -14,13 +14,13 @@ namespace ErpServicesASP.API.Services
             ResponseModel<SectorModel> response = new ResponseModel<SectorModel>();
             try
             {
-                var setorNoBanco = await _repository.GetSetorEmpresaPorID(setor.idSetor);
+                var setorNoBanco = await _repository.GetSetorEmpresaPorID(setor.IdSector);
                 if(setorNoBanco == null) 
                 {
                     response.setErro("Tipo de empresa não existe");
                     return response;
                 }
-                setorNoBanco.Nome = setor.Nome;
+                setorNoBanco.Name = setor.Name;
                 var update = await _repository.AtualizarSetorEmpresa(setorNoBanco);
                 response.Valor = update;
                 return response;
@@ -37,7 +37,7 @@ namespace ErpServicesASP.API.Services
             ResponseModel<SectorModel> response = new ResponseModel<SectorModel>();
             try
             {
-                var setorExiste = await _repository.SetorEmpresaJaExiste(novoSetor.Nome);
+                var setorExiste = await _repository.SetorEmpresaJaExiste(novoSetor.Name);
                 if (setorExiste)
                 {
                     response.setErro("Tipo de empresa já existe");

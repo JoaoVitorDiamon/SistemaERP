@@ -19,7 +19,7 @@
             Cria um cargo.
             </summary>
         </member>
-        <member name="M:ErpServicesASP.API.Controllers.CargoController.CriarCargo(ErpServicesASP.API.Model.CargoModel)">
+        <member name="M:ErpServicesASP.API.Controllers.CargoController.CriarCargo(ErpServicesASP.API.Model.PositionModel)">
             <summary>
             Altera o nome do cargo pelo ID.
             </summary>

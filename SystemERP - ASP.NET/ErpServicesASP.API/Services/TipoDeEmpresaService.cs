@@ -14,7 +14,7 @@ namespace ErpServicesASP.API.Services
             ResponseModel<EnterpriseTypeModel> response = new ResponseModel<EnterpriseTypeModel>();
             try
             {
-                var tipoDeEmpresaNoBanco = await _repository.GetTipoDeEmpresaPorID(tipoDeEmpresa.idTipoDeEmpresa);
+                var tipoDeEmpresaNoBanco = await _repository.GetTipoDeEmpresaPorID(tipoDeEmpresa.IdEnterpriseType);
                 if(tipoDeEmpresaNoBanco == null) 
                 {
                     response.setErro("Tipo de empresa não existe");

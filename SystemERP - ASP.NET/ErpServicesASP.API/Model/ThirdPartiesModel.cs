@@ -7,30 +7,29 @@ namespace ErpServicesASP.API.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idTerceiros { get; set; }
-
-        [MaxLength(255)]
-        public string nome { get; set; }
-
-        [MaxLength(255)]
-        public string nomeEFantasia { get; set; }
-
-        public bool fornecedor { get; set; }
-        public bool estadoAtividade { get; set; }
+        public int IdThirdParty { get; set; }
+        public string Name { get; set; }
+        public string TradeName { get; set; }
+        public bool Supplier { get; set; }
+        public bool ActivateState { get; set; }
 
         [EmailAddress]
-        [MaxLength(255)]
-        public string email { get; set; }
-
-        public bool impostoSobVenda { get; set; }
-        public bool segundoImposto { get; set; }
-
-        [Column(TypeName = "decimal(18,2)")]
-        public double capital { get; set; }
-
-        public int quantidadeColaboradores { get; set; }
+        public string Email { get; set; }
+        public bool TaxOnSales { get; set; }
+        public bool SecondTax { get; set; }
+        public double Capital { get; set; }
+        public int EmployeeCount { get; set; }
 
         [Column(TypeName = "bytea")]
-        public byte[] logotipo { get; set; }
+        public byte[] Logo { get; set; }
+
+        [ForeignKey("EnterpriseId")]
+        public EnterpriseModel enterprise { get; set; }
+
+        [ForeignKey("IdCoin")]
+        public CoinModel Coin { get; set; }
+
+        [ForeignKey("IdAdress")]
+        public AddressModel Address { get; set; }
     }
 }

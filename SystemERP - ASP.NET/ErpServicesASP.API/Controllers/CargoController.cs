@@ -17,7 +17,7 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém uma lista com todos os cargos.
         /// </summary>
         [HttpGet]
-        public async Task<ActionResult<ResponseModel<List<CargoModel>>>> ListarCargos()
+        public async Task<ActionResult<ResponseModel<List<PositionModel>>>> ListarCargos()
         {
             var response = await _repository.ListarCargos();
             if (!response.Status)
@@ -31,7 +31,7 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém um cargo pelo ID.
         /// </summary>
         [HttpGet("{idcargo}")]
-        public async Task<ActionResult<ResponseModel<CargoModel>>> GetCargoPorId(int idcargo)
+        public async Task<ActionResult<ResponseModel<PositionModel>>> GetCargoPorId(int idcargo)
         {
             var response = await _repository.GetCargoPorId(idcargo);
             if (!response.Status)
@@ -45,7 +45,7 @@ namespace ErpServicesASP.API.Controllers
         /// Cria um cargo.
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<CargoModel>>> CriarCargo(CargoCreateDto novoCargo)
+        public async Task<ActionResult<ResponseModel<PositionModel>>> CriarCargo(CargoCreateDto novoCargo)
         {
             var response = await _repository.CriarCargo(novoCargo);
             if (!response.Status)
@@ -59,7 +59,7 @@ namespace ErpServicesASP.API.Controllers
         /// Altera o nome do cargo pelo ID.
         /// </summary>
         [HttpPut]
-        public async Task<ActionResult<ResponseModel<CargoModel>>> CriarCargo(CargoModel cargo)
+        public async Task<ActionResult<ResponseModel<PositionModel>>> CriarCargo(PositionModel cargo)
         {
             var response = await _repository.AtualizarCargo(cargo);
             if (!response.Status)
@@ -73,7 +73,7 @@ namespace ErpServicesASP.API.Controllers
         /// Deleta um cargo pelo ID.
         /// </summary>
         [HttpDelete("delete/{idcargo}")]
-        public async Task<ActionResult<ResponseModel<List<CargoModel>>>> DeletarCargoPorId(int idcargo)
+        public async Task<ActionResult<ResponseModel<List<PositionModel>>>> DeletarCargoPorId(int idcargo)
         {
             var response = await _repository.DeletarCargoPorId(idcargo);
             if (!response.Status)

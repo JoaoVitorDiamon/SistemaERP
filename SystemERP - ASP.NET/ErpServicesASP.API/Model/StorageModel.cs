@@ -1,13 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ErpServicesASP.API.Model
 {
     public class StorageModel
     {
         [Key]
-        public int id_armazem { get; set; }
-        public string nome { get; set; }
-        public string descricao { get; set; }
-        public string telefone { get; set; }
+        public int IdStorage { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Phone { get; set; }
+
+        [ForeignKey("IdAdress")]
+        public AddressModel Address { get; set; }
+
+        [ForeignKey("IdEnterprise")]
+        public EnterpriseModel Enterprise { get; set; }
     }
 }

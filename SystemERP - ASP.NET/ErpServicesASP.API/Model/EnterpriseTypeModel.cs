@@ -5,7 +5,7 @@ namespace ErpServicesASP.API.Model
     public class EnterpriseTypeModel
     {
         [Key]
-        public int idTipoDeEmpresa { get; set; }
+        public int IdEnterpriseType { get; set; }
         public string Name { get; set; }
     }
 }
