@@ -34,7 +34,7 @@
             Obtém uma lista com todos as empresas.
             </summary>
         </member>
-        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.CriarEmpresa(ErpServicesASP.API.Dto.EmpresaCreateDto)">
+        <member name="M:ErpServicesASP.API.Controllers.EmpresaController.CriarEmpresa(ErpServicesASP.API.Dto.EnterpriseCreateDto)">
             <summary>
             Cria uma empresa.
             </summary>
@@ -64,11 +64,6 @@
             Deleta um usuário pelo ID.
             </summary>
         </member>
-        <member name="M:ErpServicesASP.API.Controllers.ValidacaoEmailController.ValidarEmail(ErpServicesASP.API.Dto.ValidacaoEmailDto)">
-            <summary>
-            Valida o email do usuário.
-            </summary>
-        </member>
         <member name="T:ErpServicesASP.API.Migrations.migrationinitial">
             <inheritdoc />
         </member>
@@ -91,6 +86,18 @@
             <inheritdoc />
         </member>
         <member name="M:ErpServicesASP.API.Migrations.migrationinitial2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ErpServicesASP.API.Migrations.Testando87">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.Testando87.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.Testando87.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ErpServicesASP.API.Migrations.Testando87.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

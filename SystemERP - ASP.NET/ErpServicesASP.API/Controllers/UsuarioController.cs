@@ -22,7 +22,7 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém uma lista com todos os usuários.
         /// </summary>
         [HttpGet]
-        public async Task<ActionResult<ResponseModel<List<UsuarioModel>>>> ListarUsuarios()
+        public async Task<ActionResult<ResponseModel<List<UserModel>>>> ListarUsuarios()
         {
             var lista = await _service.ListarUsuarios();
             return Ok(lista);
@@ -32,7 +32,7 @@ namespace ErpServicesASP.API.Controllers
         /// Adiciona um usuário no banco de dados.
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<UsuarioModel>>> CriarUsuario(UsuarioCreateDto novoUsuario)
+        public async Task<ActionResult<ResponseModel<UserModel>>> CriarUsuario(UsuarioCreateDto novoUsuario)
         {
             if (novoUsuario == null)
                 return BadRequest("Dados inválidos");
@@ -48,7 +48,7 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém um usuário pelo ID.
         /// </summary>
         [HttpGet("{id}")]
-        public async Task<ActionResult<ResponseModel<UsuarioModel>>> GetUsuarioPorId(int id)
+        public async Task<ActionResult<ResponseModel<UserModel>>> GetUsuarioPorId(int id)
         {
             var response = await _service.GetUsuarioPorId(id);
             if (response.Mensagem == "Usuário não encontrado")
@@ -63,7 +63,7 @@ namespace ErpServicesASP.API.Controllers
         /// Deleta um usuário pelo ID.
         /// </summary>
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ResponseModel<List<UsuarioModel>>>> DeletarUsuarioPorId(int id)
+        public async Task<ActionResult<ResponseModel<List<UserModel>>>> DeletarUsuarioPorId(int id)
         {
             var response = await _service.DeletarUsuarioPorId(id);
             if (response.Mensagem == "Usuário não encontrado")

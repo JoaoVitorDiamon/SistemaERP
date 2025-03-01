@@ -8,14 +8,14 @@ namespace ErpServicesASP.API.Model
         {
             var code = new Random().Next(0, 9).ToString() + new Random().Next(0, 9).ToString() 
                 + new Random().Next(0, 9).ToString() + new Random().Next(0, 9).ToString();
-            Codigo = code;
+            Code = code;
         }
 
         [Key]
-        public int idValidacaoEmail { get; set; }
-        public string Codigo { get; set; }
-        public UsuarioModel Usuario { get; set; }
-        public bool Validado { get; set; } = false;
+        public int IdValidacaoEmail { get; set; }
+        public string Code { get; set; }
+        public UserModel User { get; set; }
+        public bool Validate { get; set; } = false;
     }
 
 }

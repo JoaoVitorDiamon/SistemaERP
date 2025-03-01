@@ -10,74 +10,71 @@ namespace ErpServicesASP.API.Repositories
     {
         private readonly AppDbContext _context;
         public EmpresaRepository(AppDbContext context) { _context = context; }
-        public Task<EmpresaModel> AtualizarEmpresa(EmpresaModel empresaAtualizada)
+        public Task<EnterpriseModel> AtualizarEmpresa(EnterpriseModel empresaAtualizada)
         {
             throw new NotImplementedException();
         }
 
         public async Task<bool> CnpjJaUsado(string cnpj)
         {
-            var cnpjJaExiste = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.CNPJ == cnpj);
+            var cnpjJaExiste = await _context.Enterprises.FirstOrDefaultAsync(empresa => empresa.CNPJ == cnpj);
             if (cnpjJaExiste != null) return true;
             return false;
         }
         public async Task<bool> EmailJaUsado(string email)
         {
-            var emailUsado = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.Email == email);
+            var emailUsado = await _context.Enterprises.FirstOrDefaultAsync(empresa => empresa.Email == email);
             if (emailUsado != null) return true;
             return false;
         }
 
-        public async Task<EmpresaModel> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
+        public async Task<EnterpriseModel> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
         {
-            var dono = await _context.Usuarios.FindAsync(novaEmpresa.idDono);
-            var tipoEmpresa = await _context.TipoDeEmpresa.FindAsync(novaEmpresa.idTipoDeEmpresa);
-            var setor = await _context.Setores.FindAsync(novaEmpresa.idSetor);
-            EmpresaModel empresa = new EmpresaModel()
+            var owner = await _context.Users.FindAsync(novaEmpresa.IdOwner);
+            var tipoEmpresa = await _context.EnterpriseTypes.FindAsync(novaEmpresa.IdEnterpriseType);
+            var setor = await _context.Sectors.FindAsync(novaEmpresa.IdSector);
+            EnterpriseModel empresa = new EnterpriseModel()
             {
                 Name = novaEmpresa.Name,
-                NomeFantasia = novaEmpresa.NomeFantasia,
-                Dono = dono,
+                FantasyName = novaEmpresa.FantasyName,
+                Owner = owner,
                 CNPJ = novaEmpresa.CNPJ,
                 Email = novaEmpresa.Email,
-                Telefone = novaEmpresa.Telefone,
-                Endereco = novaEmpresa.Endereco,
-                CEP = novaEmpresa.CEP,
-                TipoDeEmpresa = tipoEmpresa,
-                Setor = setor,
-                DataCriacao = novaEmpresa.DataCriacao
+                EnterpriseType = tipoEmpresa,
+                Sector = setor,
+                CreationDate = novaEmpresa.CreationDate
             };
-            await _context.Empresas.AddAsync(empresa);
+            await _context.Enterprises.AddAsync(empresa);
             await _context.SaveChangesAsync();
             return empresa;
         }
 
-        public async Task<List<EmpresaModel>> DeletarEmpresaPeloId(EmpresaModel empresa)
+        public async Task<List<EnterpriseModel>> DeletarEmpresaPeloId(EnterpriseModel empresa)
         {
-            _context.Empresas.Remove(empresa);
+            _context.Enterprises.Remove(empresa);
             await _context.SaveChangesAsync();
             return await ListarEmpresas();
         }
 
         public async Task<bool> empresaJaExiste(EnterpriseCreateDto novaEmpresa)
         {
-            var cnpjJaExiste = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.CNPJ == novaEmpresa.CNPJ);
+            var cnpjJaExiste = await _context.Enterprises.FirstOrDefaultAsync(empresa => empresa.CNPJ == novaEmpresa.CNPJ);
             if (cnpjJaExiste != null) return true;
-            var email = await _context.Empresas.FirstOrDefaultAsync(empresa => empresa.Email == novaEmpresa.Email);
+            var email = await _context.Enterprises.FirstOrDefaultAsync(empresa => empresa.Email == novaEmpresa.Email);
             if (email != null) return true;
             return false;
 
         }
 
-        public async Task<EmpresaModel> GetEmpresaPeloId(int id)
+        public async Task<EnterpriseModel> GetEmpresaPeloId(int id)
         {
-            var empresa = await _context.Empresas.FindAsync(id);
+            var empresa = await _context.Enterprises.FindAsync(id);
             return empresa;
         }
 
-        public async Task<List<EmpresaModel>> ListarEmpresas()
+        public async Task<List<EnterpriseModel>> ListarEmpresas()
         {
-            var lista = await _context.Empresas.ToListAsync();
+            var lista = await _context.Enterprises.ToListAsync();
             return lista;
         }
     }

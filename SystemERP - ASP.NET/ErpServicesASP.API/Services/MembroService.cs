@@ -21,9 +21,9 @@ namespace ErpServicesASP.API.Services
             _empresaRepository = empresaRepository;
             _usuarioRepository = usuarioRepository;
         }
-        public async Task<ResponseModel<MembroModel>> CriarMembro(MemberCreateDto novoMembro)
+        public async Task<ResponseModel<MemberModel>> CriarMembro(MemberCreateDto novoMembro)
         {
-            ResponseModel<MembroModel> response = new ResponseModel<MembroModel>();
+            ResponseModel<MemberModel> response = new ResponseModel<MemberModel>();
                 var jaExiste = await _repository.MembroJaExiste(novoMembro);
                 if (jaExiste)
                 {

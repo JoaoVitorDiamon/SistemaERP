@@ -18,7 +18,7 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém uma lista com todos as empresas.
         /// </summary>
         [HttpGet]
-        public async Task<ActionResult<ResponseModel<List<EmpresaModel>>>> ListarEmpresas()
+        public async Task<ActionResult<ResponseModel<List<EnterpriseModel>>>> ListarEmpresas()
         {
             var response = await _service.ListarEmpresas();
             if (!response.Status) return BadRequest(response);
@@ -28,7 +28,7 @@ namespace ErpServicesASP.API.Controllers
         /// Cria uma empresa.
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<EmpresaModel>>> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
+        public async Task<ActionResult<ResponseModel<EnterpriseModel>>> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
         {
             var response = await _service.CriarEmpresa(novaEmpresa);
             if (!response.Status) return BadRequest(response);
@@ -38,7 +38,7 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém uma empresa com base no id.
         /// </summary>
         [HttpGet("{id}")]
-        public async Task<ActionResult<ResponseModel<EmpresaModel>>> GetEmpresaPeloId(int id)
+        public async Task<ActionResult<ResponseModel<EnterpriseModel>>> GetEmpresaPeloId(int id)
         {
             var response = await _service.GetEmpresaPeloId(id);
             if (response.Mensagem == "Empresa não encontrada") return NotFound(response);

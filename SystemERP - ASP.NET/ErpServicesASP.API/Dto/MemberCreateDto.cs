@@ -9,8 +9,7 @@ namespace ErpServicesASP.API.Dto
         public int Cargo_idCargo { get; set; }
         public string NaturezaMembro { get; set; }
         public string Genero { get; set; }
-        public string Telefone { get; set; }
-        public string CEP { get; set; }
+        public AddressCreateDto Address { get; set; }
         public DateTime DataNascimento { get; set; }
         public string AssociacaoPublica { get; set; }
     }

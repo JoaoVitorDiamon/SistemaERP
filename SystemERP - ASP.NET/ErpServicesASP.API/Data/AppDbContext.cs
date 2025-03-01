@@ -1,4 +1,5 @@
-﻿using ErpServicesASP.API.Model;
+﻿using ErpServicesASP.API.Dto;
+using ErpServicesASP.API.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace ErpServicesASP.API.Data
@@ -9,12 +10,16 @@ namespace ErpServicesASP.API.Data
         {
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
-        public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<UserModel> Users { get; set; }
         public DbSet<CargoModel> Cargos { get; set; }
-        public DbSet<TipoDeEmpresaModel> TipoDeEmpresa { get; set; }
-        public DbSet<EmpresaModel> Empresas { get; set; }
-        public DbSet<MembroModel> Membros { get; set; }
-        public DbSet<ValidacaoEmailModel> ValidacoesDeEmails { get; set; }
-        public DbSet<SetorModel> Setores { get; set; }
+        public DbSet<EnterpriseTypeModel> EnterpriseTypes { get; set; }
+        public DbSet<EnterpriseModel> Enterprises { get; set; }
+        public DbSet<MemberModel> Members { get; set; }
+        //public DbSet<ValidacaoEmailModel> ValidacoesDeEmails { get; set; }
+        public DbSet<SectorModel> Sectors { get; set; }
+        public DbSet<AddressModel> Addresses { get; set; }
+        public DbSet<ThirdPartiesModel> terceiros { get; set; }
+        public DbSet<StorageModel> armazem { get; set; }
+        public DbSet<TelephoneModel> Telephones { get; set; }
     }
 }

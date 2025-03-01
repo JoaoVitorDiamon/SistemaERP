@@ -10,7 +10,7 @@ namespace ErpServicesASP.API.Services
         private readonly IEmpresaRepository _repository;
         public EmpresaService(IEmpresaRepository repository) { _repository = repository; }
 
-        public Task<ResponseModel<EmpresaModel>> AtualizarEmpresa(EmpresaModel empresaAtualizada)
+        public Task<ResponseModel<EnterpriseModel>> AtualizarEmpresa(EnterpriseModel empresaAtualizada)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<EmpresaModel>> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
+        public async Task<ResponseModel<EnterpriseModel>> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
         {
-            ResponseModel<EmpresaModel> response = new ResponseModel<EmpresaModel>();
+            ResponseModel<EnterpriseModel> response = new ResponseModel<EnterpriseModel>();
             try
             {
                 if (await _repository.empresaJaExiste(novaEmpresa))
@@ -75,14 +75,14 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public Task<ResponseModel<List<EmpresaModel>>> DeletarEmpresaPeloId(int id)
+        public Task<ResponseModel<List<EnterpriseModel>>> DeletarEmpresaPeloId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<ResponseModel<EmpresaModel>> GetEmpresaPeloId(int id)
+        public async Task<ResponseModel<EnterpriseModel>> GetEmpresaPeloId(int id)
         {
-            ResponseModel<EmpresaModel> response = new ResponseModel<EmpresaModel>();
+            ResponseModel<EnterpriseModel> response = new ResponseModel<EnterpriseModel>();
             try
             {
                 var empresa = await _repository.GetEmpresaPeloId(id);
@@ -101,9 +101,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<EmpresaModel>>> ListarEmpresas()
+        public async Task<ResponseModel<List<EnterpriseModel>>> ListarEmpresas()
         {
-            ResponseModel<List<EmpresaModel>> response = new ResponseModel<List<EmpresaModel>>();
+            ResponseModel<List<EnterpriseModel>> response = new ResponseModel<List<EnterpriseModel>>();
             try
             {
                 response.Valor = await _repository.ListarEmpresas();

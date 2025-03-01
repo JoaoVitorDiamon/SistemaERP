@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "HYgRNsUvT6ObnvrFIfVpY90oIaX+mcxGPkonq41Pbqo=",
+  "Hash": "iVUrAlzXJ5uFdrnB6M0ejQEKMkxyJIQqSaNQw7zL2lw=",
   "Source": "ErpServicesASP.API",
   "BasePath": "_content/ErpServicesASP.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

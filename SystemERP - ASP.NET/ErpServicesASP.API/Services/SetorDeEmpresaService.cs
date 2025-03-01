@@ -9,9 +9,9 @@ namespace ErpServicesASP.API.Services
     {
         private readonly ISetorEmpresaRepository _repository;
         public SetorDeEmpresaService(ISetorEmpresaRepository repository) { _repository = repository; }
-        public async Task<ResponseModel<SetorModel>> AtualizarSetorEmpresa(SetorModel setor)
+        public async Task<ResponseModel<SectorModel>> AtualizarSetorEmpresa(SectorModel setor)
         {
-            ResponseModel<SetorModel> response = new ResponseModel<SetorModel>();
+            ResponseModel<SectorModel> response = new ResponseModel<SectorModel>();
             try
             {
                 var setorNoBanco = await _repository.GetSetorEmpresaPorID(setor.idSetor);
@@ -32,9 +32,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<SetorModel>> CriarSetorEmpresa(SectorCreateDto novoSetor)
+        public async Task<ResponseModel<SectorModel>> CriarSetorEmpresa(SectorCreateDto novoSetor)
         {
-            ResponseModel<SetorModel> response = new ResponseModel<SetorModel>();
+            ResponseModel<SectorModel> response = new ResponseModel<SectorModel>();
             try
             {
                 var setorExiste = await _repository.SetorEmpresaJaExiste(novoSetor.Nome);
@@ -59,9 +59,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<SetorModel>>> DeletarSetorEmpresa(int id)
+        public async Task<ResponseModel<List<SectorModel>>> DeletarSetorEmpresa(int id)
         {
-            ResponseModel<List<SetorModel>> response = new ResponseModel<List<SetorModel>>();
+            ResponseModel<List<SectorModel>> response = new ResponseModel<List<SectorModel>>();
             try
             {
                 var setor = await _repository.GetSetorEmpresaPorID(id);
@@ -76,9 +76,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<SetorModel>> GetSetorEmpresaPorID(int id)
+        public async Task<ResponseModel<SectorModel>> GetSetorEmpresaPorID(int id)
         {
-            ResponseModel<SetorModel> response = new ResponseModel<SetorModel>();
+            ResponseModel<SectorModel> response = new ResponseModel<SectorModel>();
             try
             {
                 var setor = await _repository.GetSetorEmpresaPorID(id);
@@ -97,9 +97,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<SetorModel>>> ListarSetoresEmpresa()
+        public async Task<ResponseModel<List<SectorModel>>> ListarSetoresEmpresa()
         {
-            ResponseModel<List<SetorModel>> response = new ResponseModel<List<SetorModel>>();
+            ResponseModel<List<SectorModel>> response = new ResponseModel<List<SectorModel>>();
             try
             {
                 var lista = await _repository.ListarSetoresEmpresa();

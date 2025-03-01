@@ -9,9 +9,9 @@ namespace ErpServicesASP.API.Services
     {
         private readonly ITipoDeEmpresaRepository _repository;
         public TipoDeEmpresaService(ITipoDeEmpresaRepository repository) { _repository = repository; }
-        public async Task<ResponseModel<TipoDeEmpresaModel>> AtualizarTipoDeEmpresa(TipoDeEmpresaModel tipoDeEmpresa)
+        public async Task<ResponseModel<EnterpriseTypeModel>> AtualizarTipoDeEmpresa(EnterpriseTypeModel tipoDeEmpresa)
         {
-            ResponseModel<TipoDeEmpresaModel> response = new ResponseModel<TipoDeEmpresaModel>();
+            ResponseModel<EnterpriseTypeModel> response = new ResponseModel<EnterpriseTypeModel>();
             try
             {
                 var tipoDeEmpresaNoBanco = await _repository.GetTipoDeEmpresaPorID(tipoDeEmpresa.idTipoDeEmpresa);
@@ -32,9 +32,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<TipoDeEmpresaModel>> CriarTipoDeEmpresa(EnterpriseTypeCreateDto novoTipoDeEmpresa)
+        public async Task<ResponseModel<EnterpriseTypeModel>> CriarTipoDeEmpresa(EnterpriseTypeCreateDto novoTipoDeEmpresa)
         {
-            ResponseModel<TipoDeEmpresaModel> response = new ResponseModel<TipoDeEmpresaModel>();
+            ResponseModel<EnterpriseTypeModel> response = new ResponseModel<EnterpriseTypeModel>();
             try
             {
                 var tipoDeEmpresaExiste = await _repository.tipoJaExiste(novoTipoDeEmpresa.Name);
@@ -59,9 +59,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<TipoDeEmpresaModel>>> DeletarTipoDeEmpresa(int id)
+        public async Task<ResponseModel<List<EnterpriseTypeModel>>> DeletarTipoDeEmpresa(int id)
         {
-            ResponseModel<List<TipoDeEmpresaModel>> response = new ResponseModel<List<TipoDeEmpresaModel>>();
+            ResponseModel<List<EnterpriseTypeModel>> response = new ResponseModel<List<EnterpriseTypeModel>>();
             try
             {
                 var tipoDeEmpresa = await _repository.GetTipoDeEmpresaPorID(id);
@@ -76,9 +76,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<TipoDeEmpresaModel>> GetTipoDeEmpresaPorID(int id)
+        public async Task<ResponseModel<EnterpriseTypeModel>> GetTipoDeEmpresaPorID(int id)
         {
-            ResponseModel<TipoDeEmpresaModel> response = new ResponseModel<TipoDeEmpresaModel>();
+            ResponseModel<EnterpriseTypeModel> response = new ResponseModel<EnterpriseTypeModel>();
             try
             {
                 var tipoDeEmpresa = await _repository.GetTipoDeEmpresaPorID(id);
@@ -97,9 +97,9 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<TipoDeEmpresaModel>>> ListarTiposDeEmpresa()
+        public async Task<ResponseModel<List<EnterpriseTypeModel>>> ListarTiposDeEmpresa()
         {
-            ResponseModel<List<TipoDeEmpresaModel>> response = new ResponseModel<List<TipoDeEmpresaModel>>();
+            ResponseModel<List<EnterpriseTypeModel>> response = new ResponseModel<List<EnterpriseTypeModel>>();
             try
             {
                 var lista = await _repository.ListarTiposDeEmpresa();

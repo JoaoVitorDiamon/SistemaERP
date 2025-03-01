@@ -27,7 +27,7 @@ namespace ErpServicesASP.API.Controllers
             return Ok(response);
         }
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<MembroModel>>> CriarMembro(MemberCreateDto novoMembro)
+        public async Task<ActionResult<ResponseModel<MemberModel>>> CriarMembro(MemberCreateDto novoMembro)
         {
             var response = await _service.CriarMembro(novoMembro);
             if (response.Mensagem != null) 

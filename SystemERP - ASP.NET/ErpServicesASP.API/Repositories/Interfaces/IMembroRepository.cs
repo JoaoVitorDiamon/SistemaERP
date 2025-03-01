@@ -6,7 +6,7 @@ namespace ErpServicesASP.API.Repositories.Interfaces
     public interface IMembroRepository
     {
         Task<MemberGetIdDto> GetMembroPorId(int membroId);
-        Task<MembroModel> CriarMembro(MemberCreateDto novoMembro, UsuarioModel usuario, CargoModel cargo, EmpresaModel empresa);
+        Task<MemberModel> CriarMembro(MemberCreateDto novoMembro, UserModel usuario, CargoModel cargo, EnterpriseModel empresa);
         Task<List<MemberGetIdDto>> ListarMembros();
         Task<bool> MembroJaExiste(MemberCreateDto novoMembro);
     }

@@ -15,26 +15,24 @@ namespace ErpServicesASP.API.Repositories
             _context = context;
         }
 
-        public async Task<MembroModel> CriarMembro(MemberCreateDto novoMembro, UsuarioModel usuario, CargoModel cargo, EmpresaModel empresa)
+        public async Task<MemberModel> CriarMembro(MemberCreateDto novoMembro, UserModel usuario, CargoModel cargo, EnterpriseModel empresa)
         {
-            MembroModel membro = new MembroModel();
+            MemberModel membro = new MemberModel();
             membro.Empresa = empresa;
             membro.Usuario = usuario;
             membro.Cargo = cargo;
             membro.NaturezaMembro = novoMembro.NaturezaMembro;
             membro.Genero = novoMembro.Genero;
-            membro.Telefone = novoMembro.Telefone;
-            membro.CEP = novoMembro.CEP;
             membro.DataNascimento = novoMembro.DataNascimento;
             membro.AssociacaoPublica = novoMembro.AssociacaoPublica;
-            await _context.Membros.AddAsync(membro);
+            await _context.Members.AddAsync(membro);
             await _context.SaveChangesAsync();
             return membro;
         }
 
         public async Task<MemberGetIdDto> GetMembroPorId(int membroId)
         {
-            var membro = await _context.Membros
+            var membro = await _context.Members
                 .Include(mem => mem.Usuario)
                 .Include(mem => mem.Empresa)
                 .Include(mem => mem.Cargo)
@@ -42,7 +40,7 @@ namespace ErpServicesASP.API.Repositories
 
             var membroGet = new MemberGetIdDto() { 
                 Cargo_idCargo = membro.Cargo.idCargo,
-                Empresa_idEmpresa = membro.Empresa.idEmpresa,
+                Empresa_idEmpresa = membro.Empresa.IdEmpresa,
                 Usuario_idUsuario = membro.Usuario.Id,
                 idMembro = membro.idMembro,
                 NaturezaMembro = membro.NaturezaMembro
@@ -52,18 +50,18 @@ namespace ErpServicesASP.API.Repositories
 
         public async Task<List<MemberGetIdDto>> ListarMembros()
         {
-            var lista = await _context.Membros
+            var lista = await _context.Members
                 .Include(mem => mem.Cargo)
                 .Include(mem => mem.Empresa)
                 .Include(mem => mem.Usuario)
                 .ToListAsync();
             var listaMembroGet = new List<MemberGetIdDto>();
-            foreach (MembroModel membro in lista)
+            foreach (MemberModel membro in lista)
             {
                 var membroGet = new MemberGetIdDto()
                 {
                     Cargo_idCargo = membro.Cargo.idCargo,
-                    Empresa_idEmpresa = membro.Empresa.idEmpresa,
+                    Empresa_idEmpresa = membro.Empresa.IdEmpresa,
                     Usuario_idUsuario = membro.Usuario.Id,
                     idMembro = membro.idMembro,
                     NaturezaMembro = membro.NaturezaMembro
@@ -75,7 +73,7 @@ namespace ErpServicesASP.API.Repositories
 
         public async Task<bool> MembroJaExiste(MemberCreateDto novoMembro)
         {
-            var idExiste = await _context.Membros.FirstOrDefaultAsync(membro => membro.Usuario.Id == novoMembro.Usuario_idUsuario);
+            var idExiste = await _context.Members.FirstOrDefaultAsync(membro => membro.Usuario.Id == novoMembro.Usuario_idUsuario);
             if (idExiste == null) return false;
             return true;
         }

@@ -5,11 +5,11 @@ namespace ErpServicesASP.API.Repositories.Interfaces
 {
     public interface IUsuarioRepository
     {
-        Task<UsuarioModel?> CriarUsuario(UsuarioCreateDto novoUsuario);
-        Task<List<UsuarioModel>> ListarUsuarios();
-        Task<UsuarioModel?> GetUsuarioPorId(int id);
+        Task<UserModel?> CriarUsuario(UsuarioCreateDto novoUsuario);
+        Task<List<UserModel>> ListarUsuarios();
+        Task<UserModel?> GetUsuarioPorId(int id);
         Task<bool> UsuarioJaExiste(UsuarioCreateDto novoUsuario);
-        Task<List<UsuarioModel>> DeletarUsuario(UsuarioModel usuario);
+        Task<List<UserModel>> DeletarUsuario(UserModel usuario);
         Task<bool> VerificarExistenciaCPF(string cpf);
         Task<bool> VerificarExistenciaEmail(string email);
     }

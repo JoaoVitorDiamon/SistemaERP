@@ -50,13 +50,13 @@ namespace ErpServicesASP.API.Test
                 novoUsuario.DataNascimento,
                 novoUsuario.AssociacaoPublica
                 );
-            var resultadoEsperado = new ResponseModel<UsuarioModel>() { Valor = novoUsuarioModel, Status = true };
+            var resultadoEsperado = new ResponseModel<UserModel>() { Valor = novoUsuarioModel, Status = true };
             _usuarioServiceyMock.Setup(service => service.CriarUsuario(novoUsuario)).ReturnsAsync(resultadoEsperado);
 
             var result = await _controller.CriarUsuario(novoUsuario);
 
             var okResult = Assert.IsType<OkObjectResult>(result.Result);
-            var actualValue = Assert.IsType<ResponseModel<UsuarioModel>>(okResult.Value);
+            var actualValue = Assert.IsType<ResponseModel<UserModel>>(okResult.Value);
             Assert.Equal(resultadoEsperado.Status, actualValue.Status);
             Assert.Equal(Newtonsoft.Json.JsonConvert.SerializeObject(resultadoEsperado.Valor),
                          Newtonsoft.Json.JsonConvert.SerializeObject(actualValue.Valor));

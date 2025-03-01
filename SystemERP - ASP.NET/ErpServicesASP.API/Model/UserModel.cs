@@ -2,7 +2,7 @@
 
 namespace ErpServicesASP.API.Model
 {
-    public class UsuarioModel
+    public class UserModel
     {
         [Key]
         public int Id { get; set; }
@@ -11,7 +11,7 @@ namespace ErpServicesASP.API.Model
         public string Email { get; set; }
         public string Senha { get; set; }
         public DateTime DataCriacao { get; set; }
-        public UsuarioModel(string name, string CPF, string email, string senha)
+        public UserModel(string name, string CPF, string email, string senha)
         {
             Name = name;
             this.CPF = CPF;

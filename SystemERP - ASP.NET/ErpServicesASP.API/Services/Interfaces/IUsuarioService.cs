@@ -5,10 +5,10 @@ namespace ErpServicesASP.API.Services.Interfaces
 {
     public interface IUsuarioService
     {
-        Task<ResponseModel<UsuarioModel>> CriarUsuario(UsuarioCreateDto novoUsuario);
-        Task<ResponseModel<List<UsuarioModel>>> ListarUsuarios();
-        Task<ResponseModel<UsuarioModel>> GetUsuarioPorId(int id);
-        Task<ResponseModel<List<UsuarioModel>>> DeletarUsuarioPorId(int id);
+        Task<ResponseModel<UserModel>> CriarUsuario(UsuarioCreateDto novoUsuario);
+        Task<ResponseModel<List<UserModel>>> ListarUsuarios();
+        Task<ResponseModel<UserModel>> GetUsuarioPorId(int id);
+        Task<ResponseModel<List<UserModel>>> DeletarUsuarioPorId(int id);
         Task<ResponseModel<string>> VerificarExistenciaCPF(string cpf);
         Task<ResponseModel<string>> VerificarExistenciaEmail(string cpf);
     }
