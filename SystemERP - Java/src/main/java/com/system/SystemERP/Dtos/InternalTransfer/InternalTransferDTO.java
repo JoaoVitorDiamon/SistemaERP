@@ -5,17 +5,25 @@ import com.system.SystemERP.Entity.InternalTransfer.InternalTransfer;
 import com.system.SystemERP.Entity.TypesPayments.TypesPayments;
 import com.system.SystemERP.Services.AccountBank.AccountBankServices;
 import com.system.SystemERP.Services.TypesPayments.TypesPaymentsServices;
+import jakarta.persistence.EntityNotFoundException;
 
 import java.util.Date;
 
-public record InternalTransferDTO(Integer IdAccountPayment, Integer IdAccountReceiver, Integer IdPaymentType, Date DatePayment,String Description, Double Value) {
+public record InternalTransferDTO(
+        Integer IdAccountPayment,
+        Integer IdAccountReceiver,
+        Integer IdPaymentType,
+        Date DatePayment,
+        String Description,
+        Double Value) {
 
 
     public InternalTransfer toEntity(AccountBankServices accountBankServices, TypesPaymentsServices typesPaymentsServices) {
+
         return new InternalTransfer(
                 null,
-                fetchAccountBankByID(IdAccountPayment, accountBankServices),
-                fetchAccountBankByID(IdAccountReceiver, accountBankServices),
+                fetchAccountBankById(IdAccountPayment, accountBankServices),
+                fetchAccountBankById(IdAccountReceiver, accountBankServices),
                 fetchTypesPaymentsByID(IdPaymentType,typesPaymentsServices),
                 DatePayment,
                 Description,
@@ -23,13 +31,13 @@ public record InternalTransferDTO(Integer IdAccountPayment, Integer IdAccountRec
                 );
     }
 
-    private AccountBank fetchAccountBankByID(Integer Id, AccountBankServices accountBankServices){
-        var accountBank = accountBankServices.findByID(Id);
-        return accountBank.get();
+    private AccountBank fetchAccountBankById(Integer accountBankId, AccountBankServices accountBankServices) {
+        var accountBank = accountBankServices.findByID(accountBankId);
+        return accountBank.orElseThrow(() -> new EntityNotFoundException("Conta Bancaria não encontrada"));
     }
 
     private TypesPayments fetchTypesPaymentsByID(Integer Id, TypesPaymentsServices typesPaymentsServices){
         var typesPayments = typesPaymentsServices.findByID(Id);
-        return typesPayments.get();
+        return typesPayments.orElseThrow(() -> new EntityNotFoundException("Tipo nao encontrado"));
     }
 }

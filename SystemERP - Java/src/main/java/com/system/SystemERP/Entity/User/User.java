@@ -15,14 +15,11 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "\"IDUser\"")
+    @Column(name = "\"IdUser\"")
     private int IDUser;
 
     @Column(name = "\"Name\"", length = 255)
     private String Name;
-
-    @Column(name = "\"ZipCode\"", length = 255)
-    private String ZipCode;
 
     @Column(name = "\"Email\"", length = 255)
     private String Email;
@@ -33,5 +30,8 @@ public class User {
 
     @Column(name = "\"Password\"")
     private String Password;
+
+    @Column(name = "\"CPF\"")
+    private String CPF;
 
 }
