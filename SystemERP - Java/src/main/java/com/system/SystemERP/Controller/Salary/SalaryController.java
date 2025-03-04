@@ -19,7 +19,7 @@ public class SalaryController {
 
 
     @PostMapping
-    public ResponseEntity<Salary> creteSalary(@RequestBody SalaryDTO salaryDTO) {
+    public ResponseEntity<String> creteSalary(@RequestBody SalaryDTO salaryDTO) {
         var salaryID = salaryServices.createSalary(salaryDTO);
         return ResponseEntity.created(URI.create("/salary" + salaryID.toString())).build();
     }

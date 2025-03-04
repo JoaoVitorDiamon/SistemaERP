@@ -20,7 +20,7 @@ public class InternalTransferController {
 
 
     @PostMapping
-    public ResponseEntity<InternalTransfer> createInternalTransfer(@RequestBody InternalTransferDTO internalTransferDTO) {
+    public ResponseEntity<String> createInternalTransfer(@RequestBody InternalTransferDTO internalTransferDTO) {
         var saved = internalTransferServices.createInternalTransfer(internalTransferDTO);
         return ResponseEntity.created(URI.create("/internalTransfer" + saved.toString()))
                 .build();
