@@ -4,9 +4,11 @@ import com.system.SystemERP.Entity.Adress.Adress;
 import com.system.SystemERP.Entity.Enterprise.Enterprise;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
 @Table(name = "\"Storages\"")
 public class Storage {
 
@@ -41,7 +43,4 @@ public class Storage {
         this.Enterprise = Enterprise;
     }
 
-    public Storage() {
-
-    }
 }

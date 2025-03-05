@@ -12,23 +12,22 @@ import com.system.SystemERP.Services.Enterprise.EnterpriseServices;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.Data;
 
-@Data
-public class ThirdPartiesDTO {
-    private String nome;
-    private String nomeEFantasia;
-    private Integer idclientType;
-    private boolean fornecedor;
-    private boolean estadoAtividade;
-    private Integer idAdress;
-    private String email;
-    private boolean impostoSobVenda;
-    private boolean segundoImposto;
-    private double capital;
-    private Integer idCoin;
-    private Integer quantidadeColaboradores;
-    private byte[] logotipo;
-    private Integer idEnterprise;
-
+public record ThirdPartiesDTO (
+    String nome,
+    String nomeEFantasia,
+    Integer idclientType,
+    boolean fornecedor,
+    boolean estadoAtividade,
+    Integer idAdress,
+    String email,
+    boolean impostoSobVenda,
+    boolean segundoImposto,
+    double capital,
+    Integer idCoin,
+    Integer quantidadeColaboradores,
+    byte[] logotipo,
+    Integer idEnterprise
+){
     public ThirdParty toEntity(ClientTypeServices clientTypeServices, CoinServices coinServices,
                                EnterpriseServices enterpriseServices, AddresServices addresServices) {
         return new ThirdParty(

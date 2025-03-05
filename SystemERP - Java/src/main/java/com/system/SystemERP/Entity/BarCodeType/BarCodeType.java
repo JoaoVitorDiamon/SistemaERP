@@ -17,4 +17,9 @@ public class BarCodeType {
 
     @Column(name = "\"Name\"")
     private String Name;
+
+    public BarCodeType(Integer idBarCodeType, String name) {
+        IdBarCodeType = idBarCodeType;
+        Name = name;
+    }
 }
