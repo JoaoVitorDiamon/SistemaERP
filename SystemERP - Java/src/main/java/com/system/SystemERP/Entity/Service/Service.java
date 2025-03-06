@@ -15,7 +15,6 @@ import java.time.LocalTime;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "\"Services\"")
 public class Service {
 
@@ -43,9 +42,6 @@ public class Service {
     @OneToOne
     @JoinColumn(name = "\"IdBarCodeType\"", foreignKey = @ForeignKey(name = "\"FK_IdBarCodeType_Service\""))
     private BarCodeType BarCodeType;
-
-    @Column(name = "\"Barcode\"")
-    private String Barcode;
 
     @Column(name = "\"Description\"")
     private String Description;
@@ -91,4 +87,27 @@ public class Service {
     @ManyToOne
     @JoinColumn(name = "\"IdAddress\"", foreignKey = @ForeignKey(name = "\"FK_IdAddress_Service\""))
     private Adress Adress;
+
+    public Service(Integer idService, String productRef, String label, boolean sale, boolean purchase, com.system.SystemERP.Entity.SerialNumberControl.SerialNumberControl serialNumberControl, com.system.SystemERP.Entity.BarCodeType.BarCodeType barCodeType, String description, String notes, LocalTime duration, double price, double minimumPrice, int ICMS, double taxCMSP, AccountingCode salesCode, AccountingCode exportCode, AccountingCode importCode, AccountingCode purchaseCode, com.system.SystemERP.Entity.Enterprise.Enterprise enterprise, com.system.SystemERP.Entity.Adress.Adress adress) {
+        IdService = idService;
+        ProductRef = productRef;
+        Label = label;
+        Sale = sale;
+        Purchase = purchase;
+        SerialNumberControl = serialNumberControl;
+        BarCodeType = barCodeType;
+        Description = description;
+        Notes = notes;
+        Duration = duration;
+        Price = price;
+        MinimumPrice = minimumPrice;
+        this.ICMS = ICMS;
+        TaxCMSP = taxCMSP;
+        SalesCode = salesCode;
+        ExportCode = exportCode;
+        ImportCode = importCode;
+        PurchaseCode = purchaseCode;
+        Enterprise = enterprise;
+        Adress = adress;
+    }
 }
