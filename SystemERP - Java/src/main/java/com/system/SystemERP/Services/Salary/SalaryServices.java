@@ -53,4 +53,8 @@ public class SalaryServices {
        }
     }
 
+    public List<Salary> findByIdEnterprise(Integer Id){
+        return salaryRepository.findByMembers_Enterprise_IdEnterprise(Id);
+    }
+
 }

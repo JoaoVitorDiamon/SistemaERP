@@ -19,7 +19,7 @@ public class SalaryController {
 
 
     @PostMapping
-    public ResponseEntity<Salary> creteSalary(@RequestBody SalaryDTO salaryDTO) {
+    public ResponseEntity<String> creteSalary(@RequestBody SalaryDTO salaryDTO) {
         var salaryID = salaryServices.createSalary(salaryDTO);
         return ResponseEntity.created(URI.create("/salary" + salaryID.toString())).build();
     }
@@ -31,6 +31,12 @@ public class SalaryController {
         return salary.isPresent()
                 ? ResponseEntity.ok(salary.get())
                 : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/enterprise/{IdEnterprise}")
+    public ResponseEntity<List<Salary>> findByIdEnterprise(@PathVariable Integer IdEnterprise) {
+        var salary = salaryServices.findByIdEnterprise(IdEnterprise);
+        return ResponseEntity.ok(salary);
     }
 
 

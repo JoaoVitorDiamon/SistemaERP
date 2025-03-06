@@ -24,7 +24,7 @@ public class ThirdParty {
     private String TradeName;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdClientType\"")
+    @JoinColumn(name = "\"IdClientType\"", foreignKey = @ForeignKey(name = "\"FK_IdClientType_ThirdParty\""))
     private ClientType ClientType;
 
     @Column(name = "\"Supplier\"")
@@ -34,7 +34,7 @@ public class ThirdParty {
     private boolean ActiveState;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdAddress\"")
+    @JoinColumn(name = "\"IdAddress\"", foreignKey = @ForeignKey(name = "\"FK_IdAddress_ThirdParty\""))
     private Adress Address;
 
     @Column(name = "\"Email\"")
@@ -50,7 +50,7 @@ public class ThirdParty {
     private double Capital;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdCoin\"")
+    @JoinColumn(name = "\"IdCoin\"", foreignKey = @ForeignKey(name = "\"FK_IdCoin_ThirdParty\""))
     private Coin Coin;
 
     @Column(name = "\"EmployeeCount\"")
@@ -61,7 +61,7 @@ public class ThirdParty {
     private byte[] Logo;
 
     @ManyToOne
-    @JoinColumn(name = "\"EnterpriseId\"")
+    @JoinColumn(name = "\"EnterpriseId\"", foreignKey = @ForeignKey(name = "\"FK_EnterpriseId_ThirdParty\""))
     private Enterprise Enterprise;
 
     public ThirdParty() {

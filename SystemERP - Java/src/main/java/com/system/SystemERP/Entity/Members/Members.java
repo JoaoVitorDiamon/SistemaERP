@@ -17,15 +17,15 @@ public class Members {
     private Integer IdMembers;
 
     @ManyToOne
-    @JoinColumn(name = "IdEnterprise")
-    private Enterprise Enterprise;
+    @JoinColumn(name = "IdEnterprise", foreignKey = @ForeignKey(name = "\"FK_IdEnterprise_Members\""))
+    private Enterprise enterprise;
 
     @ManyToOne
-    @JoinColumn(name = "IdUser")
+    @JoinColumn(name = "IdUser", foreignKey = @ForeignKey(name = "\"FK_IdUser_Members\""))
     private User User;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdPosition\"")
+    @JoinColumn(name = "\"IdPosition\"", foreignKey = @ForeignKey(name = "\"FK_IdPosition_Members\""))
     private Position Position;
 
     @Column(name = "\"NatureMember\"")
