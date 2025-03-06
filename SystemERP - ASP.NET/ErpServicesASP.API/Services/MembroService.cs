@@ -21,10 +21,10 @@ namespace ErpServicesASP.API.Services
             _empresaRepository = empresaRepository;
             _usuarioRepository = usuarioRepository;
         }
-        public async Task<ResponseModel<MemberModel>> CriarMembro(MemberCreateDto novoMembro)
+        public async Task<ResponseModel<MemberModel>> CreateMember(MemberCreateDto novoMembro)
         {
             ResponseModel<MemberModel> response = new ResponseModel<MemberModel>();
-                var jaExiste = await _repository.MembroJaExiste(novoMembro);
+                var jaExiste = await _repository.CheckExistenceMember(novoMembro);
                 if (jaExiste)
                 {
                     response.setErro("Usuário já é membro");
@@ -36,28 +36,28 @@ namespace ErpServicesASP.API.Services
                     response.setErro("Usuário não encontrado");
                     return response;
                 }
-                var cargo = await _cargoRepository.GetCargoPorId(novoMembro.Cargo_idCargo);
+                var cargo = await _cargoRepository.GetResponsePositionById(novoMembro.Cargo_idCargo);
                 if (cargo.Valor == null)
                 {
                     response.setErro("Cargo não encontrado");
                     return response;
                 }
-                var empresa = await _empresaRepository.GetEmpresaPeloId(novoMembro.Empresa_idEmpresa);
+                var empresa = await _empresaRepository.GetEnterpriseById(novoMembro.Empresa_idEmpresa);
                 if (empresa == null)
                 {
                     response.setErro("Empresa não encontrado");
                     return response;
                 }
-                response.Valor = await _repository.CriarMembro(novoMembro, usuario, cargo.Valor, empresa);
+                response.Valor = await _repository.CreateMember(novoMembro, usuario, cargo.Valor, empresa);
                 return response;
         }
 
-        public async Task<ResponseModel<MemberGetIdDto>> GetMembroPorId(int membroId)
+        public async Task<ResponseModel<MemberGetIdDto>> GetMemberById(int membroId)
         {
             ResponseModel<MemberGetIdDto> response = new ResponseModel<MemberGetIdDto>();
             try
             {
-                var membro = await _repository.GetMembroPorId(membroId);
+                var membro = await _repository.GetMemberById(membroId);
                 if(membro == null)
                 {
                     response.setErro("Membro não encontrado");
@@ -73,12 +73,12 @@ namespace ErpServicesASP.API.Services
             }
         }
 
-        public async Task<ResponseModel<List<MemberGetIdDto>>> ListarMembros()
+        public async Task<ResponseModel<List<MemberGetIdDto>>> ListMembers()
         {
             ResponseModel<List<MemberGetIdDto>> response = new ResponseModel<List<MemberGetIdDto>>();
             try
             {
-                var lista = await _repository.ListarMembros();
+                var lista = await _repository.ListMembers();
                 response.Valor = lista;
                 return response;
             }

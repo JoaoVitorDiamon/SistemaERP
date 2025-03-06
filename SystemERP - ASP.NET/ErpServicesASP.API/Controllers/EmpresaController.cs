@@ -18,9 +18,9 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém uma lista com todos as empresas.
         /// </summary>
         [HttpGet]
-        public async Task<ActionResult<ResponseModel<List<EnterpriseModel>>>> ListarEmpresas()
+        public async Task<ActionResult<ResponseModel<List<EnterpriseModel>>>> ListEnterprises()
         {
-            var response = await _service.ListarEmpresas();
+            var response = await _service.ListEnterprises();
             if (!response.Status) return BadRequest(response);
             return Ok(response);
         }
@@ -28,9 +28,9 @@ namespace ErpServicesASP.API.Controllers
         /// Cria uma empresa.
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult<ResponseModel<EnterpriseModel>>> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
+        public async Task<ActionResult<ResponseModel<EnterpriseModel>>> CreateEnterprise(EnterpriseCreateDto novaEmpresa)
         {
-            var response = await _service.CriarEmpresa(novaEmpresa);
+            var response = await _service.CreateEnterprise(novaEmpresa);
             if (!response.Status) return BadRequest(response);
             return Ok(response);
         }
@@ -38,15 +38,15 @@ namespace ErpServicesASP.API.Controllers
         /// Obtém uma empresa com base no id.
         /// </summary>
         [HttpGet("{id}")]
-        public async Task<ActionResult<ResponseModel<EnterpriseModel>>> GetEmpresaPeloId(int id)
+        public async Task<ActionResult<ResponseModel<EnterpriseModel>>> GetEnterpriseById(int id)
         {
-            var response = await _service.GetEmpresaPeloId(id);
+            var response = await _service.GetEnterpriseById(id);
             if (response.Mensagem == "Empresa não encontrada") return NotFound(response);
             else if (!response.Status) return BadRequest(response);
             return Ok(response);
         }
         [HttpGet("cep/{cep}")]
-        public async Task<ActionResult> getCep(string cep)
+        public async Task<ActionResult> GetCep(string cep)
         {
             if(cep.Contains("-")){
                 var cepe = cep.Split("-");
@@ -59,16 +59,16 @@ namespace ErpServicesASP.API.Controllers
             }
         }
         [HttpGet("CNPJ/{cnpj}")]
-        public async Task<ActionResult<ResponseModel<string>>> CnpjJaUsado(string cnpj)
+        public async Task<ActionResult<ResponseModel<string>>> CheckIfCnpjUsed(string cnpj)
         {
-            var response = await _service.CnpjJaUsado(cnpj);
+            var response = await _service.CheckIfCnpjUsed(cnpj);
             if (!response.Status) return BadRequest(response);
             return Ok(response);
         }
         [HttpGet("Email/{email}")]
-        public async Task<ActionResult<ResponseModel<string>>> EmailJaUsado(string email)
+        public async Task<ActionResult<ResponseModel<string>>> CheckIfEmailUsed(string email)
         {
-            var response = await _service.EmailJaUsado(email);
+            var response = await _service.CheckIfEmailUsed(email);
             if (!response.Status) return BadRequest(response);
             return Ok(response);
         }

@@ -5,8 +5,8 @@ namespace ErpServicesASP.API.Services.Interfaces
 {
     public interface IMembroService
     {
-        Task<ResponseModel<MemberGetIdDto>> GetMembroPorId(int membroId);
-        Task<ResponseModel<MemberModel>> CriarMembro(MemberCreateDto novoMembro);
-        Task<ResponseModel<List<MemberGetIdDto>>> ListarMembros();
+        Task<ResponseModel<MemberGetIdDto>> GetMemberById(int membroId);
+        Task<ResponseModel<MemberModel>> CreateMember(MemberCreateDto novoMembro);
+        Task<ResponseModel<List<MemberGetIdDto>>> ListMembers();
     }
 }

@@ -10,25 +10,25 @@ namespace ErpServicesASP.API.Repositories
     {
         private readonly AppDbContext _context;
         public EmpresaRepository(AppDbContext context) { _context = context; }
-        public Task<EnterpriseModel> AtualizarEmpresa(EnterpriseModel empresaAtualizada)
+        public Task<EnterpriseModel> UpdateEnterprise(EnterpriseModel empresaAtualizada)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<bool> CnpjJaUsado(string cnpj)
+        public async Task<bool> CheckIfCnpjUsed(string cnpj)
         {
             var cnpjJaExiste = await _context.Enterprise.FirstOrDefaultAsync(empresa => empresa.CNPJ == cnpj);
             if (cnpjJaExiste != null) return true;
             return false;
         }
-        public async Task<bool> EmailJaUsado(string email)
+        public async Task<bool> CheckIfEmailUsed(string email)
         {
             var emailUsado = await _context.Enterprise.FirstOrDefaultAsync(empresa => empresa.Email == email);
             if (emailUsado != null) return true;
             return false;
         }
 
-        public async Task<EnterpriseModel> CriarEmpresa(EnterpriseCreateDto novaEmpresa)
+        public async Task<EnterpriseModel> CreateEnterprise(EnterpriseCreateDto novaEmpresa)
         {
             var owner = await _context.Users.FindAsync(novaEmpresa.IdOwner);
             var tipoEmpresa = await _context.EnterpriseType.FindAsync(novaEmpresa.IdEnterpriseType);
@@ -51,14 +51,14 @@ namespace ErpServicesASP.API.Repositories
             return empresa;
         }
 
-        public async Task<List<EnterpriseModel>> DeletarEmpresaPeloId(EnterpriseModel empresa)
+        public async Task<List<EnterpriseModel>> DeleteEnterpriseByID(EnterpriseModel empresa)
         {
             _context.Enterprise.Remove(empresa);
             await _context.SaveChangesAsync();
-            return await ListarEmpresas();
+            return await ListEnterprises();
         }
 
-        public async Task<bool> empresaJaExiste(EnterpriseCreateDto novaEmpresa)
+        public async Task<bool> CheckExistenceEnterprise(EnterpriseCreateDto novaEmpresa)
         {
             var cnpjJaExiste = await _context.Enterprise.FirstOrDefaultAsync(empresa => empresa.CNPJ == novaEmpresa.CNPJ);
             if (cnpjJaExiste != null) return true;
@@ -68,13 +68,13 @@ namespace ErpServicesASP.API.Repositories
 
         }
 
-        public async Task<EnterpriseModel> GetEmpresaPeloId(int id)
+        public async Task<EnterpriseModel> GetEnterpriseById(int id)
         {
             var empresa = await _context.Enterprise.FindAsync(id);
             return empresa;
         }
 
-        public async Task<List<EnterpriseModel>> ListarEmpresas()
+        public async Task<List<EnterpriseModel>> ListEnterprises()
         {
             var lista = await _context.Enterprise.ToListAsync();
             return lista;

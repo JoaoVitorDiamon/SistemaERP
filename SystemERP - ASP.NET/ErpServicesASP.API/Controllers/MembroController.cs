@@ -15,13 +15,13 @@ namespace ErpServicesASP.API.Controllers
         [HttpGet]
         public async Task<ActionResult<ResponseModel<List<MemberGetIdDto>>>> ListarMembros()
         {
-            var lista = await _service.ListarMembros();
+            var lista = await _service.ListMembers();
             return Ok(lista);
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<ResponseModel<MemberGetIdDto>>> GetMembroPorId(int id)
         {
-            var response = await _service.GetMembroPorId(id);
+            var response = await _service.GetMemberById(id);
             if (response.Mensagem == "Membro não encontrado") return NotFound(response);
             else if (!response.Status) return BadRequest(response);
             return Ok(response);
@@ -29,7 +29,7 @@ namespace ErpServicesASP.API.Controllers
         [HttpPost]
         public async Task<ActionResult<ResponseModel<MemberModel>>> CriarMembro(MemberCreateDto novoMembro)
         {
-            var response = await _service.CriarMembro(novoMembro);
+            var response = await _service.CreateMember(novoMembro);
             if (response.Mensagem != null) 
             {
                 if(response.Mensagem.Contains("não")) return NotFound(response);

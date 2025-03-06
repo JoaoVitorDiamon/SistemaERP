@@ -13,12 +13,12 @@ namespace ErpServicesASP.API.Repositories
         private readonly AppDbContext _context;
         public RoleRepository(AppDbContext context) { _context = context; }
 
-        public async Task<ResponseModel<PositionModel?>> AtualizarCargo(PositionModel atualizacaoCargo)
+        public async Task<ResponseModel<PositionModel?>> UpdatePosition(PositionModel atualizacaoCargo)
         {
             ResponseModel<PositionModel?> response = new ResponseModel<PositionModel?>();
             try
             {
-                var cargo = await BuscarCargoPorId(atualizacaoCargo.IdPosition);
+                var cargo = await GetPositionById(atualizacaoCargo.IdPosition);
                 if (cargo == null) 
                 {
                     response.Mensagem = "Não foi possivel localizar esse cargo";
@@ -39,7 +39,7 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<PositionModel>> CriarCargo(CargoCreateDto novoCargo)
+        public async Task<ResponseModel<PositionModel>> CreatePosition(CargoCreateDto novoCargo)
         {
             ResponseModel<PositionModel> response = new ResponseModel<PositionModel>();
             try
@@ -66,12 +66,12 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<List<PositionModel>>> DeletarCargoPorId(int id)
+        public async Task<ResponseModel<List<PositionModel>>> DeletePositionById(int id)
         {
             ResponseModel<List<PositionModel>> response = new ResponseModel<List<PositionModel>>();
             try
             {
-                var cargo = await BuscarCargoPorId(id);
+                var cargo = await GetPositionById(id);
                 if(cargo == null)
                 {
                     response.Mensagem = "Cargo não foi encontrado";
@@ -91,12 +91,12 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<PositionModel>> GetCargoPorId(int id)
+        public async Task<ResponseModel<PositionModel>> GetResponsePositionById(int id)
         {
             ResponseModel<PositionModel> response = new ResponseModel<PositionModel>();
             try
             {
-                var cargo = await BuscarCargoPorId(id);
+                var cargo = await GetPositionById(id);
                 if (cargo == null)
                 {
                     response.Mensagem = "Não foi possivel encontrar esse cargo";
@@ -114,7 +114,7 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        public async Task<ResponseModel<List<PositionModel>>> ListarCargos()
+        public async Task<ResponseModel<List<PositionModel>>> ListPosition()
         {
             ResponseModel<List<PositionModel>> response = new ResponseModel<List<PositionModel>>();
             try
@@ -130,7 +130,7 @@ namespace ErpServicesASP.API.Repositories
             }
         }
 
-        private async Task<PositionModel?> BuscarCargoPorId(int id)
+        private async Task<PositionModel?> GetPositionById(int id)
         {
             return await _context.Position.FindAsync(id);
         }

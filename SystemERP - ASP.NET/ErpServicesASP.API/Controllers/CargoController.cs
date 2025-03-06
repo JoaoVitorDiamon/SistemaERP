@@ -33,7 +33,7 @@ namespace ErpServicesASP.API.Controllers
         [HttpGet("{idcargo}")]
         public async Task<ActionResult<ResponseModel<PositionModel>>> GetCargoPorId(int idcargo)
         {
-            var response = await _repository.GetCargoPorId(idcargo);
+            var response = await _repository.GetResponsePositionById(idcargo);
             if (!response.Status)
             {
                 return BadRequest(response);
@@ -47,7 +47,7 @@ namespace ErpServicesASP.API.Controllers
         [HttpPost]
         public async Task<ActionResult<ResponseModel<PositionModel>>> CriarCargo(CargoCreateDto novoCargo)
         {
-            var response = await _repository.CriarCargo(novoCargo);
+            var response = await _repository.CreatePosition(novoCargo);
             if (!response.Status)
             {
                 return BadRequest(response);
@@ -61,7 +61,7 @@ namespace ErpServicesASP.API.Controllers
         [HttpPut]
         public async Task<ActionResult<ResponseModel<PositionModel>>> CriarCargo(PositionModel cargo)
         {
-            var response = await _repository.AtualizarCargo(cargo);
+            var response = await _repository.UpdatePosition(cargo);
             if (!response.Status)
             {
                 return BadRequest(response);
@@ -75,7 +75,7 @@ namespace ErpServicesASP.API.Controllers
         [HttpDelete("delete/{idcargo}")]
         public async Task<ActionResult<ResponseModel<List<PositionModel>>>> DeletarCargoPorId(int idcargo)
         {
-            var response = await _repository.DeletarCargoPorId(idcargo);
+            var response = await _repository.DeletePositionById(idcargo);
             if (!response.Status)
             {
                 return BadRequest(response);

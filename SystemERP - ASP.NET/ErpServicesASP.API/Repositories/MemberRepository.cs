@@ -15,7 +15,7 @@ namespace ErpServicesASP.API.Repositories
             _context = context;
         }
 
-        public async Task<MemberModel> CriarMembro(MemberCreateDto novoMembro, UserModel usuario, PositionModel cargo, EnterpriseModel empresa)
+        public async Task<MemberModel> CreateMember(MemberCreateDto novoMembro, UserModel usuario, PositionModel cargo, EnterpriseModel empresa)
         {
             MemberModel membro = new MemberModel();
             membro.Enterprise = empresa;
@@ -32,7 +32,7 @@ namespace ErpServicesASP.API.Repositories
             return membro;
         }
 
-        public async Task<MemberGetIdDto> GetMembroPorId(int membroId)
+        public async Task<MemberGetIdDto> GetMemberById(int membroId)
         {
             var membro = await _context.Members
                 .Include(mem => mem.User)
@@ -50,7 +50,7 @@ namespace ErpServicesASP.API.Repositories
             return membroGet;
         }
 
-        public async Task<List<MemberGetIdDto>> ListarMembros()
+        public async Task<List<MemberGetIdDto>> ListMembers()
         {
             var lista = await _context.Members
                 .Include(mem => mem.Position)
@@ -73,7 +73,7 @@ namespace ErpServicesASP.API.Repositories
             return listaMembroGet;
         }
 
-        public async Task<bool> MembroJaExiste(MemberCreateDto novoMembro)
+        public async Task<bool> CheckExistenceMember(MemberCreateDto novoMembro)
         {
             var idExiste = await _context.Members.FirstOrDefaultAsync(membro => membro.User.IdUser == novoMembro.Usuario_idUsuario);
             if (idExiste == null) return false;
