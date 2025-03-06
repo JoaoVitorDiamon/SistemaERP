@@ -23,8 +23,8 @@ public class Salary {
     private Integer IdSalary;
 
     @ManyToOne
-    @JoinColumn(name = "IdMembers",foreignKey = @ForeignKey(name = "\"FK_IdMembers_Salary\""))
-    private Members Members;
+    @JoinColumn(name = "\"IdMembers\"",foreignKey = @ForeignKey(name = "\"FK_IdMembers_Salary\""))
+    private Members members;
 
     @Column(name = "\"Label\"")
     private String Label;
@@ -52,7 +52,7 @@ public class Salary {
 
     public Salary(Integer idSalary, Members members, String label, Date dateStart, Date endDate, Double value, com.system.SystemERP.Entity.AccountBank.AccountBank accountBank, TypesPayments typePayment, Instant paymentDate, String transferNumber) {
         IdSalary = idSalary;
-        this.Members = members;
+        this.members = members;
         Label = label;
         DateStart = dateStart;
         EndDate = endDate;

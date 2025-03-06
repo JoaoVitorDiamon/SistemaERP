@@ -20,7 +20,7 @@ public class Enterprise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "\"IdEnterprise\"")
-    private Integer IdEnterprise;
+    private Integer idEnterprise;
     @Column(name = "\"Name\"")
     private String Name;
     @Column(name = "\"NameFantasy\"")
@@ -50,6 +50,20 @@ public class Enterprise {
     @ManyToOne
     @JoinColumn(name = "\"IdCompanyType\"", foreignKey = @ForeignKey(name = "\"FK_IdCompanyType__Enterprise\""))
     private EnterpriseType CompanyType;
+
+    public Enterprise(Integer idEnterprise, String name, String nameFantasy, User ownerId, String CNPJ, String email, String telephone, Adress address, com.system.SystemERP.Entity.Sector.Sector sector, EnterpriseType companyType, Instant creationDate) {
+        this.idEnterprise = idEnterprise;
+        Name = name;
+        NameFantasy = nameFantasy;
+        OwnerId = ownerId;
+        this.CNPJ = CNPJ;
+        Email = email;
+        Telephone = telephone;
+        Address = address;
+        Sector = sector;
+        CompanyType = companyType;
+        CreationDate = creationDate;
+    }
 
     @CreationTimestamp
     @Column(name = "\"CreationDate\"")

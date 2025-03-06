@@ -33,6 +33,12 @@ public class SalaryController {
                 : ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/enterprise/{IdEnterprise}")
+    public ResponseEntity<List<Salary>> findByIdEnterprise(@PathVariable Integer IdEnterprise) {
+        var salary = salaryServices.findByIdEnterprise(IdEnterprise);
+        return ResponseEntity.ok(salary);
+    }
+
 
     @GetMapping
     public ResponseEntity<List<Salary>> findAll() {

@@ -18,7 +18,7 @@ public class Members {
 
     @ManyToOne
     @JoinColumn(name = "IdEnterprise", foreignKey = @ForeignKey(name = "\"FK_IdEnterprise_Members\""))
-    private Enterprise Enterprise;
+    private Enterprise enterprise;
 
     @ManyToOne
     @JoinColumn(name = "IdUser", foreignKey = @ForeignKey(name = "\"FK_IdUser_Members\""))
