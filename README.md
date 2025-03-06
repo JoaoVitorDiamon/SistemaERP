@@ -27,13 +27,11 @@ Certifique-se de ter instalado em sua máquina:
 
 Clone o repositório:
 ```bash
-
 git clone https://github.com/seu-repositorio.git
 cd seu-repositorio
-
 ```
-Configure as variáveis de ambiente no .env:
 
+Configure as variáveis de ambiente no .env:
 ```bash
 DATABASE_URL=jdbc:postgresql://localhost:5432/erp_db
 DATABASE_USER=seu_usuario
@@ -78,15 +76,9 @@ A API está documentada via Swagger. Para acessá-la, após rodar o projeto, ent
 👨‍💻 **Guilherme** - Back-End (Spring Boot)  
 👨‍💻 **Khaleu** - Back-End (ASP.NET)  
 
-📢 Dúvidas ou sugestões? Entre em contato!
-
-🎨 Interface do Sistema
 
 ![UI ERP](https://via.placeholder.com/800x400?text=Interface+do+ERP)
 
 📜 Licença
 
 Este projeto está sob a licença MIT. Veja mais detalhes no arquivo **LICENSE**.
-
-🚀 Desenvolvido com paixão e código limpo! ✨
-
