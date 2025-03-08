@@ -1,5 +1,7 @@
 package com.system.SystemERP.Entity.Products;
 
+import com.system.SystemERP.Entity.BarCodeType.BarCodeType;
+import com.system.SystemERP.Entity.SerialNumberControl.SerialNumberControl;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,14 @@ public class Product {
     @Column(name = "\"Sale\"")
     private boolean Sale;
 
+    @OneToOne
+    @JoinColumn(name = "\"SerialNumberControlId\"", foreignKey = @ForeignKey(name = "\"FK_SerialNumberControlId_Products\""))
+    private SerialNumberControl SerialNumberControl;
+
+    @OneToOne
+    @JoinColumn(name = "\"BarCodeTypeId\"", foreignKey = @ForeignKey(name = "\"FK_BarCodeTypeId_Products\""))
+    private BarCodeType BarCodeType;
+
     @Column(name = "\"Purchase\"")
     private boolean Purchase;
 
@@ -37,6 +47,10 @@ public class Product {
 
     @Column(name = "\"DesiredStock\"")
     private int DesiredStock;
+
+//    @OneToOne
+//    @JoinColumn(name = "\"NatureProductId\"", foreignKey = @ForeignKey(name = "\"FK_NatureProductId_Products\""))
+//    private NatureProduct NatureProduct;
 
     @Column(name = "\"Weight\"")
     private double Weight;
@@ -74,7 +88,6 @@ public class Product {
     @Column(name = "\"ICMSTaxRate\"")
     private double ICMSTaxRate;
 
-    // Full constructor
     public Product(Integer ProductId, String ProductName, String Label, boolean Sale, boolean Purchase, String Barcode, String Description, int StockAlert, int DesiredStock, double Weight, double Length, double Height, double Width, String CustomsCode, String Note, double Price, double MinimumPrice, double ICMS, double ICMSTaxRate) {
         this.IdProduct = ProductId;
         this.ProductName = ProductName;

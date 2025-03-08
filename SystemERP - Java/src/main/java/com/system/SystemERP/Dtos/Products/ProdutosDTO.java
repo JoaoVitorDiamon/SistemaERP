@@ -2,7 +2,6 @@ package com.system.SystemERP.Dtos.Products;
 import com.system.SystemERP.Entity.Products.Product;
 
 public record ProdutosDTO(
-        Integer idProduto,
         String nomeProduto,
         String etiqueta,
         boolean venda,
@@ -31,7 +30,7 @@ public record ProdutosDTO(
 
     public Product toEntity() {
         return new Product(
-                idProduto,
+                null,
                 nomeProduto,
                 etiqueta,
                 venda,
