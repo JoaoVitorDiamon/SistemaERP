@@ -19,7 +19,7 @@ namespace ErpServicesASP.API.Controllers
         [HttpGet]
         public async Task<ActionResult<ResponseModel<List<PositionModel>>>> ListarCargos()
         {
-            var response = await _repository.ListarCargos();
+            var response = await _repository.ListPosition();
             if (!response.Status)
             {
                 return BadRequest(response);

@@ -27,7 +27,7 @@ function FormCreateCorporationStepOne() {
         }
     };
     async function jaExisteCNPJ(cnpj="") : Promise<boolean>{
-        let cnpje = await fetch(`https://localhost:7106/api/Empresa/CNPJ/${cnpj}`, {
+        let cnpje = await fetch(`http://localhost:5068/api/Empresa/CNPJ/${cnpj}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function FormCreateCorporationStepOne() {
         localStorage.clear()
     }, [])
     async function jaExisteEmail(email="") : Promise<boolean>{
-        let emailExiste = await fetch(`https://localhost:7106/api/Empresa/Email/${email}`, {
+        let emailExiste = await fetch(`http://localhost:5068/api/Empresa/Email/${email}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

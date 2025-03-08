@@ -12,6 +12,7 @@ interface ICep {
     bairro: string
     estado: string
     numero: string
+
 }
 function FormCreateCorporationStepEndereco() {
     const navigate = useNavigate()
@@ -22,10 +23,11 @@ function FormCreateCorporationStepEndereco() {
     const onSubmit: SubmitHandler<ICep> = data => {
         viaCEP()
         if(cepDados){
-            let endereco = `${cepDados.logradouro}, ${data.numero} - ${cepDados.bairro}, ${cepDados.localidade} - ${cepDados.estado}`
+            let endereco = `Brasil, ${cep}, ${cepDados.localidade},
+             ${cepDados.bairro}, ${cepDados.logradouro}, ${data.numero}`
             if(empresa!=null){
                 let empresaLC = JSON.parse(empresa)
-                Object.assign(empresaLC, {endereco, cep})
+                Object.assign(empresaLC, {endereco})
                 console.log(empresaLC)
                 localStorage.setItem("data", JSON.stringify(empresaLC))
                 navigate("/CadastroRepresentante")
@@ -34,7 +36,7 @@ function FormCreateCorporationStepEndereco() {
     };
 
     function viaCEP(){
-        fetch(`https://localhost:7106/api/Empresa/cep/${cep}`, {
+        fetch(`http://localhost:5068/api/Empresa/cep/${cep}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

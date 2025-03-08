@@ -26,6 +26,8 @@ builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
 builder.Services.AddScoped<IEmpresaService, EmpresaService>();
 builder.Services.AddScoped<IMembroRepository, MemberRepository>();
 builder.Services.AddScoped<IMembroService, MembroService>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<MailService>();
 builder.Services.AddCors(options =>
 {

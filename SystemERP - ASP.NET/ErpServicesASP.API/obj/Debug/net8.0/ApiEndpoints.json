@@ -177,7 +177,7 @@
   },
   {
     "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
-    "Method": "ListarEmpresas",
+    "Method": "ListEnterprises",
     "RelativePath": "api/Empresa",
     "HttpMethod": "GET",
     "IsController": true,
@@ -197,7 +197,7 @@
   },
   {
     "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
-    "Method": "CriarEmpresa",
+    "Method": "CreateEnterprise",
     "RelativePath": "api/Empresa",
     "HttpMethod": "POST",
     "IsController": true,
@@ -223,7 +223,7 @@
   },
   {
     "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
-    "Method": "GetEmpresaPeloId",
+    "Method": "GetEnterpriseById",
     "RelativePath": "api/Empresa/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -249,7 +249,7 @@
   },
   {
     "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
-    "Method": "getCep",
+    "Method": "GetCep",
     "RelativePath": "api/Empresa/cep/{cep}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -265,7 +265,7 @@
   },
   {
     "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
-    "Method": "CnpjJaUsado",
+    "Method": "CheckIfCnpjUsed",
     "RelativePath": "api/Empresa/CNPJ/{cnpj}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -291,7 +291,7 @@
   },
   {
     "ContainingType": "ErpServicesASP.API.Controllers.EmpresaController",
-    "Method": "EmailJaUsado",
+    "Method": "CheckIfEmailUsed",
     "RelativePath": "api/Empresa/Email/{email}",
     "HttpMethod": "GET",
     "IsController": true,

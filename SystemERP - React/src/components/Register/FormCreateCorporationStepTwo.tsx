@@ -7,14 +7,14 @@ import { useNavigate } from "react-router-dom";
 function FormCreateCorporationStepTwo() {
     const navigate = useNavigate()
     const empresa = localStorage.getItem("data")
-    const [tiposdeempresa, setTiposDeEmpresa] = useState({'valor':[{'idTipoDeEmpresa':1, 'name':null}], 'mensagem':null, 'status':true})
-    const [setores, setSetores] = useState({'valor':[{'idSetor':1, 'nome':null}], 'mensagem':null, 'status':true})
+    const [tiposdeempresa, setTiposDeEmpresa] = useState({'valor':[{'idEnterpriseType':1, 'name':null}], 'mensagem':null, 'status':true})
+    const [setores, setSetores] = useState({'valor':[{'idSector':1, 'name':null}], 'mensagem':null, 'status':true})
     const { register, handleSubmit, formState: { errors }} = useForm<EmpresaCreateDto>();
     const onSubmit: SubmitHandler<EmpresaCreateDto> = data => {
         console.log(data)
         let name = data.name
-        let idSetor = data.idSetor
-        let idTipoDeEmpresa = data.idTipoDeEmpresa
+        let idSetor = data.idSector
+        let idTipoDeEmpresa = data.idEnterpriseType
         if(empresa != null){
             let empresaLocalStorage = JSON.parse(empresa)
             Object.assign(empresaLocalStorage, {name, idTipoDeEmpresa, idSetor})
@@ -31,7 +31,7 @@ function FormCreateCorporationStepTwo() {
         }
     }, [])
     function CarregandoTipos(){
-        fetch('https://localhost:7106/api/TipoDeEmpresa', {
+        fetch('http://localhost:5068/api/TipoDeEmpresa', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function FormCreateCorporationStepTwo() {
         .catch((error) => console.log(error))
     }
     function CarregandoSetores(){
-        fetch('https://localhost:7106/api/Setor', {
+        fetch('http://localhost:5068/api/Setor', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,23 +66,23 @@ function FormCreateCorporationStepTwo() {
                     <form onSubmit={handleSubmit(onSubmit)} className="sm:mt-10 mt-6 space-y-4 text-gray-600">
                         <div>
                             <p>Setor da Empresa</p>
-                            <select {...register("idSetor", {required: true})} className="w-full p-3 border mt-1 border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300">
+                            <select {...register("idSector", {required: true})} className="w-full p-3 border mt-1 border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300">
                                 <option value=""></option>
                                 {setores.valor.map((option)=>(
-                                    <option value={option.idSetor} key={option.idSetor}>{option.nome}</option>
+                                    <option value={option.idSector} key={option.idSector}>{option.name}</option>
                                 ))}
                             </select>
-                            {errors?.idSetor?.type === "required" && <p className="text-red-600 text-sm">Setor está vázio.</p>}
+                            {errors?.idSector?.type === "required" && <p className="text-red-600 text-sm">Setor está vázio.</p>}
                         </div>
                         <div>
                             <p>Tipo da Empresa</p>
-                            <select {...register("idTipoDeEmpresa", {required: true})} className="w-full p-3 border mt-1 border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300">
+                            <select {...register("idEnterpriseType", {required: true})} className="w-full p-3 border mt-1 border-gray-300 rounded-[8px] focus:outline-none focus:ring-2 focus:ring-blue-300">
                                 <option value=""></option>
                                 {tiposdeempresa.valor.map((option) => (
-                                    <option value={option.idTipoDeEmpresa} key={option.idTipoDeEmpresa}>{option.name}</option>
+                                    <option value={option.idEnterpriseType} key={option.idEnterpriseType}>{option.name}</option>
                                 ))}
                             </select>
-                            {errors?.idTipoDeEmpresa?.type === "required" && <p className="text-red-600 text-sm">Tipo de empresa está vázio.</p>}
+                            {errors?.idEnterpriseType?.type === "required" && <p className="text-red-600 text-sm">Tipo de empresa está vázio.</p>}
                         </div>
                         <div>
                             <p>Razão social</p>

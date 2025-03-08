@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import ProgressBar from "./ProgressBar";
-import { ResponsePostDto } from "../../../models/ResponsePostDto"
+import { ResponsePostDto, ResponsePostEnterpriseDto } from "../../../models/ResponsePostDto"
 import { EmpresaCreateDto } from "../../../models/EmpresaCreateDto";
 interface Representante {
     Name: String;
@@ -11,6 +11,15 @@ interface Representante {
     EmailRepresentante: String;
     Senha: String;
   }
+interface Endereco {
+    country: string
+    zipCode: string
+    city: string
+    neighborhood: string
+    street: string
+    number: string
+    complement: string
+}
 function FormCreateCorporationStepThree() {
     const navigate = useNavigate()
     const empresa = localStorage.getItem("data")
@@ -29,20 +38,20 @@ function FormCreateCorporationStepThree() {
             let empresaLocalStorage = JSON.parse(empresa);
             console.log(empresaLocalStorage)
             let representante = {Name:data.Name, CPF:data.CPF, EmailRepresentante:data.EmailRepresentante, Senha:empresaLocalStorage.Senha}
-            let idDono = (await CriarRepresentante(representante)).valor.id
+            let endereco = empresaLocalStorage.endereco
+            let idDono = (await CriarRepresentante(representante)).valor.idUser
+            let idEndereco = (await CriarEndereco(endereco)).valor.idAdress
             console.log(idDono)
             let empresa_dto : EmpresaCreateDto = {
                 "name": empresaLocalStorage.name,
-                "nomeFantasia" : empresaLocalStorage.nomeFantasia,
-                "idDono" : idDono,
+                "fantasyName" : empresaLocalStorage.nomeFantasia,
+                "idOwner" : idDono,
                 "cnpj": empresaLocalStorage.cnpj,
                 "email" : empresaLocalStorage.email,
-                "endereco" : empresaLocalStorage.endereco,
-                "cep" : empresaLocalStorage.cep,
-                "idTipoDeEmpresa" : empresaLocalStorage.idTipoDeEmpresa,
-                "idSetor" : empresaLocalStorage.idSetor,
-                "telefone" : "123123",
-                "dataCriacao" : "2025-02-27T00:02:24.239Z"
+                "idAddress" : idEndereco,
+                "idEnterpriseType" : empresaLocalStorage.idTipoDeEmpresa,
+                "idSector" : empresaLocalStorage.idSetor,
+                "creationDate" : "2025-02-27T00:02:24.239Z"
             }
             await CriarEmpresa(empresa_dto)
             localStorage.setItem("data", JSON.stringify(empresaLocalStorage))
@@ -56,7 +65,7 @@ function FormCreateCorporationStepThree() {
     }, [])
 
     async function VerificarCPF(cpf:String) : Promise<boolean>{
-        var response = await fetch(`https://localhost:7106/api/Usuario/CPF/${cpf}`,{
+        var response = await fetch(`http://localhost:5068/api/Usuario/CPF/${cpf}`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,7 +75,7 @@ function FormCreateCorporationStepThree() {
         return result.valor === "Usado";
     }
     async function VerificarEmail(email:String) : Promise<boolean>{
-        var response = await fetch(`https://localhost:7106/api/Usuario/Email/${email}`, {
+        var response = await fetch(`http://localhost:5068/api/Usuario/Email/${email}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +85,7 @@ function FormCreateCorporationStepThree() {
         return result.valor === "Usado"
     }
     async function CriarRepresentante(representante:Representante) : Promise<ResponsePostDto>{
-        var response = await fetch(`https://localhost:7106/api/Usuario`, {
+        var response = await fetch(`http://localhost:5068/api/Usuario`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -92,8 +101,32 @@ function FormCreateCorporationStepThree() {
         const result = await response.json()
         return result
     }
+
+    async function CriarEndereco(endereco:string) : Promise<ResponsePostEnterpriseDto>{
+        let endereco_split = endereco.split(",")
+        var response = await fetch(`http://localhost:5068/api/Address`, {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify(
+                {
+                    country: endereco_split[0],
+                    zipCode: endereco_split[1],
+                    city: endereco_split[2],
+                    neighborhood: endereco_split[3],
+                    street: endereco_split[4],
+                    number: endereco_split[5],
+                    complement: "endereco_split[0]"
+                }
+            )
+        })
+        const result = await response.json()
+        return result
+    }
+
     async function CriarEmpresa(novaEmpresa:EmpresaCreateDto){
-        var response = await fetch(`https://localhost:7106/api/Empresa`, {
+        var response = await fetch(`http://localhost:5068/api/Empresa`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

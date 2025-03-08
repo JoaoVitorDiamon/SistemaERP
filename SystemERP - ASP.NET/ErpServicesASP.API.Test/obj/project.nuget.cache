@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ECHWL8ZwMow=",
+  "dgSpecHash": "xu+4O2qnt2HnjELuY3VdchRfOaveocbuw7M+1XpQesXkda+wE0B9PkWQf1vYCnG213GlpSjJlyJHGSNbq6DbXw==",
   "success": true,
   "projectFilePath": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API.Test\\ErpServicesASP.API.Test.csproj",
   "expectedPackageFiles": [
@@ -153,10 +153,7 @@
     "C:\\Users\\khaleu\\.nuget\\packages\\xunit.core\\2.5.3\\xunit.core.2.5.3.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\xunit.extensibility.core\\2.5.3\\xunit.extensibility.core.2.5.3.nupkg.sha512",
     "C:\\Users\\khaleu\\.nuget\\packages\\xunit.extensibility.execution\\2.5.3\\xunit.extensibility.execution.2.5.3.nupkg.sha512",
-    "C:\\Users\\khaleu\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.3\\xunit.runner.visualstudio.2.5.3.nupkg.sha512",
-    "C:\\Users\\khaleu\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
-    "C:\\Users\\khaleu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
-    "C:\\Users\\khaleu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
+    "C:\\Users\\khaleu\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.3\\xunit.runner.visualstudio.2.5.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -16,9 +16,9 @@ namespace ErpServicesASP.API.Controllers
         public async Task<ActionResult<ResponseModel<AddressModel>>> GetAdressById(int id)
         {
             var response = await _service.GetAdressById(id);
-            if (response.Mensagem.Contains("Erro")) return BadRequest(response);
-            else if (!response.Status) return NotFound(response);
-            return Ok(response);
+            if (response.Status) return Ok(response);
+            else if (response.Mensagem.Contains("Erro")) return NotFound(response);
+            return BadRequest(response);
         }
 
         [HttpPost]
