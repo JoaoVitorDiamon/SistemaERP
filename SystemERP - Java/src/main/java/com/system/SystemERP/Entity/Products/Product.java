@@ -1,6 +1,9 @@
 package com.system.SystemERP.Entity.Products;
 
+import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Entity.BarCodeType.BarCodeType;
+import com.system.SystemERP.Entity.Enterprise.Enterprise;
+import com.system.SystemERP.Entity.NatureProduct.NatureProduct;
 import com.system.SystemERP.Entity.SerialNumberControl.SerialNumberControl;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -48,9 +51,9 @@ public class Product {
     @Column(name = "\"DesiredStock\"")
     private int DesiredStock;
 
-//    @OneToOne
-//    @JoinColumn(name = "\"NatureProductId\"", foreignKey = @ForeignKey(name = "\"FK_NatureProductId_Products\""))
-//    private NatureProduct NatureProduct;
+    @OneToOne
+    @JoinColumn(name = "\"NatureProductId\"", foreignKey = @ForeignKey(name = "\"FK_NatureProductId_Products\""))
+    private NatureProduct NatureProduct;
 
     @Column(name = "\"Weight\"")
     private double Weight;
@@ -88,27 +91,55 @@ public class Product {
     @Column(name = "\"ICMSTaxRate\"")
     private double ICMSTaxRate;
 
-    public Product(Integer ProductId, String ProductName, String Label, boolean Sale, boolean Purchase, String Barcode, String Description, int StockAlert, int DesiredStock, double Weight, double Length, double Height, double Width, String CustomsCode, String Note, double Price, double MinimumPrice, double ICMS, double ICMSTaxRate) {
-        this.IdProduct = ProductId;
-        this.ProductName = ProductName;
-        this.Label = Label;
-        this.Sale = Sale;
-        this.Purchase = Purchase;
-        this.Barcode = Barcode;
-        this.Description = Description;
-        this.StockAlert = StockAlert;
-        this.DesiredStock = DesiredStock;
-        this.Weight = Weight;
-        this.Length = Length;
-        this.Height = Height;
-        this.Width = Width;
-        this.Volume = Length * Height * Width;
-        this.Area = Length * Width;
-        this.CustomsCode = CustomsCode;
-        this.Note = Note;
-        this.Price = Price;
-        this.MinimumPrice = MinimumPrice;
+    @OneToOne
+    @JoinColumn(name = "\"SalesCodeId\"", foreignKey = @ForeignKey(name = "\"FK_SalesCodeId_Products\""))
+    private AccountingCode SalesCode;
+
+    @OneToOne
+    @JoinColumn(name = "\"ExportCodeId\"", foreignKey = @ForeignKey(name = "\"FK_ExportCodeId_Products\""))
+    private AccountingCode ExportCode;
+
+    @OneToOne
+    @JoinColumn(name = "\"PurchaseCodeId\"", foreignKey = @ForeignKey(name = "\"FK_PurchaseCodeId_Products\""))
+    private AccountingCode PurchaseCode;
+
+    @OneToOne
+    @JoinColumn(name = "\"ImportCodeId\"", foreignKey = @ForeignKey(name = "\"FK_ImportCodeId_Products\""))
+    private AccountingCode ImportCode;
+
+    @OneToOne
+    @JoinColumn(name = "\"EnterpriseId\"", foreignKey = @ForeignKey(name = "\"FK_Enterprise_Products\""))
+    private Enterprise Enterprise;
+
+    public Product(Integer idProduct, String productName, String label, boolean sale, com.system.SystemERP.Entity.SerialNumberControl.SerialNumberControl serialNumberControl, com.system.SystemERP.Entity.BarCodeType.BarCodeType barCodeType, boolean purchase, String barcode, String description, int stockAlert, int desiredStock, com.system.SystemERP.Entity.NatureProduct.NatureProduct natureProduct, double weight, double length, double height, double width, double volume, double area, String customsCode, String note, double price, double minimumPrice, double ICMS, double ICMSTaxRate, AccountingCode salesCode, AccountingCode exportCode, AccountingCode purchaseCode, AccountingCode importCode, com.system.SystemERP.Entity.Enterprise.Enterprise enterprise) {
+        IdProduct = idProduct;
+        ProductName = productName;
+        Label = label;
+        Sale = sale;
+        SerialNumberControl = serialNumberControl;
+        BarCodeType = barCodeType;
+        Purchase = purchase;
+        Barcode = barcode;
+        Description = description;
+        StockAlert = stockAlert;
+        DesiredStock = desiredStock;
+        NatureProduct = natureProduct;
+        Weight = weight;
+        Length = length;
+        Height = height;
+        Width = width;
+        Volume = volume;
+        Area = area;
+        CustomsCode = customsCode;
+        Note = note;
+        Price = price;
+        MinimumPrice = minimumPrice;
         this.ICMS = ICMS;
         this.ICMSTaxRate = ICMSTaxRate;
+        SalesCode = salesCode;
+        ExportCode = exportCode;
+        PurchaseCode = purchaseCode;
+        ImportCode = importCode;
+        Enterprise = enterprise;
     }
 }

@@ -6,7 +6,6 @@ import com.system.SystemERP.Entity.BarCodeType.BarCodeType;
 import com.system.SystemERP.Entity.Enterprise.Enterprise;
 import com.system.SystemERP.Entity.SerialNumberControl.SerialNumberControl;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
