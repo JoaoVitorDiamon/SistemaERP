@@ -15,7 +15,7 @@ function FormLogin() {
   return (
     <div className="h-screen rounded-4xl bg-white w-2xl xl:min-w-3xl md:min-w-xl flex flex-col justify-center items-center">
       <div className="w-full max-w-md p-9 md:p-0 flex-grow flex flex-col justify-center">
-        <h1 className="md:text-3xl text-2xl font-poppins font-semibold md:mb-1 text-center">
+        <h1 className="md:text-3xl text-2xl font-poppins font-medium md:mb-1 text-center">
           Entre com sua conta
         </h1>
         <div className="">
@@ -30,7 +30,7 @@ function FormLogin() {
                 {...register("Email", { required: true })}
               />
               {errors?.Email?.type === "required" && (
-                <p className="font-poppins mt-1  font-bold text-red-600 text-sm">Email ou cnpj inválidos</p>
+                <p className="font-poppins mt-1  font-semibold text-red-600 text-sm">Email ou cnpj inválidos</p>
               )}
             </div>
             <div>
