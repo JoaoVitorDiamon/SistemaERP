@@ -4,7 +4,6 @@ package com.system.SystemERP.Controller.Loan;
 import com.system.SystemERP.Dtos.Loan.LoanDTO;
 import com.system.SystemERP.Entity.Loan.Loan;
 import com.system.SystemERP.Services.Loan.LoanServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +14,12 @@ import java.util.List;
 @RequestMapping("/loan")
 public class LoanController {
 
-    @Autowired
+
     private LoanServices loanServices;
 
+    public LoanController(LoanServices loanServices) {
+        this.loanServices = loanServices;
+    }
 
     @PostMapping
     public ResponseEntity<String> createLoan(@RequestBody LoanDTO loanDTO) {
@@ -28,9 +30,7 @@ public class LoanController {
     @GetMapping("/{idLoan}")
     public ResponseEntity<Loan> findById(@PathVariable Integer idLoan) {
         var loan = loanServices.findByID(idLoan);
-        return loan.isPresent()
-                ? ResponseEntity.ok(loan.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(loan);
     }
 
     @GetMapping

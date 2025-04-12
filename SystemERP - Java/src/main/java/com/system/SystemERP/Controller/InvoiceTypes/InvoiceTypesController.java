@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @Tag(name = "Tipos de Faturas")
-@RequestMapping("/InvoiceTypes")
+@RequestMapping("/invoiceTypes")
 public class InvoiceTypesController {
     private final InvoiceTypesServices invoiceTypesServices;
 
@@ -42,9 +42,8 @@ public class InvoiceTypesController {
     @Operation(summary = "Retornar Tipo atraves do ID", description = "Retornar todos os dados do Tipo De Fatura atraves do ID")
     public ResponseEntity<InvoiceTypes> findByID(@PathVariable Integer idInvoiceTypes) {
         var invoiceTypesExists = invoiceTypesServices.getByID(idInvoiceTypes);
-        return invoiceTypesExists.isPresent()
-                ? ResponseEntity.ok(invoiceTypesExists.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(invoiceTypesExists);
+
     }
 
 

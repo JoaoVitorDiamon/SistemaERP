@@ -4,7 +4,6 @@ package com.system.SystemERP.Controller.MiscellaneousPayments;
 import com.system.SystemERP.Dtos.MiscellaneousPayments.MiscellaneousPaymentsDTO;
 import com.system.SystemERP.Entity.MiscellaneousPayments.MiscellaneousPayments;
 import com.system.SystemERP.Services.MiscellaneousPayments.MiscellaneousPaymentsServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +14,12 @@ import java.util.List;
 @RequestMapping("/miscellaneousPayments")
 public class MiscellaneousPaymentsController {
 
-    @Autowired
+
     private MiscellaneousPaymentsServices miscellaneousPaymentsServices;
 
+    public MiscellaneousPaymentsController(MiscellaneousPaymentsServices miscellaneousPaymentsServices) {
+        this.miscellaneousPaymentsServices = miscellaneousPaymentsServices;
+    }
 
     @PostMapping
     public ResponseEntity<MiscellaneousPayments> createMiscellaneousPayments(@RequestBody MiscellaneousPaymentsDTO miscellaneousPaymentsDTO){
@@ -27,14 +29,10 @@ public class MiscellaneousPaymentsController {
                 savedId.toString()))
                 .build();
     }
-
-
     @GetMapping("/{idMiscellaneousPayments}")
     public ResponseEntity<MiscellaneousPayments> findByID(@PathVariable Integer idMiscellaneousPayments){
         var miscellaneousPayments = miscellaneousPaymentsServices.findByID(idMiscellaneousPayments);
-        return miscellaneousPayments.isPresent()
-                ? ResponseEntity.ok(miscellaneousPayments.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(miscellaneousPayments);
     }
 
     @GetMapping

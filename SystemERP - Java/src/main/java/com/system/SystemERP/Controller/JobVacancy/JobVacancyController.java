@@ -28,9 +28,8 @@ public class JobVacancyController {
     @GetMapping("/{idJobVacancy}")
     public ResponseEntity<JobVacancy> findById(@PathVariable Integer idJobVacancy) {
         var entity = jobVacancyServices.findById(idJobVacancy);
-        return entity.isPresent()
-                ? ResponseEntity.ok(entity.get())
-                : ResponseEntity.notFound().build();
+        return  ResponseEntity.ok(entity);
+
     }
 
     @GetMapping
@@ -41,7 +40,6 @@ public class JobVacancyController {
 
     @DeleteMapping("/{idJobVacancy}")
     public ResponseEntity<Void> deleteById(@PathVariable Integer idJobVacancy){
-
         jobVacancyServices.deleteById(idJobVacancy);
         return ResponseEntity.noContent().build();
     }

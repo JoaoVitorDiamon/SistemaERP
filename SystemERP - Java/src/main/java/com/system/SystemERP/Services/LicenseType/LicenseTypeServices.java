@@ -4,18 +4,20 @@ package com.system.SystemERP.Services.LicenseType;
 import com.system.SystemERP.Dtos.LicenseType.LicenceTypeDTO;
 import com.system.SystemERP.Entity.LicenseType.LicenseType;
 import com.system.SystemERP.Repository.LicenseType.LicenseTypeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class LicenseTypeServices {
 
-    @Autowired
+
     private LicenseTypeRepository licenseTypeRepository;
 
+    public LicenseTypeServices(LicenseTypeRepository licenseTypeRepository) {
+        this.licenseTypeRepository = licenseTypeRepository;
+    }
 
     public Integer createLicenceType(LicenceTypeDTO licenceTypeDTO) {
         var entity = licenceTypeDTO.toEntity();
@@ -23,8 +25,8 @@ public class LicenseTypeServices {
         return entity.getIdLicenseType();
     }
 
-    public Optional<LicenseType> findByID(Integer Id) {
-        return licenseTypeRepository.findById(Id);
+    public LicenseType findByID(Integer Id) {
+        return licenseTypeRepository.findById(Id).orElseThrow(() -> new EntityNotFoundException("Licença nao Encontrada!"));
     }
 
     public List<LicenseType> getAll() {
@@ -33,9 +35,7 @@ public class LicenseTypeServices {
 
     public void deleteByID(Integer id) {
         var exists = licenseTypeRepository.existsById(id);
-
-        if (exists) {
-            licenseTypeRepository.deleteById(id);
-        }
+        if (!exists) throw new EntityNotFoundException("Licença nao Encontrada!");
+        licenseTypeRepository.deleteById(id);
     }
 }

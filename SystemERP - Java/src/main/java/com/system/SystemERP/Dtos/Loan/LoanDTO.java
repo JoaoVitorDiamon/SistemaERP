@@ -5,7 +5,6 @@ import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Entity.Loan.Loan;
 import com.system.SystemERP.Services.AccountBank.AccountBankServices;
 import com.system.SystemERP.Services.AccountingCode.AccountingCodeServices;
-import jakarta.persistence.EntityNotFoundException;
 
 import java.util.Date;
 
@@ -34,12 +33,12 @@ public record LoanDTO(Double capital, Date inicialDate, Date endDate, Integer nu
 
     private AccountBank fetchAccountBankById(Integer accountBankId, AccountBankServices accountBankServices) {
         var accountBank = accountBankServices.findByID(accountBankId);
-        return accountBank.orElseThrow(() -> new EntityNotFoundException("Conta Bancaria não encontrada"));
+        return accountBank;
     }
 
     private AccountingCode fetchAccountingCodeByID(Integer Id, AccountingCodeServices accountingCodeServices) {
         var accountingCode = accountingCodeServices.findByID(Id);
-        return accountingCode.orElseThrow(() -> new EntityNotFoundException("Tipo nao encontrado"));
+        return accountingCode;
     }
 
 }

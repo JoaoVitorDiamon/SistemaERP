@@ -95,14 +95,12 @@ public record ProdutosDTO(
 
     private NatureProduct fetchNatureProductById(Integer id, NatureProductsServices natureProductsServices){
         var natureProduct = natureProductsServices.getById(id);
-        return natureProduct.orElseThrow(
-                () -> new EntityNotFoundException("A natureza do produto não foi encontrada"));
+        return natureProduct;
     }
 
     private AccountingCode fetchAccountingCodeByID(Integer id, AccountingCodeServices accountingCodeServices){
         var accountingCode = accountingCodeServices.findByID(id);
-        return accountingCode.orElseThrow(
-                () -> new EntityNotFoundException("Código de venda não encontrado"));
+        return accountingCode;
     }
 
     private Enterprise fetchEnterpriseById(Integer id, EnterpriseServices enterpriseServices){

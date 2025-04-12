@@ -6,27 +6,26 @@ import com.system.SystemERP.Repository.JobVacancy.JobVacancyRepository;
 import com.system.SystemERP.Services.Addres.AddresServices;
 import com.system.SystemERP.Services.Members.MembersServices;
 import com.system.SystemERP.Services.Position.PositionServices;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class JobVacancyServices {
 
-    @Autowired
+
     private AddresServices addresServices;
-
-    @Autowired
     private MembersServices membersServices;
-
-    @Autowired
     private PositionServices positionServices;
-
-    @Autowired
     private JobVacancyRepository jobVacancyRepository;
 
+    public JobVacancyServices(AddresServices addresServices, MembersServices membersServices, PositionServices positionServices, JobVacancyRepository jobVacancyRepository) {
+        this.addresServices = addresServices;
+        this.membersServices = membersServices;
+        this.positionServices = positionServices;
+        this.jobVacancyRepository = jobVacancyRepository;
+    }
 
     public Integer createJobVacancy(JobVacancyDTO jobVacancyDTO) {
         var entity = jobVacancyDTO.toEntity(positionServices, membersServices, addresServices);
@@ -34,20 +33,20 @@ public class JobVacancyServices {
         return entity.getIdJobVacancy();
     }
 
-    public Optional<JobVacancy> findById(Integer Id) {
-        return jobVacancyRepository.findById(Id);
+    public JobVacancy findById(Integer Id) {
+        return jobVacancyRepository.findById(Id).orElseThrow(() -> new EntityNotFoundException("Vaga de Emprego nao encontrada!"));
     }
 
     public List<JobVacancy> getAll() {
-        var listJob = jobVacancyRepository.findAll();
-        return listJob;
+        return jobVacancyRepository.findAll();
     }
 
     public void deleteById(Integer id) {
         var exists = jobVacancyRepository.existsById(id);
-        if (exists) {
-            jobVacancyRepository.deleteById(id);
+        if (!exists) {
+            throw new EntityNotFoundException("Vaga de Emprego nao encontrada!");
         }
+        jobVacancyRepository.deleteById(id);
     }
 
 }

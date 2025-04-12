@@ -6,23 +6,26 @@ import com.system.SystemERP.Entity.MiscellaneousPayments.MiscellaneousPayments;
 import com.system.SystemERP.Repository.MiscellaneousPayments.MiscellaneousPaymentsRepository;
 import com.system.SystemERP.Services.AccountBank.AccountBankServices;
 import com.system.SystemERP.Services.TypesPayments.TypesPaymentsServices;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MiscellaneousPaymentsServices {
 
-    @Autowired
+
     private MiscellaneousPaymentsRepository miscellaneousPaymentsRepository;
-
-    @Autowired
     private AccountBankServices accountBankServices;
-
-    @Autowired
     private TypesPaymentsServices typesPaymentsServices;
+
+
+    public MiscellaneousPaymentsServices(MiscellaneousPaymentsRepository miscellaneousPaymentsRepository, AccountBankServices accountBankServices, TypesPaymentsServices typesPaymentsServices) {
+        this.miscellaneousPaymentsRepository = miscellaneousPaymentsRepository;
+        this.accountBankServices = accountBankServices;
+        this.typesPaymentsServices = typesPaymentsServices;
+    }
+
 
     public Integer createMiscellaneousPayments(MiscellaneousPaymentsDTO miscellaneousPaymentsDTO) {
         var miscellaneousPayments = miscellaneousPaymentsDTO.toEntity(typesPaymentsServices, accountBankServices);
@@ -31,8 +34,8 @@ public class MiscellaneousPaymentsServices {
 
     }
 
-    public Optional<MiscellaneousPayments> findByID(Integer Id) {
-        return miscellaneousPaymentsRepository.findById(Id);
+    public MiscellaneousPayments findByID(Integer Id) {
+        return miscellaneousPaymentsRepository.findById(Id).orElseThrow(() -> new EntityNotFoundException("Pagamento diverso nao encontrado!"));
     }
 
     public List<MiscellaneousPayments> getAll() {
@@ -41,8 +44,7 @@ public class MiscellaneousPaymentsServices {
 
     public void deleteByID(Integer ID) {
         var exists = miscellaneousPaymentsRepository.existsById(ID);
-        if (exists) {
-            miscellaneousPaymentsRepository.deleteById(ID);
-        }
+        if (!exists) throw new EntityNotFoundException("Pagamento diverso nao encontrado!");
+        miscellaneousPaymentsRepository.deleteById(ID);
     }
 }

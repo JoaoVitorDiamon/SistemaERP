@@ -40,7 +40,7 @@ public record ProductionOrderDTO(
 
     public MaterialType fetchMaterialTypeById(Integer id, MaterialTypeServices materialTypeServices) {
         var entity = materialTypeServices.findByID(id);
-        return entity.orElseThrow(() -> new EntityNotFoundException("Tipo de material nao encontrado"));
+        return entity;
     }
 
     public Product fetchProductById(Integer id, ProdutosServices produtosServices) {

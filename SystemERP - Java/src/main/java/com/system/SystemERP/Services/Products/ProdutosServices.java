@@ -1,6 +1,5 @@
 package com.system.SystemERP.Services.Products;
 
-import com.system.SystemERP.Dtos.Products.ProdutosDTO;
 import com.system.SystemERP.Entity.Products.Product;
 import com.system.SystemERP.Repository.Products.ProdutosRepository;
 import org.springframework.stereotype.Service;
@@ -16,11 +15,11 @@ public class ProdutosServices {
         this.produtosRepository = produtosRepository;
     }
 
-    public Integer createProducts(ProdutosDTO produtosDTO) {
-        var product = produtosDTO.toEntity();
-        var savedProduct = produtosRepository.save(product);
-        return savedProduct.getIdProduct();
-    }
+//    public Integer createProducts(ProdutosDTO produtosDTO) {
+//        var product = produtosDTO.toEntity();
+//        var savedProduct = produtosRepository.save(product);
+//        return savedProduct.getIdProduct();
+//    }
 
 
     public Optional<Product> getById(Integer id){

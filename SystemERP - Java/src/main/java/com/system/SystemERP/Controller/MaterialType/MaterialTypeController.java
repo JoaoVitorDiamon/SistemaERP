@@ -4,7 +4,6 @@ import com.system.SystemERP.Dtos.MaterialType.MaterialTypeDTO;
 import com.system.SystemERP.Entity.MaterialType.MaterialType;
 import com.system.SystemERP.Services.MaterialType.MaterialTypeServices;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +14,10 @@ import java.util.List;
 @RequestMapping("/materialType")
 public class MaterialTypeController {
 
-    @Autowired
+    public MaterialTypeController(MaterialTypeServices materialTypeServices) {
+        this.materialTypeServices = materialTypeServices;
+    }
+
     private MaterialTypeServices materialTypeServices;
 
     @PostMapping
@@ -27,9 +29,8 @@ public class MaterialTypeController {
     @GetMapping("/{idMaterialType}")
     public ResponseEntity<MaterialType> findByID(@PathVariable Integer idMaterialType) {
         var entity = materialTypeServices.findByID(idMaterialType);
-        return entity.isPresent() ?
-                ResponseEntity.ok(entity.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(entity);
+
     }
 
     @GetMapping

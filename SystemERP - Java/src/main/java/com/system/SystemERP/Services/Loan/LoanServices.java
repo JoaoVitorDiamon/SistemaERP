@@ -6,43 +6,44 @@ import com.system.SystemERP.Entity.Loan.Loan;
 import com.system.SystemERP.Repository.Loan.LoanRepository;
 import com.system.SystemERP.Services.AccountBank.AccountBankServices;
 import com.system.SystemERP.Services.AccountingCode.AccountingCodeServices;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class LoanServices {
 
-    @Autowired
+
     private LoanRepository loanRepository;
-
-    @Autowired
     private AccountingCodeServices accountingCodeServices;
-
-    @Autowired
     private AccountBankServices accountBankServices;
 
+    public LoanServices(LoanRepository loanRepository, AccountingCodeServices accountingCodeServices, AccountBankServices accountBankServices) {
+        this.loanRepository = loanRepository;
+        this.accountingCodeServices = accountingCodeServices;
+        this.accountBankServices = accountBankServices;
+    }
 
     public Integer createLoan(LoanDTO loanDTO) {
         var loan = loanDTO.toEntity(accountBankServices, accountingCodeServices);
         loan = loanRepository.save(loan);
         return loan.getIdLoan();
     }
-    public Optional<Loan> findByID(Integer Id){
-    return loanRepository.findById(Id);
+
+    public Loan findByID(Integer Id) {
+        return loanRepository.findById(Id).orElseThrow(() -> new EntityNotFoundException("Emprestimo nao encontrado!"));
     }
 
-    public List<Loan> getAll(){
+    public List<Loan> getAll() {
         return loanRepository.findAll();
     }
 
-    public void deleteById(Integer Id){
-         var exists = loanRepository.existsById(Id);
-         if(exists){
-             loanRepository.deleteById(Id);
-         }
+    public void deleteById(Integer Id) {
+        var exists = loanRepository.existsById(Id);
+        if (!exists) throw new EntityNotFoundException("Emprestimo nao encontrado!");
+
+        loanRepository.deleteById(Id);
     }
 
 }

@@ -77,8 +77,7 @@ public record ServiceDTO (
 
     private AccountingCode fetchAccountingCodeByID(Integer Id, AccountingCodeServices accountingCodeServices) {
         var accountingCode = accountingCodeServices.findByID(Id);
-        return accountingCode.orElseThrow(
-                () -> new EntityNotFoundException("Tipo nao encontrado"));
+        return accountingCode;
     }
 
     private Enterprise fetchEnterpriseById(Integer Id, EnterpriseServices enterpriseServices){

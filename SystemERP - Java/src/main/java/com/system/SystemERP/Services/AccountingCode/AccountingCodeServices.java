@@ -3,6 +3,7 @@ package com.system.SystemERP.Services.AccountingCode;
 import com.system.SystemERP.Dtos.AccountingCode.AccountingCodeDTO;
 import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Repository.AccountingCode.AccountingCodeRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +30,9 @@ public class AccountingCodeServices {
         return created.getIdAccountingCode();
     }
 
-    public Optional<AccountingCode> findByID(Integer id) {
-        return accountingCodeRepository.findById(id);
+    public AccountingCode findByID(Integer id) {
+        return accountingCodeRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Entidade nao encontrada"));
+
     }
 
     public List<AccountingCode> findAll() {
@@ -39,11 +41,8 @@ public class AccountingCodeServices {
 
     public void deleteByID(Integer id) {
         var accountingCodePresent = accountingCodeRepository.existsById(id);
-        if (accountingCodePresent) {
-            accountingCodeRepository.deleteById(id);
-        }
-
-
+        if (!accountingCodePresent) throw new EntityNotFoundException("Entidade nao encontrada");
+        accountingCodeRepository.deleteById(id);
     }
 
 

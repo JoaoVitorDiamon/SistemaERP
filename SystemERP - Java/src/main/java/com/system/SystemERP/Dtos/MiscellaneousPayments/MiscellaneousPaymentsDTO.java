@@ -31,7 +31,7 @@ public record MiscellaneousPaymentsDTO(Date DatePayment, Date DateValue, String 
 
     private AccountBank fetchAccountBankById(Integer accountBankId, AccountBankServices accountBankServices) {
         var accountBank = accountBankServices.findByID(accountBankId);
-        return accountBank.orElseThrow(() -> new EntityNotFoundException("Conta Bancaria não encontrada"));
+        return accountBank;
     }
 
     private TypesPayments fetchTypesPaymentsById(Integer typePaymentID, TypesPaymentsServices typesPaymentsServices) {

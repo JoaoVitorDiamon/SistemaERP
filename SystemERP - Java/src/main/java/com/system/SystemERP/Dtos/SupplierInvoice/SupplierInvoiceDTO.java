@@ -34,7 +34,7 @@ public record SupplierInvoiceDTO(Integer IdThirdParty, Integer IdInvoiceTypes, D
 
     private AccountBank fetchAccountBankById(Integer accountBankId, AccountBankServices accountBankServices) {
         var accountBank = accountBankServices.findByID(accountBankId);
-        return accountBank.orElseThrow(() -> new EntityNotFoundException("Conta Bancaria não encontrada"));
+        return accountBank;
     }
 
     private TypesPayments fetchTypesPaymentsById(Integer typePaymentID, TypesPaymentsServices typesPaymentsServices) {
@@ -44,7 +44,7 @@ public record SupplierInvoiceDTO(Integer IdThirdParty, Integer IdInvoiceTypes, D
 
     private InvoiceTypes fetchInvoiceTypesById(Integer invoiceTypesID, InvoiceTypesServices invoiceTypesServices) {
         var invoiceTypes = invoiceTypesServices.getByID(invoiceTypesID);
-        return invoiceTypes.orElseThrow(() -> new EntityNotFoundException("Tipo de fatura nao encontrado"));
+        return invoiceTypes;
 
     }
 

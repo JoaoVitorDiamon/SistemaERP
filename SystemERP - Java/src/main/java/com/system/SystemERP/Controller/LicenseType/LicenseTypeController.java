@@ -27,10 +27,7 @@ public class LicenseTypeController {
     @GetMapping("/{IdLicense}")
     public ResponseEntity<LicenseType> findByID(@PathVariable Integer IdLicense) {
         var entity = licenseTypeServices.findByID(IdLicense);
-
-        return entity.isPresent()
-                ? ResponseEntity.ok(entity.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(entity);
     }
 
     @GetMapping

@@ -4,16 +4,15 @@ package com.system.SystemERP.Services.NatureProducts;
 import com.system.SystemERP.Dtos.NatureProducts.NatureProductsDTO;
 import com.system.SystemERP.Entity.NatureProduct.NatureProduct;
 import com.system.SystemERP.Repository.NatureProduct.NatureProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class NatureProductsServices {
 
-    @Autowired
+
     private NatureProductRepository natureProductRepository;
 
     public NatureProductsServices(NatureProductRepository natureProductRepository) {
@@ -26,15 +25,17 @@ public class NatureProductsServices {
         return savednatureProducts.getIdNatureProduct();
     }
 
-    public Optional<NatureProduct> getById(Integer id){
-        return natureProductRepository.findById(id);
+    public NatureProduct getById(Integer id) {
+        return natureProductRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Natureza do produto nao encontrada"));
     }
 
-    public List<NatureProduct> getAll(){
+    public List<NatureProduct> getAll() {
         return natureProductRepository.findAll();
     }
 
-    public void delete(Integer id){
+    public void delete(Integer id) {
+        var exists = natureProductRepository.existsById(id);
+        if (!exists) throw new EntityNotFoundException("Natureza do produto nao encontrada");
         natureProductRepository.deleteById(id);
     }
 }

@@ -29,10 +29,8 @@ public class InternalTransferController {
     @GetMapping("/{idInternalTransfer}")
     public ResponseEntity<InternalTransfer> findInternalTransferByID(@PathVariable Integer idInternalTransfer) {
         var internalTransfer = internalTransferServices.findById(idInternalTransfer);
+        return ResponseEntity.ok(internalTransfer);
 
-        return internalTransfer.isPresent()
-                ? ResponseEntity.ok(internalTransfer.get())
-                : ResponseEntity.notFound().build();
     }
 
     @GetMapping
@@ -45,8 +43,7 @@ public class InternalTransferController {
     @DeleteMapping("/{idInternalTransfer}")
     public ResponseEntity<Void> deleteByID(@PathVariable Integer idInternalTransfer) {
         internalTransferServices.deleteByID(idInternalTransfer);
-        return ResponseEntity
-                .noContent()
+        return ResponseEntity.noContent()
                 .build();
     }
 }

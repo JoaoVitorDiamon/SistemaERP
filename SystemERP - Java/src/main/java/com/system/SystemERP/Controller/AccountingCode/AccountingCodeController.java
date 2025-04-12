@@ -40,9 +40,7 @@ public class AccountingCodeController {
     public ResponseEntity<AccountingCode> findByID(@PathVariable Integer idAccountingCode) {
         var accountingCode = accountingCodeServices.findByID(idAccountingCode);
 
-        return accountingCode.isPresent()
-                ? ResponseEntity.ok(accountingCode.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(accountingCode);
     }
 
 

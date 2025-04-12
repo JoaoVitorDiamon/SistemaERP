@@ -1,4 +1,4 @@
-package com.system.SystemERP.Controller.NaturePRoducts;
+package com.system.SystemERP.Controller.NatureProducts;
 
 import com.system.SystemERP.Dtos.NatureProducts.NatureProductsDTO;
 import com.system.SystemERP.Entity.NatureProduct.NatureProduct;
@@ -34,9 +34,7 @@ public class NatureProductsController {
     @Operation(summary = "Busca uma Natureza para o Produto", description = "Busca uma Natureza de Produto")
     public ResponseEntity<NatureProduct> findById(@PathVariable Integer idNatureProduct){
         var exist = natureProductsServices.getById(idNatureProduct);
-        return exist.isPresent()
-                ? ResponseEntity.ok(exist.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(exist);
     }
 
     @GetMapping
