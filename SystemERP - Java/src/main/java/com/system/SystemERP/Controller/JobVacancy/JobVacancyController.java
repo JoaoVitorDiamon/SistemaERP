@@ -4,7 +4,6 @@ package com.system.SystemERP.Controller.JobVacancy;
 import com.system.SystemERP.Dtos.JobVacancy.JobVacancyDTO;
 import com.system.SystemERP.Entity.JobVacancy.JobVacancy;
 import com.system.SystemERP.Services.JobVacancy.JobVacancyServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +14,11 @@ import java.util.List;
 @RequestMapping("/jobVacancy")
 public class JobVacancyController {
 
-    @Autowired
     private JobVacancyServices jobVacancyServices;
 
+    public JobVacancyController(JobVacancyServices jobVacancyServices) {
+        this.jobVacancyServices = jobVacancyServices;
+    }
 
     @PostMapping
     public ResponseEntity<String> createJobVacancy(JobVacancyDTO jobVacancyDTO) {

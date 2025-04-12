@@ -4,7 +4,6 @@ package com.system.SystemERP.Controller.InternalTransfer;
 import com.system.SystemERP.Dtos.InternalTransfer.InternalTransferDTO;
 import com.system.SystemERP.Entity.InternalTransfer.InternalTransfer;
 import com.system.SystemERP.Services.InternalTransfer.InternalTransferServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +14,10 @@ import java.util.List;
 @RequestMapping("/internalTransfer")
 public class InternalTransferController {
 
-    @Autowired
+    public InternalTransferController(InternalTransferServices internalTransferServices) {
+        this.internalTransferServices = internalTransferServices;
+    }
+
     private InternalTransferServices internalTransferServices;
 
 

@@ -51,26 +51,22 @@ public record ThirdPartiesDTO (
 
     private ClientType fetchClientyTypeByID(Integer Id, ClientTypeServices clientTypeServices) {
         var clientType = clientTypeServices.findByID(Id);
-        return clientType.orElseThrow(
-                () -> new EntityNotFoundException("Tipo de Cliente nao encontrado"));
+        return clientType;
     }
 
     private Coin fetchCoinByID(Integer Id, CoinServices coinServices) {
         var coin = coinServices.findByID(Id);
-        return coin.orElseThrow(
-                () -> new EntityNotFoundException("Moeda nao encontrado"));
+        return coin;
     }
 
     private Enterprise fetchEnterpriseByID(Integer Id, EnterpriseServices enterpriseServices) {
         var enterprise = enterpriseServices.findByID(Id);
-        return enterprise.orElseThrow(
-                () -> new EntityNotFoundException("Empresa nao encontrado"));
+        return enterprise;
     }
 
     private Adress fetchAdressByID(Integer Id, AddresServices addresServices) {
         var addres = addresServices.findByID(Id);
-        return addres.orElseThrow(
-                () -> new EntityNotFoundException("Endereço nao encontrado"));
+        return addres;
     }
 
 }

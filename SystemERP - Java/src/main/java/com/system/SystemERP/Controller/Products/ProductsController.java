@@ -35,9 +35,7 @@ public class ProductsController {
     @Operation(summary = "Busca um produto pelo id", description = "Busca um produto pelo id")
     public ResponseEntity<Product> findById(@PathVariable Integer idProduto) {
         var exist = produtosServices.getById(idProduto);
-        return exist.isPresent()
-                ? ResponseEntity.ok(exist.get())
-                : ResponseEntity.notFound().build();
+        return  ResponseEntity.ok(exist);
     }
 
     @GetMapping

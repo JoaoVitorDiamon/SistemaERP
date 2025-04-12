@@ -3,19 +3,19 @@ package com.system.SystemERP.Services.TypesPayments;
 import com.system.SystemERP.Dtos.TypesPayments.TypesPaymentsDTO;
 import com.system.SystemERP.Entity.TypesPayments.TypesPayments;
 import com.system.SystemERP.Repository.TypesPayments.TypesPaymentsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TypesPaymentsServices {
-
-    @Autowired
     private TypesPaymentsRepository typesPaymentsRepository;
 
+    public TypesPaymentsServices(TypesPaymentsRepository typesPaymentsRepository) {
+        this.typesPaymentsRepository = typesPaymentsRepository;
+    }
 
     public Integer createTypePayment(TypesPaymentsDTO typesPaymentsDTO) {
         var typePayment = new TypesPayments(
@@ -29,8 +29,8 @@ public class TypesPaymentsServices {
 
     }
 
-    public Optional<TypesPayments> findByID(Integer id) {
-        return typesPaymentsRepository.findById(id);
+    public TypesPayments findByID(Integer id) {
+        return typesPaymentsRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Tipo de pagamento nao encontrado"));
     }
 
     public List<TypesPayments> findAll() {
@@ -39,10 +39,7 @@ public class TypesPaymentsServices {
 
     public void deleteByID(Integer id) {
         var exists = typesPaymentsRepository.existsById(id);
-
-        if (exists) {
-            typesPaymentsRepository.deleteById(id);
-        }
-
+        if (!exists) throw new EntityNotFoundException("Tipo de pagamento nao encontrado");
+        typesPaymentsRepository.deleteById(id);
     }
 }

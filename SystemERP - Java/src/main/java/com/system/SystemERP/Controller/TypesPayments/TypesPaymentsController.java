@@ -5,7 +5,6 @@ import com.system.SystemERP.Entity.TypesPayments.TypesPayments;
 import com.system.SystemERP.Services.TypesPayments.TypesPaymentsServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,9 +15,12 @@ import java.util.List;
 @Tag(name = "Tipos de Pagamentos")
 @RequestMapping("/typesPayments")
 public class TypesPaymentsController {
-
-    @Autowired
     private TypesPaymentsServices typesPaymentsServices;
+
+    public TypesPaymentsController(TypesPaymentsServices typesPaymentsServices) {
+        this.typesPaymentsServices = typesPaymentsServices;
+    }
+
 
     @PostMapping
     @Operation(summary = "Criar um Tipo de Pagamento")
@@ -31,10 +33,7 @@ public class TypesPaymentsController {
     @Operation(summary = "Busca um Tipo de Pagamento atraves do ID")
     public ResponseEntity<TypesPayments> findByID(@PathVariable Integer idTypesPayments) {
         var typesPaymentsExists = typesPaymentsServices.findByID(idTypesPayments);
-
-        return typesPaymentsExists.isPresent()
-                ? ResponseEntity.ok(typesPaymentsExists.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(typesPaymentsExists);
     }
 
     @GetMapping

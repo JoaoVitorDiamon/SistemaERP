@@ -4,17 +4,18 @@ import com.system.SystemERP.Dtos.AccountingCode.AccountingCodeDTO;
 import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Repository.AccountingCode.AccountingCodeRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AccountingCodeServices {
 
-    @Autowired
     private AccountingCodeRepository accountingCodeRepository;
+
+    public AccountingCodeServices(AccountingCodeRepository accountingCodeRepository) {
+        this.accountingCodeRepository = accountingCodeRepository;
+    }
 
     public Integer createAccountingCode(AccountingCodeDTO accountingCodeDTO) {
 

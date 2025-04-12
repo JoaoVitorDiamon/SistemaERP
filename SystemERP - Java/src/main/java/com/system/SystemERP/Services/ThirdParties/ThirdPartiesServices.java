@@ -7,10 +7,10 @@ import com.system.SystemERP.Services.Addres.AddresServices;
 import com.system.SystemERP.Services.ClientType.ClientTypeServices;
 import com.system.SystemERP.Services.Coin.CoinServices;
 import com.system.SystemERP.Services.Enterprise.EnterpriseServices;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ThirdPartiesServices {
@@ -36,8 +36,8 @@ public class ThirdPartiesServices {
         return savedThirdParty.getThirdPartyId();
     }
 
-    public Optional<ThirdParty> getById(Integer id) {
-        return thirdPartiesRepository.findById(id);
+    public ThirdParty getById(Integer id) {
+        return thirdPartiesRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Terceiros nao encontrado!"));
     }
 
     public List<ThirdParty> getAll() {
@@ -45,6 +45,8 @@ public class ThirdPartiesServices {
     }
 
     public void delete(Integer id) {
+        var exists = thirdPartiesRepository.existsById(id);
+        if (!exists) throw new EntityNotFoundException("Terceiros nao encontrado!");
         thirdPartiesRepository.deleteById(id);
     }
 }

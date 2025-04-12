@@ -28,13 +28,11 @@ public record StorageDTO(
     }
     private Adress fetchAdressById(Integer id, AddresServices addresServices){
         var addres = addresServices.findByID(id);
-        return addres.orElseThrow(
-                () -> new EntityNotFoundException("Endereco nao encontrado"));
+        return addres;
     }
 
     private Enterprise fetchEnterpriseById(Integer id, EnterpriseServices enterpriseServices){
         var enterprise = enterpriseServices.findByID(id);
-        return enterprise.orElseThrow(
-                () -> new EntityNotFoundException("Empresa não encontrada"));
+        return enterprise;
     }
 }

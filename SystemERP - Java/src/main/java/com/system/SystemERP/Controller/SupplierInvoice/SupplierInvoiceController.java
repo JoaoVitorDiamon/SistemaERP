@@ -14,35 +14,35 @@ import java.util.List;
 @RestController
 @RequestMapping("/supplierInvoice")
 public class SupplierInvoiceController {
-
-    @Autowired
     private SupplierInvoiceServices supplierInvoiceServices;
+
+    public SupplierInvoiceController(SupplierInvoiceServices supplierInvoiceServices) {
+        this.supplierInvoiceServices = supplierInvoiceServices;
+    }
 
 
     @PostMapping
-    public ResponseEntity<String> createSupplierInvoice(@RequestBody SupplierInvoiceDTO supplierInvoiceDTO){
+    public ResponseEntity<String> createSupplierInvoice(@RequestBody SupplierInvoiceDTO supplierInvoiceDTO) {
         var saved = supplierInvoiceServices.createSupplierInvoice(supplierInvoiceDTO);
         return ResponseEntity.created(URI.create("/supplierInvoice" + saved.toString())).build();
 
     }
 
     @GetMapping("/{idSupplierInvoice}")
-    public ResponseEntity<SupplierInvoice> findByID(@PathVariable Integer idSupplierInvoice){
+    public ResponseEntity<SupplierInvoice> findByID(@PathVariable Integer idSupplierInvoice) {
         var entityPresent = supplierInvoiceServices.findByID(idSupplierInvoice);
-        return entityPresent.isPresent()
-                ? ResponseEntity.ok(entityPresent.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(entityPresent);
     }
 
     @GetMapping
-    public ResponseEntity<List<SupplierInvoice>> getAll (){
+    public ResponseEntity<List<SupplierInvoice>> getAll() {
         var listSupplier = supplierInvoiceServices.getAll();
         return ResponseEntity.ok(listSupplier);
 
     }
 
     @DeleteMapping("/{idSupplierInvoice}")
-    public ResponseEntity<Void> deleteByID(@PathVariable Integer idSupplierInvoice){
+    public ResponseEntity<Void> deleteByID(@PathVariable Integer idSupplierInvoice) {
         supplierInvoiceServices.deleteByID(idSupplierInvoice);
         return ResponseEntity.noContent().build();
     }

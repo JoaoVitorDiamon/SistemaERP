@@ -3,7 +3,6 @@ package com.system.SystemERP.Controller.LicenseType;
 import com.system.SystemERP.Dtos.LicenseType.LicenceTypeDTO;
 import com.system.SystemERP.Entity.LicenseType.LicenseType;
 import com.system.SystemERP.Services.LicenseType.LicenseTypeServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,9 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/license")
 public class LicenseTypeController {
-
-    @Autowired
     private LicenseTypeServices licenseTypeServices;
+
+    public LicenseTypeController(LicenseTypeServices licenseTypeServices) {
+        this.licenseTypeServices = licenseTypeServices;
+    }
+
 
 
     @PostMapping

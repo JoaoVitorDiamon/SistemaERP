@@ -8,27 +8,29 @@ import com.system.SystemERP.Services.Addres.AddresServices;
 import com.system.SystemERP.Services.BarCodeType.BarCodeTypeServices;
 import com.system.SystemERP.Services.Enterprise.EnterpriseServices;
 import com.system.SystemERP.Services.SerialNumberControl.SerialNumberControlService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ServiceServices {
 
-    @Autowired
     private ServiceRepository serviceRepository;
-    @Autowired
     private SerialNumberControlService serialNumberControlService;
-    @Autowired
     private BarCodeTypeServices barCodeTypeServices;
-    @Autowired
     private AccountingCodeServices accountingCodeServices;
-    @Autowired
     private EnterpriseServices enterpriseServices;
-    @Autowired
     private AddresServices addresServices;
+
+    public ServiceServices(ServiceRepository serviceRepository, SerialNumberControlService serialNumberControlService, BarCodeTypeServices barCodeTypeServices, AccountingCodeServices accountingCodeServices, EnterpriseServices enterpriseServices, AddresServices addresServices) {
+        this.serviceRepository = serviceRepository;
+        this.serialNumberControlService = serialNumberControlService;
+        this.barCodeTypeServices = barCodeTypeServices;
+        this.accountingCodeServices = accountingCodeServices;
+        this.enterpriseServices = enterpriseServices;
+        this.addresServices = addresServices;
+    }
 
     public Integer CreateService(ServiceDTO serviceDTO) {
         var service = serviceDTO.toEntity(serialNumberControlService, barCodeTypeServices, accountingCodeServices, enterpriseServices, addresServices);
@@ -36,8 +38,8 @@ public class ServiceServices {
         return savedService.getIdService();
     }
 
-    public Optional<com.system.SystemERP.Entity.Service.Service> getById(Integer id) {
-        return serviceRepository.findById(id);
+    public com.system.SystemERP.Entity.Service.Service getById(Integer id) {
+        return serviceRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Servico nao encontrado"));
     }
 
     public List<com.system.SystemERP.Entity.Service.Service> getAll() {
@@ -45,6 +47,8 @@ public class ServiceServices {
     }
 
     public void delete(Integer id) {
+        var exists = serviceRepository.existsById(id);
+        if (!exists) throw new EntityNotFoundException("Servico nao encontrado");
         serviceRepository.deleteById(id);
     }
 }

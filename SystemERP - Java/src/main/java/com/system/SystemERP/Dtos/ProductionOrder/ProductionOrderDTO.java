@@ -45,18 +45,18 @@ public record ProductionOrderDTO(
 
     public Product fetchProductById(Integer id, ProdutosServices produtosServices) {
         var entity = produtosServices.getById(id);
-        return entity.orElseThrow(() -> new EntityNotFoundException("Produto nao encontrado"));
+        return entity;
     }
 
     public Storage fetchStorageById(Integer id, StorageServices storageServices) {
         var entity = storageServices.getById(id);
-        return entity.orElseThrow(() -> new EntityNotFoundException("Armazem nao encontrado"));
+        return entity;
 
     }
 
     public ThirdParty fetchThirdPartyById(Integer id, ThirdPartiesServices thirdPartiesServices) {
         var entity = thirdPartiesServices.getById(id);
-        return entity.orElseThrow(() -> new EntityNotFoundException("Terceiro nao encontrado"));
+        return entity;
 
     }
 

@@ -65,14 +65,12 @@ public record ServiceDTO (
     }
     private SerialNumberControl fetchSerialNumberControlById(Integer id, SerialNumberControlService serialNumberControlService){
         var serialNumberControl = serialNumberControlService.findById(id);
-        return serialNumberControl.orElseThrow(
-                () -> new EntityNotFoundException("Numero de Serie não nencontrado"));
+        return serialNumberControl;
     }
 
     private BarCodeType fetchBarCodeTypeById(Integer id, BarCodeTypeServices barCodeTypeServices){
         var barCodeType = barCodeTypeServices.findById(id);
-        return barCodeType.orElseThrow(
-                () -> new EntityNotFoundException("Codigo de barras não encontrado"));
+        return barCodeType;
         }
 
     private AccountingCode fetchAccountingCodeByID(Integer Id, AccountingCodeServices accountingCodeServices) {
@@ -82,13 +80,11 @@ public record ServiceDTO (
 
     private Enterprise fetchEnterpriseById(Integer Id, EnterpriseServices enterpriseServices){
         var enterprise = enterpriseServices.findByID(Id);
-        return enterprise.orElseThrow(
-                () -> new EntityNotFoundException("Empresa não encontrada"));
+        return enterprise;
     }
 
     private Adress fetchAdressByID(Integer Id, AddresServices addresServices) {
         var addres = addresServices.findByID(Id);
-        return addres.orElseThrow(
-                () -> new EntityNotFoundException("Endereço nao encontrado"));
+        return addres;
     }
 }

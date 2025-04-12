@@ -48,7 +48,7 @@ public class PaymentTermsController {
 
     public ResponseEntity<PaymentTerms> getByID(@PathVariable Integer idPaymentTerms) {
         var terms = paymentTermsServices.findByIDPaymentTerms(idPaymentTerms);
-        return terms.isPresent() ? ResponseEntity.ok(terms.get()) : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(terms);
     }
 
     @Operation(summary = "Busca todos os Termos por ID", description = "Retorna os detalhes de todos os Termos")

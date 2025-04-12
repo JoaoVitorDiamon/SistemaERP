@@ -35,9 +35,7 @@ public class ServiceController {
     @Operation(summary = "Busca um serviço pelo id", description = "Busca um serviço pelo id")
     public ResponseEntity<Service> findById(@PathVariable Integer idServico){
         var exist = serviceServices.getById(idServico);
-        return exist.isPresent()
-                ? ResponseEntity.ok(exist.get())
-                : ResponseEntity.notFound().build();
+        return  ResponseEntity.ok(exist);
     }
 
     @GetMapping

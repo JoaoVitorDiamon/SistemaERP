@@ -13,9 +13,12 @@ import java.util.List;
 @RequestMapping("/salary")
 @RestController
 public class SalaryController {
-
-    @Autowired
     private SalaryServices salaryServices;
+
+    public SalaryController(SalaryServices salaryServices) {
+        this.salaryServices = salaryServices;
+    }
+
 
 
     @PostMapping
@@ -28,9 +31,7 @@ public class SalaryController {
     public ResponseEntity<Salary> findByID(@PathVariable Integer idSalary) {
         var salary = salaryServices.findByID(idSalary);
 
-        return salary.isPresent()
-                ? ResponseEntity.ok(salary.get())
-                : ResponseEntity.notFound().build();
+        return  ResponseEntity.ok(salary);
     }
 
     @GetMapping("/enterprise/{IdEnterprise}")

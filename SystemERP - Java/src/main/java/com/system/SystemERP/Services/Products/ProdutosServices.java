@@ -2,16 +2,16 @@ package com.system.SystemERP.Services.Products;
 
 import com.system.SystemERP.Entity.Products.Product;
 import com.system.SystemERP.Repository.Products.ProdutosRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProdutosServices {
     private ProdutosRepository produtosRepository;
 
-    public ProdutosServices(ProdutosRepository produtosRepository){
+    public ProdutosServices(ProdutosRepository produtosRepository) {
         this.produtosRepository = produtosRepository;
     }
 
@@ -22,15 +22,17 @@ public class ProdutosServices {
 //    }
 
 
-    public Optional<Product> getById(Integer id){
-        return produtosRepository.findById(id);
+    public Product getById(Integer id) {
+        return produtosRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Produto nao encontrado!"));
     }
 
-    public List<Product> getAll(){
+    public List<Product> getAll() {
         return produtosRepository.findAll();
     }
 
-    public void delete(Integer id){
+    public void delete(Integer id) {
+        var exists = produtosRepository.existsById(id);
+        if (!exists) throw new EntityNotFoundException("Produto nao encontrado!");
         produtosRepository.deleteById(id);
     }
 }

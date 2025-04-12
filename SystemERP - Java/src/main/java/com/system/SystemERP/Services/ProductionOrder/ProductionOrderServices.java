@@ -8,28 +8,27 @@ import com.system.SystemERP.Services.MaterialType.MaterialTypeServices;
 import com.system.SystemERP.Services.Products.ProdutosServices;
 import com.system.SystemERP.Services.Storage.StorageServices;
 import com.system.SystemERP.Services.ThirdParties.ThirdPartiesServices;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductionOrderServices {
 
-    @Autowired
     private ProductionOrderRepositorty productionOrderRepositorty;
-
-    @Autowired
     private MaterialTypeServices materialTypeServices;
-
-    @Autowired
     private ProdutosServices produtosServices;
-
-    @Autowired
     private StorageServices storageServices;
 
-    @Autowired
+    public ProductionOrderServices(ProductionOrderRepositorty productionOrderRepositorty, MaterialTypeServices materialTypeServices, ProdutosServices produtosServices, StorageServices storageServices, ThirdPartiesServices thirdPartiesServices) {
+        this.productionOrderRepositorty = productionOrderRepositorty;
+        this.materialTypeServices = materialTypeServices;
+        this.produtosServices = produtosServices;
+        this.storageServices = storageServices;
+        this.thirdPartiesServices = thirdPartiesServices;
+    }
+
     private ThirdPartiesServices thirdPartiesServices;
 
     public Integer createProductionOrder(ProductionOrderDTO productionOrderDTO) {
@@ -38,8 +37,8 @@ public class ProductionOrderServices {
         return entity.getIdProductionOrder();
     }
 
-    public Optional<ProductionOrder> findById(Integer id) {
-        return productionOrderRepositorty.findById(id);
+    public ProductionOrder findById(Integer id) {
+        return productionOrderRepositorty.findById(id).orElseThrow(() -> new EntityNotFoundException("Entidade não encontrada"));
     }
 
     public List<ProductionOrder> getAll() {
@@ -48,9 +47,8 @@ public class ProductionOrderServices {
 
     public void deleteById(Integer id) {
         var exists = productionOrderRepositorty.existsById(id);
-        if (exists) {
-            productionOrderRepositorty.deleteById(id);
-        }
+        if (!exists) throw new EntityNotFoundException("Entidade não encontrada");
+        productionOrderRepositorty.deleteById(id);
     }
 
 

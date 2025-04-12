@@ -8,25 +8,28 @@ import com.system.SystemERP.Services.AccountBank.AccountBankServices;
 import com.system.SystemERP.Services.InvoiceTypes.InvoiceTypesServices;
 import com.system.SystemERP.Services.ThirdParties.ThirdPartiesServices;
 import com.system.SystemERP.Services.TypesPayments.TypesPaymentsServices;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SupplierInvoiceServices {
 
-    @Autowired
     private SupplierInvoiceRepository supplierInvoiceRepository;
-    @Autowired
     private AccountBankServices accountBankServices;
-    @Autowired
     private InvoiceTypesServices invoiceTypesServices;
-    @Autowired
     private TypesPaymentsServices typesPaymentsServices;
-    @Autowired
     private ThirdPartiesServices thirdPartiesServices;
+
+    public SupplierInvoiceServices(SupplierInvoiceRepository supplierInvoiceRepository, AccountBankServices accountBankServices, InvoiceTypesServices invoiceTypesServices, TypesPaymentsServices typesPaymentsServices, ThirdPartiesServices thirdPartiesServices) {
+        this.supplierInvoiceRepository = supplierInvoiceRepository;
+        this.accountBankServices = accountBankServices;
+        this.invoiceTypesServices = invoiceTypesServices;
+        this.typesPaymentsServices = typesPaymentsServices;
+        this.thirdPartiesServices = thirdPartiesServices;
+    }
+
 
 
     public Integer createSupplierInvoice(SupplierInvoiceDTO supplierInvoiceDTO) {
@@ -35,8 +38,8 @@ public class SupplierInvoiceServices {
         return supplier.getIdSupplierInvoice();
     }
 
-    public Optional<SupplierInvoice> findByID(Integer ID) {
-        return supplierInvoiceRepository.findById(ID);
+    public SupplierInvoice findByID(Integer ID) {
+        return supplierInvoiceRepository.findById(ID).orElseThrow(() -> new EntityNotFoundException("Fatura nao encontrada"));
     }
 
     public List<SupplierInvoice> getAll() {
@@ -45,9 +48,8 @@ public class SupplierInvoiceServices {
 
     public void deleteByID(Integer ID) {
         var exists = supplierInvoiceRepository.existsById(ID);
-        if (exists) {
-            supplierInvoiceRepository.deleteById(ID);
-        }
+        if (!exists) throw new EntityNotFoundException("Fatura nao encontrada");
+        supplierInvoiceRepository.deleteById(ID);
     }
 
 }

@@ -1,4 +1,5 @@
 package com.system.SystemERP.Dtos.Products;
+
 import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Entity.BarCodeType.BarCodeType;
 import com.system.SystemERP.Entity.Enterprise.Enterprise;
@@ -10,7 +11,6 @@ import com.system.SystemERP.Services.BarCodeType.BarCodeTypeServices;
 import com.system.SystemERP.Services.Enterprise.EnterpriseServices;
 import com.system.SystemERP.Services.NatureProducts.NatureProductsServices;
 import com.system.SystemERP.Services.SerialNumberControl.SerialNumberControlService;
-import jakarta.persistence.EntityNotFoundException;
 
 public record ProdutosDTO(
         String productName,
@@ -83,14 +83,12 @@ public record ProdutosDTO(
 
     private SerialNumberControl fetchSerialNumberControlById(Integer id, SerialNumberControlService serialNumberControlService){
         var serialNumberControl = serialNumberControlService.findById(id);
-        return serialNumberControl.orElseThrow(
-                () -> new EntityNotFoundException("Numero de Serie não nencontrado") );
+        return serialNumberControl;
     }
 
     private BarCodeType fetchBarCodeTypeById(Integer id, BarCodeTypeServices barCodeTypeServices){
         var barCodeType = barCodeTypeServices.findById(id);
-        return barCodeType.orElseThrow(
-                () -> new EntityNotFoundException("Codigo de barras não encontrado"));
+        return barCodeType;
     }
 
     private NatureProduct fetchNatureProductById(Integer id, NatureProductsServices natureProductsServices){
@@ -105,7 +103,6 @@ public record ProdutosDTO(
 
     private Enterprise fetchEnterpriseById(Integer id, EnterpriseServices enterpriseServices){
         var entity = enterpriseServices.findByID(id);
-        return entity.orElseThrow(
-                () -> new EntityNotFoundException("Empresa não encontrada"));
+        return entity;
     }
 }

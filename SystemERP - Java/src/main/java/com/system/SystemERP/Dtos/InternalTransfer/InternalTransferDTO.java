@@ -5,7 +5,6 @@ import com.system.SystemERP.Entity.InternalTransfer.InternalTransfer;
 import com.system.SystemERP.Entity.TypesPayments.TypesPayments;
 import com.system.SystemERP.Services.AccountBank.AccountBankServices;
 import com.system.SystemERP.Services.TypesPayments.TypesPaymentsServices;
-import jakarta.persistence.EntityNotFoundException;
 
 import java.util.Date;
 
@@ -38,6 +37,6 @@ public record InternalTransferDTO(
 
     private TypesPayments fetchTypesPaymentsByID(Integer Id, TypesPaymentsServices typesPaymentsServices){
         var typesPayments = typesPaymentsServices.findByID(Id);
-        return typesPayments.orElseThrow(() -> new EntityNotFoundException("Tipo nao encontrado"));
+        return typesPayments;
     }
 }

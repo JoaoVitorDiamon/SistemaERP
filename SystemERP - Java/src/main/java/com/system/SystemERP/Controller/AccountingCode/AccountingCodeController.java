@@ -6,7 +6,6 @@ import com.system.SystemERP.Entity.AccountingCode.AccountingCode;
 import com.system.SystemERP.Services.AccountingCode.AccountingCodeServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +18,12 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:")
 
 public class AccountingCodeController {
-
-    @Autowired
     private AccountingCodeServices accountingCodeServices;
+
+    public AccountingCodeController(AccountingCodeServices accountingCodeServices) {
+        this.accountingCodeServices = accountingCodeServices;
+    }
+
 
     @PostMapping
     @Operation(summary = "Criar um Codigo Contabil")
@@ -39,7 +41,6 @@ public class AccountingCodeController {
     @Operation(summary = "Buscar um Codigo Contabil atraves do ID")
     public ResponseEntity<AccountingCode> findByID(@PathVariable Integer idAccountingCode) {
         var accountingCode = accountingCodeServices.findByID(idAccountingCode);
-
         return ResponseEntity.ok(accountingCode);
     }
 
@@ -48,7 +49,6 @@ public class AccountingCodeController {
     @Operation(summary = "Buscar todos os Codigo Contabil")
     public ResponseEntity<List<AccountingCode>> findAll() {
         var listsAccountingCode = accountingCodeServices.findAll();
-
         return ResponseEntity.ok(listsAccountingCode);
     }
 

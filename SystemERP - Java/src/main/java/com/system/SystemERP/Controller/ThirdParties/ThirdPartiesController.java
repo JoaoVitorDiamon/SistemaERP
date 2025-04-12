@@ -33,8 +33,8 @@ public class ThirdPartiesController {
     @GetMapping("/{idTerceiros}")
     @Operation(summary = "Busca um terceiro pelo ID", description = "Retorna um terceiro pelo ID")
     public ResponseEntity<ThirdParty> findById(@PathVariable Integer idTerceiros) {
-        var exist = thirdPartiesServices.getById(idTerceiros);
-        return exist.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        var entity = thirdPartiesServices.getById(idTerceiros);
+        return ResponseEntity.ok(entity);
     }
 
     @GetMapping

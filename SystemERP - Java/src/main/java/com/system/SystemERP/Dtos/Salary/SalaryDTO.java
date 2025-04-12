@@ -37,12 +37,12 @@ public record SalaryDTO(String label, Date dateStart, Date endDate, Double value
 
     private TypesPayments fetchTypesPaymentsById(Integer typePaymentID, TypesPaymentsServices typesPaymentsServices){
         var typesPayments = typesPaymentsServices.findByID(typePaymentID);
-        return typesPayments.orElseThrow(() -> new EntityNotFoundException("Tipo de Pagamento nao encontrado"));
+        return typesPayments;
     }
 
     private Members fetchMemberById(Integer memberID, MembersServices membersServices){
         var members = membersServices.findById(memberID);
-        return members.orElseThrow(() -> new EntityNotFoundException("Membro nao Encontrado"));
+        return members;
 
     }
 

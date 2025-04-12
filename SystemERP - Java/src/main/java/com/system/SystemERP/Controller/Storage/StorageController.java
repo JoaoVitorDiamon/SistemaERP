@@ -34,7 +34,7 @@ public class StorageController {
     @Operation(summary = "Busca um armazém pelo ID", description = "Retorna um armazém pelo ID")
     public ResponseEntity<Storage> findById(@PathVariable Integer idArmazem) {
         var exist = storageServices.getById(idArmazem);
-        return exist.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return ResponseEntity.ok(exist);
     }
 
     @GetMapping

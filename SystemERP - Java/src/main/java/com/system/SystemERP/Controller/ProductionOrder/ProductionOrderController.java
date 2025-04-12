@@ -3,7 +3,6 @@ package com.system.SystemERP.Controller.ProductionOrder;
 import com.system.SystemERP.Dtos.ProductionOrder.ProductionOrderDTO;
 import com.system.SystemERP.Entity.ProductionOrder.ProductionOrder;
 import com.system.SystemERP.Services.ProductionOrder.ProductionOrderServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +13,12 @@ import java.util.List;
 @RequestMapping("/productionOrder")
 public class ProductionOrderController {
 
-    @Autowired
     private ProductionOrderServices productionOrderServices;
+
+    public ProductionOrderController(ProductionOrderServices productionOrderServices) {
+        this.productionOrderServices = productionOrderServices;
+    }
+
 
 
     @PostMapping
@@ -27,9 +30,7 @@ public class ProductionOrderController {
     @GetMapping("/{idProductionOrder}")
     public ResponseEntity<ProductionOrder> findById(@PathVariable Integer idProductionOrder) {
         var entity = productionOrderServices.findById(idProductionOrder);
-        return entity.isPresent()
-                ? ResponseEntity.ok(entity.get())
-                : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(entity);
     }
 
     @GetMapping

@@ -39,7 +39,7 @@ public record SupplierInvoiceDTO(Integer IdThirdParty, Integer IdInvoiceTypes, D
 
     private TypesPayments fetchTypesPaymentsById(Integer typePaymentID, TypesPaymentsServices typesPaymentsServices) {
         var typesPayments = typesPaymentsServices.findByID(typePaymentID);
-        return typesPayments.orElseThrow(() -> new EntityNotFoundException("Tipo de Pagamento nao encontrado"));
+        return typesPayments;
     }
 
     private InvoiceTypes fetchInvoiceTypesById(Integer invoiceTypesID, InvoiceTypesServices invoiceTypesServices) {
@@ -50,6 +50,6 @@ public record SupplierInvoiceDTO(Integer IdThirdParty, Integer IdInvoiceTypes, D
 
     private ThirdParty fetchThirdPartyById(Integer idThirdParty, ThirdPartiesServices thirdPartiesServices) {
         var thirdParty = thirdPartiesServices.getById(idThirdParty);
-        return thirdParty.orElseThrow(() -> new EntityNotFoundException("Fornecedor nao encontrado"));
+        return thirdParty;
     }
 }

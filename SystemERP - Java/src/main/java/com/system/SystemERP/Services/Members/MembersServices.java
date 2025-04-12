@@ -3,19 +3,20 @@ package com.system.SystemERP.Services.Members;
 
 import com.system.SystemERP.Entity.Members.Members;
 import com.system.SystemERP.Repository.Members.MembersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class MembersServices {
-
-    @Autowired
     private MembersRepository membersRepository;
+    public MembersServices(MembersRepository membersRepository) {
+        this.membersRepository = membersRepository;
+    }
 
-    public Optional<Members> findById(Integer Id){
-        return membersRepository.findById(Id);
+
+
+    public Members findById(Integer Id){
+        return membersRepository.findById(Id).orElseThrow(() -> new EntityNotFoundException("Membro nao encontrado"));
     }
 
 }

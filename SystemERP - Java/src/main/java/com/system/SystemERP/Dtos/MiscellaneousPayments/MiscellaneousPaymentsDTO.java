@@ -5,7 +5,6 @@ import com.system.SystemERP.Entity.MiscellaneousPayments.MiscellaneousPayments;
 import com.system.SystemERP.Entity.TypesPayments.TypesPayments;
 import com.system.SystemERP.Services.AccountBank.AccountBankServices;
 import com.system.SystemERP.Services.TypesPayments.TypesPaymentsServices;
-import jakarta.persistence.EntityNotFoundException;
 
 import java.util.Date;
 
@@ -36,7 +35,7 @@ public record MiscellaneousPaymentsDTO(Date DatePayment, Date DateValue, String 
 
     private TypesPayments fetchTypesPaymentsById(Integer typePaymentID, TypesPaymentsServices typesPaymentsServices) {
         var typesPayments = typesPaymentsServices.findByID(typePaymentID);
-        return typesPayments.orElseThrow(() -> new EntityNotFoundException("Tipo de Pagamento nao encontrado"));
+        return typesPayments;
     }
 
 }

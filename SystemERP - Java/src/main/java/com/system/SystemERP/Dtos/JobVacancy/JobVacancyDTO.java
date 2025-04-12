@@ -7,7 +7,6 @@ import com.system.SystemERP.Entity.Position.Position;
 import com.system.SystemERP.Services.Addres.AddresServices;
 import com.system.SystemERP.Services.Members.MembersServices;
 import com.system.SystemERP.Services.Position.PositionServices;
-import jakarta.persistence.EntityNotFoundException;
 
 import java.util.Date;
 
@@ -38,22 +37,18 @@ public record JobVacancyDTO(
 
     private Members fetchMemberById(Integer memberID, MembersServices membersServices) {
         var members = membersServices.findById(memberID);
-        return members.orElseThrow(() -> new EntityNotFoundException("Membro nao Encontrado"));
-
+        return members;
     }
 
     private Adress fetchAdressByID(Integer Id, AddresServices addresServices) {
         var addres = addresServices.findByID(Id);
-        return addres.orElseThrow(
-                () -> new EntityNotFoundException("Endereço nao encontrado"));
+        return addres;
     }
 
 
     private Position fetchPositionByID(Integer id, PositionServices positionServices) {
         var position = positionServices.findByID(id);
-        return position.orElseThrow(
-                () -> new EntityNotFoundException("Cargo nao encontrado"));
-
+        return position;
     }
 
 

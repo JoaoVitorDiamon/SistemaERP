@@ -5,10 +5,10 @@ import com.system.SystemERP.Entity.Storage.Storage;
 import com.system.SystemERP.Repository.Storage.StorageRepository;
 import com.system.SystemERP.Services.Addres.AddresServices;
 import com.system.SystemERP.Services.Enterprise.EnterpriseServices;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class StorageServices {
@@ -28,8 +28,8 @@ public class StorageServices {
         return savedStorage.getStorageId();
     }
 
-    public Optional<Storage> getById(Integer id) {
-        return storageRepository.findById(id);
+    public Storage getById(Integer id) {
+        return storageRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Armazem nao encontrado"));
     }
 
     public List<Storage> getAll() {
@@ -37,6 +37,8 @@ public class StorageServices {
     }
 
     public void delete(Integer id) {
+        var exists = storageRepository.existsById(id);
+        if (!exists) throw new EntityNotFoundException("Armazem nao encontrado");
         storageRepository.deleteById(id);
     }
 }
