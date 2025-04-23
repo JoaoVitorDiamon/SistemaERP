@@ -4,7 +4,6 @@ import com.system.SystemERP.Dtos.PaymentTerms.PaymentTermsDTOS;
 import com.system.SystemERP.Entity.PaymentTerms.PaymentTerms;
 import com.system.SystemERP.Enum.PaymentTerms.PaymentTermsEnum;
 import com.system.SystemERP.Repository.PaymentTerms.PaymentTermsRepository;
-import com.system.SystemERP.Services.PaymentTerms.PaymentTermsServices;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -111,7 +110,7 @@ class PaymentTermsServicesTest {
 
             var output = paymentTermsServices.findByIDPaymentTerms(termsPayment.getIdPaymentTerms());
 
-            assertTrue(output.isPresent());
+            assertNotNull(output);
             assertEquals(termsPayment.getIdPaymentTerms(), idArgumentCaptor.getValue());
         }
 
@@ -132,7 +131,7 @@ class PaymentTermsServicesTest {
 
             var output = paymentTermsServices.findByIDPaymentTerms(termsPaymentID);
 
-            assertTrue(output.isEmpty());
+            assertNull(output);
             assertEquals(termsPaymentID, idArgumentCaptor.getValue());
         }
     }

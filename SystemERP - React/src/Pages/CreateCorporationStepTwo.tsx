@@ -1,4 +1,4 @@
-import FormCreateCorporationStepTwo from '../components/Register/FormCreateCorporationStepTwo';
+import FormCreateCorporationStepTwo from '../components/Register/StepTwo/FormCreateCorporationStepTwo';
 
 function CreateCorporationStepTwoPage() {
   return (

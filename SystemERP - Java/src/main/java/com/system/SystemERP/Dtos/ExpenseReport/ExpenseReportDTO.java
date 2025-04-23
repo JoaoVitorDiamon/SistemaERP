@@ -4,11 +4,11 @@ import com.system.SystemERP.Entity.ExpenseReport.ExpenseReport;
 import com.system.SystemERP.Entity.Members.Members;
 import com.system.SystemERP.Services.Members.MembersServices;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public record ExpenseReportDTO(
-        Date inicialDate,
-        Date endDate,
+        LocalDateTime inicialDate,
+        LocalDateTime endDate,
         Integer idMembers,
         Integer idResponsable,
         String note

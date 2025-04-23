@@ -5,7 +5,7 @@ import com.system.SystemERP.Entity.Members.Members;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -15,14 +15,15 @@ public class ExpenseReport {
 
     @Id
     @Column(name = "\"IdExpenseReport\"")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer idExpenseReport;
 
 
     @Column(name = "\"InicialDate\"")
-    private Date inicialDate;
+    private LocalDateTime inicialDate;
 
     @Column(name = "\"EndDate\"")
-    private Date endDate;
+    private LocalDateTime endDate;
 
     @ManyToOne
     @JoinColumn(name = "\"IdMembers\"", foreignKey = @ForeignKey(name = "\"FK_IdMembers_ExpenseReport\""))
@@ -38,7 +39,7 @@ public class ExpenseReport {
     public ExpenseReport() {
     }
 
-    public ExpenseReport(Integer idExpenseReport, Date inicialDate, Date endDate, Members idMembers, Members idResponsible, String note) {
+    public ExpenseReport(Integer idExpenseReport, LocalDateTime inicialDate, LocalDateTime endDate, Members idMembers, Members idResponsible, String note) {
         this.idExpenseReport = idExpenseReport;
         this.inicialDate = inicialDate;
         this.endDate = endDate;

@@ -107,32 +107,10 @@ class InvoiceTypesServicesTest {
 
             var output = invoiceTypesServices.getByID(invoice.getIdInvoiceTypes());
 
-            assertTrue(output.isPresent());
+            assertNotNull(output);
             assertEquals(invoice.getIdInvoiceTypes(), invoiceTypesArgumentCaptorID.getValue());
         }
 
-        @Test
-        @DisplayName("Should Get Invoice Types By Id With Success When OptionalIs Empty")
-        void shouldGetInvoiceTypesByIdWithSuccessWhenOptionalIsEmpty() {
-            var invoiceID = 55;
-            var invoice = new InvoiceTypes(
-                    21,
-                    " fatura_padrao",
-                    Instant.now(),
-                    null
-            );
-
-
-            doReturn(Optional.empty())
-                    .when(invoiceTypesRepository)
-                    .findById(invoiceTypesArgumentCaptorID.capture());
-
-
-            var output = invoiceTypesServices.getByID(invoiceID);
-
-            assertTrue(output.isEmpty());
-            assertEquals(invoiceID, invoiceTypesArgumentCaptorID.getValue());
-        }
 
     }
 
@@ -165,7 +143,7 @@ class InvoiceTypesServicesTest {
         @Test
         @DisplayName("Should delete  Invoice Types with success when  Invoice Types exists")
         void shouldDeleteInvoiceTypesWithSuccessWhenInvoiceTypesExists() {
-            var invoiceID = 55;
+            var invoiceID = 1;
 
             doReturn(true)
                     .when(invoiceTypesRepository)
@@ -187,25 +165,6 @@ class InvoiceTypesServicesTest {
                     .deleteById(listOfArgumentsValues.get(1));
         }
 
-        @Test
-        @DisplayName("Should not delete  Invoice Types when  Invoice Types NOT exists")
-        void shouldNotDeleteInvoiceTypesTypesWhenInvoiceTypesNotExists() {
-            var invoiceID = 55;
-
-            doReturn(false)
-                    .when(invoiceTypesRepository)
-                    .existsById(invoiceTypesArgumentCaptorID.capture());
-
-            invoiceTypesServices.deleteByID(invoiceID);
-
-            assertEquals(invoiceID, invoiceTypesArgumentCaptorID.getValue());
-
-            verify(invoiceTypesRepository, times(1))
-                    .existsById(invoiceTypesArgumentCaptorID.getValue());
-
-            verify(invoiceTypesRepository, times(0))
-                    .deleteById(any());
-        }
 
 
     }

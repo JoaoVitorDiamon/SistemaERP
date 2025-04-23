@@ -12,8 +12,11 @@
   --color-cardsStroke: #282D45;
   --color-borderButton: #282D45;
   --color-fontPrice: #4E2D92;
+  --color-navColor: #A3AED0;
+  --color-navIsActive: #007AFF;
 
   --font-poppins: "Poppins", sans-serif;
+  --font-dmSans: "DM Sans", sans-serif;
 }
 
 :root {
@@ -134,4 +137,3 @@
     @apply bg-background text-foreground;
   }
 }
-

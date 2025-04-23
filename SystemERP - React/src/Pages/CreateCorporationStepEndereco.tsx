@@ -1,4 +1,4 @@
-import FormCreateCorporationStepEndereco from "../components/Register/FormCreateCorporationStepEndereco"
+import FormCreateCorporationStepEndereco from "../components/Register/StepAdress/FormCreateCorporationStepEndereco"
 
 function CreateCorporationStepEndereco() {
   return (

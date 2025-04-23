@@ -16,6 +16,10 @@ public class ExpenseReportController {
 
     private ExpenseReportServices expenseReportServices;
 
+    public ExpenseReportController(ExpenseReportServices expenseReportServices) {
+        this.expenseReportServices = expenseReportServices;
+    }
+
     @PostMapping
     public ResponseEntity<String> createExpenseReport(@RequestBody ExpenseReportDTO expenseReportDTO) {
         var saved = expenseReportServices.createExpenseReport(expenseReportDTO);

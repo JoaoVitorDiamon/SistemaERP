@@ -1,4 +1,4 @@
-import FormCreateCorporationStepThree from "../components/Register/FormCreateCorporationStepThree"
+import FormCreateCorporationStepThree from "../components/Register/StepThree/FormCreateCorporationStepThree"
 
 function CreateCorporationStepThreePage() {
   return (
