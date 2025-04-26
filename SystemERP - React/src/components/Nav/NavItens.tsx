@@ -3,8 +3,8 @@ import { NavLink } from "react-router"
 
 interface NavItemProps {
     title: string;
-  icon: (isActive: boolean) => React.ReactNode;
-  url: string;
+     icon: (isActive: boolean) => React.ReactNode;
+     url: string;
 }
 
 

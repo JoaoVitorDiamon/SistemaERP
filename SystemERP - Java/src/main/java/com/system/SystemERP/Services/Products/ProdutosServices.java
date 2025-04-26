@@ -1,7 +1,13 @@
 package com.system.SystemERP.Services.Products;
 
+import com.system.SystemERP.Dtos.Products.ProdutosDTO;
 import com.system.SystemERP.Entity.Products.Product;
 import com.system.SystemERP.Repository.Products.ProdutosRepository;
+import com.system.SystemERP.Services.AccountingCode.AccountingCodeServices;
+import com.system.SystemERP.Services.BarCodeType.BarCodeTypeServices;
+import com.system.SystemERP.Services.Enterprise.EnterpriseServices;
+import com.system.SystemERP.Services.NatureProducts.NatureProductsServices;
+import com.system.SystemERP.Services.SerialNumberControl.SerialNumberControlService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -10,16 +16,27 @@ import java.util.List;
 @Service
 public class ProdutosServices {
     private ProdutosRepository produtosRepository;
+    private SerialNumberControlService serialNumberControlService;
+    private BarCodeTypeServices barCodeTypeServices;
+    private NatureProductsServices natureProductsServices;
+    private AccountingCodeServices accountingCodeServices;
+    private EnterpriseServices enterpriseServices;
 
-    public ProdutosServices(ProdutosRepository produtosRepository) {
+
+    public ProdutosServices(ProdutosRepository produtosRepository, SerialNumberControlService serialNumberControlService, BarCodeTypeServices barCodeTypeServices, NatureProductsServices natureProductsServices, AccountingCodeServices accountingCodeServices, EnterpriseServices enterpriseServices) {
         this.produtosRepository = produtosRepository;
+        this.serialNumberControlService = serialNumberControlService;
+        this.barCodeTypeServices = barCodeTypeServices;
+        this.natureProductsServices = natureProductsServices;
+        this.accountingCodeServices = accountingCodeServices;
+        this.enterpriseServices = enterpriseServices;
     }
 
-//    public Integer createProducts(ProdutosDTO produtosDTO) {
-//        var product = produtosDTO.toEntity();
-//        var savedProduct = produtosRepository.save(product);
-//        return savedProduct.getIdProduct();
-//    }
+    public Integer createProducts(ProdutosDTO produtosDTO) {
+        var product = produtosDTO.toEntity(serialNumberControlService,barCodeTypeServices,natureProductsServices,accountingCodeServices,enterpriseServices);
+        var savedProduct = produtosRepository.save(product);
+        return savedProduct.getIdProduct();
+    }
 
 
     public Product getById(Integer id) {

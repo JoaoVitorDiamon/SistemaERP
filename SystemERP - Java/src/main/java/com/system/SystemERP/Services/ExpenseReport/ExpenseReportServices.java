@@ -56,6 +56,5 @@ public class ExpenseReportServices {
         if (inicialDate.isAfter(now)) {
             throw new InvalidDataException("A data de início não pode estar no futuro. ");
         }
-
     }
 }

@@ -6,6 +6,7 @@ import com.system.SystemERP.Entity.Enterprise.Enterprise;
 import com.system.SystemERP.Entity.NatureProduct.NatureProduct;
 import com.system.SystemERP.Entity.Products.Product;
 import com.system.SystemERP.Entity.SerialNumberControl.SerialNumberControl;
+import com.system.SystemERP.Entity.Size.Size;
 import com.system.SystemERP.Services.AccountingCode.AccountingCodeServices;
 import com.system.SystemERP.Services.BarCodeType.BarCodeTypeServices;
 import com.system.SystemERP.Services.Enterprise.EnterpriseServices;
@@ -42,11 +43,6 @@ public record ProdutosDTO(
         Integer IdImportCode,
         Integer IdEnterprise
 ) {
-    public ProdutosDTO {
-        volume = length * height * width;
-        area = length * width;
-    }
-
     public Product toEntity(SerialNumberControlService serialNumberControlService, BarCodeTypeServices barCodeTypeServices, NatureProductsServices natureProductsServices, AccountingCodeServices accountingCodeServices, EnterpriseServices enterpriseServices) {
         return new Product(
                 null,
@@ -61,12 +57,7 @@ public record ProdutosDTO(
                 stockAlert,
                 desiredStock,
                 fetchNatureProductById(IdNatureProduct, natureProductsServices),
-                weight,
-                length,
-                height,
-                width,
-                volume,
-                area,
+                new Size(weight,length,height,width,volume,area),
                 customsCode,
                 note,
                 price,
