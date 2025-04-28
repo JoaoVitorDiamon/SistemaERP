@@ -50,4 +50,12 @@ public class ThirdPartiesController {
         thirdPartiesServices.delete(idTerceiros);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/{idTerceiros}")
+    @Operation(summary = "Atualiza um terceiro pelo ID", description = "Caso exista, atualiza um terceiro pelo ID")
+    public ResponseEntity<Void> update(@PathVariable Integer idTerceiros, @RequestBody ThirdPartiesDTO thirdPartiesDTO){
+      thirdPartiesServices.updateThirdParty(idTerceiros, thirdPartiesDTO);
+      return ResponseEntity.noContent().build();
+    }
+
 }

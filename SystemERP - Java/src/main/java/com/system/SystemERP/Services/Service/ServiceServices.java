@@ -51,4 +51,12 @@ public class ServiceServices {
         if (!exists) throw new EntityNotFoundException("Servico nao encontrado");
         serviceRepository.deleteById(id);
     }
+
+    public void updateService(Integer id, ServiceDTO serviceDTO) {
+        var exists = serviceRepository.existsById(id);
+        if (!exists) throw new EntityNotFoundException("Servico nao encontrado");
+        var service = serviceDTO.toEntity(serialNumberControlService, barCodeTypeServices, accountingCodeServices, enterpriseServices, addresServices);
+        service.setIdService(id);
+        serviceRepository.save(service);
+    }
 }

@@ -49,4 +49,12 @@ public class ThirdPartiesServices {
         if (!exists) throw new EntityNotFoundException("Terceiros nao encontrado!");
         thirdPartiesRepository.deleteById(id);
     }
+
+    public void updateThirdParty(Integer id, ThirdPartiesDTO thirdPartiesDTO){
+        var exists = thirdPartiesRepository.existsById(id);
+        if(!exists) throw new EntityNotFoundException("Terceiro nao encontrado");
+        var thirdParty = thirdPartiesDTO.toEntity(clientTypeServices, coinServices, enterpriseServices, addresServices);
+        thirdParty.setThirdPartyId(id);
+        thirdPartiesRepository.save(thirdParty);
+    }
 }

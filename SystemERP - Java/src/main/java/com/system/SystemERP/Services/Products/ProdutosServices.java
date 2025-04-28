@@ -52,4 +52,13 @@ public class ProdutosServices {
         if (!exists) throw new EntityNotFoundException("Produto nao encontrado!");
         produtosRepository.deleteById(id);
     }
+
+
+    public void updateProduct(Integer id, ProdutosDTO produtosDTO){
+        var exists = produtosRepository.existsById(id);
+        if (!exists) throw new EntityNotFoundException("Produto nao encontrado!");
+        var product = produtosDTO.toEntity(serialNumberControlService,barCodeTypeServices,natureProductsServices,accountingCodeServices,enterpriseServices);
+        product.setIdProduct(id);
+        produtosRepository.save(product);
+    }
 }

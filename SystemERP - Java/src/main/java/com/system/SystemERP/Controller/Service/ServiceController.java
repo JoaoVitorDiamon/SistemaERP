@@ -51,4 +51,11 @@ public class ServiceController {
         serviceServices.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/{idServico}")
+    @Operation(summary = "Atualiza um serviço utilizando id", description = "Caso exista, atualiza um serviço pelo id")
+    public ResponseEntity<Void> update(@PathVariable Integer idServico, @RequestBody ServiceDTO serviceDTO) {
+        serviceServices.updateService(idServico, serviceDTO);
+        return ResponseEntity.noContent().build();
+    }
 }

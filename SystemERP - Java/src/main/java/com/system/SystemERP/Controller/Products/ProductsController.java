@@ -52,5 +52,11 @@ public class ProductsController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/{idProduto}")
+    @Operation(summary = "Atualiza um produto utilizando id", description = "Caso exista, atualiza um produto pelo id")
+    public ResponseEntity<Void> update(@PathVariable Integer idProduto, @RequestBody ProdutosDTO produtosDTO) {
+        produtosServices.updateProduct(idProduto, produtosDTO);
+        return ResponseEntity.noContent().build();
+    }
 
 }
