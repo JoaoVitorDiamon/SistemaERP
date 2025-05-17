@@ -17,16 +17,11 @@ public class InternalTransfer {
     private Integer IDInternalTransfer;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdPayingAccount\"",
-            foreignKey = @ForeignKey(name = "\"FK_IdAccountPayment_InternalTransfer\"")
-
-    )
+    @JoinColumn(name = "\"IdPayingAccount\"",foreignKey = @ForeignKey(name = "\"FK_IdAccountPayment_InternalTransfer\""))
     private AccountBank IdPayingAccount;
 
     @ManyToOne
-    @JoinColumn(name = "\"IdReceiverAccount\"",
-            foreignKey = @ForeignKey(name = "\"FK_IdAccountReceiver_InternalTransfer\"")
-            )
+    @JoinColumn(name = "\"IdReceiverAccount\"",foreignKey = @ForeignKey(name = "\"FK_IdAccountReceiver_InternalTransfer\""))
     private AccountBank IdReceiverAccount;
 
     @ManyToOne
