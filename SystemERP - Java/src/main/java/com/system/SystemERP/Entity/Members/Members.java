@@ -1,10 +1,13 @@
 package com.system.SystemERP.Entity.Members;
 
+import com.system.SystemERP.Entity.CollectiveLicense.CollectiveLicense;
 import com.system.SystemERP.Entity.Enterprise.Enterprise;
 import com.system.SystemERP.Entity.Position.Position;
 import com.system.SystemERP.Entity.User.User;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Table(name = "\"Members\"")
@@ -44,6 +47,8 @@ public class Members {
     private String DateOfBirth;
 
     @Column(name = "\"PublicAssociation\"")
-    private String PublicAssociation
-    ;
+    private String PublicAssociation;
+
+    @ManyToMany(mappedBy = "members")
+    private List<CollectiveLicense> collectiveLicenses;
 }
