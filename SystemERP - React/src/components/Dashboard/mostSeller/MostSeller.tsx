@@ -4,8 +4,8 @@ import { MostSellerTable } from "./MostSellerTable";
 export const MostSeller = () => {
   return (
     <div>
-      <div className="flex flex-col bg-background h-screen w-full justify-start items-left">
-        <h1 className="text-2xl font-bold mt-4 text-dashboard">
+      <div className="flex flex-col bg-background  w-full justify-start items-left mt-8 ml-8">
+        <h1 className="text-2xl font-bold font-poppins  mt-4 text-dashboard">
           Produtos mais vendidos
         </h1>
         <MostSellerHeader />

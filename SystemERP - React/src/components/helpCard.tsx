@@ -1,6 +1,6 @@
 export const HelpCard = () => {
   return (
-    <div className="rounded-lg shadow-lg p-6 flex flex-col items-center ">
+    <div className="rounded-lg p-6 flex flex-col items-center ">
       <div className="bg-[url(../../assets/helpBackground.png)]  h-52 w-58  ml-2  bg-no-repeat bg-cover rounded-lg">
         <div className="bg-white w-[50px] h-[50px]  rounded-2xl flex items-center justify-center mt-4 ml-4">
           <img

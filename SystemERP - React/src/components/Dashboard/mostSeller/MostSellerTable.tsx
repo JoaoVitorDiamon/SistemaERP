@@ -18,9 +18,9 @@ export const MostSellerTable = ({ ...seller }: MostSellerTableProps) => {
   ];
 
   return (
-    <div className="grid grid-cols-4 items-center h-8  w-full gap-4 mt-2 px-4">
-      <h3 className="text-gray-500 font-poppins">{seller.index}</h3>
-      <h3 className="text-gray-500 font-poppins">{seller.name}</h3>
+    <div className="grid grid-cols-4 items-center h-8  w-full  mt-2 gap-8">
+      <h3 className="text-gray-500 font-medium font-poppins">{seller.index}</h3>
+      <h3 className="text-gray-500 font-medium font-poppins">{seller.name}</h3>
       <div className="w-3/4">
         <ProgressBar
           completed={seller.popularity}
