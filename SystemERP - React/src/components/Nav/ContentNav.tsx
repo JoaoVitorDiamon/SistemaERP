@@ -24,7 +24,7 @@ export const NavContent = [
   {
     title: "Produtos",
     icon: (isActive: boolean) => <ProductIcon isActive={isActive} />,
-    url: "/thirtyParty",
+    url: "/products",
   },
   {
     title: "Contatos",

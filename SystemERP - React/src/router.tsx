@@ -5,8 +5,14 @@ import CreateCorporationStepTwoPage from './pages/CreateCorporationStepTwo.tsx'
 import CreateCorporationStepEndereco from './pages/CreateCorporationStepEndereco.tsx'
 import CreateCorporationStepThreePage from './pages/CreateCorporationStepThreePage.tsx'
 import { Dashboard } from './pages/Dahsboard.tsx'
+import Products from './Pages/Products.tsx'
+import LandingPage from './Pages/LandingPage.tsx'
 
 const router = createBrowserRouter([
+  {
+    path: "/landing-page",
+    element: <LandingPage/>
+  },
   {
     path: "/create-corporation",
     element: <CreateCorporationStepOnePage />
@@ -34,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/thirtyParty",
     element: <Dashboard />
+  },
+  {
+    path: "/products",
+    element: <Products/>
   }
 ])
 
