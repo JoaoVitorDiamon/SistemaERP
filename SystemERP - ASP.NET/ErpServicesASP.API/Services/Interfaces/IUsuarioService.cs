@@ -11,5 +11,6 @@ namespace ErpServicesASP.API.Services.Interfaces
         Task<ResponseModel<List<UserModel>>> DeletarUsuarioPorId(int id);
         Task<ResponseModel<string>> VerificarExistenciaCPF(string cpf);
         Task<ResponseModel<string>> VerificarExistenciaEmail(string cpf);
+        Task<ResponseModel<UserModel>> LoginUser(string email, string password);
     }
 }

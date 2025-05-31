@@ -144,5 +144,26 @@ namespace ErpServicesASP.API.Services
                 return response;
             }
         }
+
+        public async Task<ResponseModel<UserModel>> LoginUser(string email, string password)
+        {
+            ResponseModel<UserModel> response = new ResponseModel<UserModel>();
+            try
+            {
+                var usuario = await _usuarioRepository.LoginUser(email, password);
+                if (usuario == null)
+                {
+                    response.setErro("Usuário ou senha inválidos");
+                    return response;
+                }
+                response.Valor = usuario;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.setErro("Erro: " + ex.Message);
+                return response;
+            }
+        }
     }
 }

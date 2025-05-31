@@ -27,7 +27,7 @@ namespace ErpServicesASP.API.Repositories
         {
             var emailCadastrado = await _context.Users.FirstOrDefaultAsync(usuario => novoUsuario.Email == usuario.Email);
             var cpfCadastrado = await _context.Users.FirstOrDefaultAsync(usuario => novoUsuario.CPF == usuario.CPF);
-            if(emailCadastrado != null || cpfCadastrado != null)
+            if (emailCadastrado != null || cpfCadastrado != null)
             {
                 return true;
             }
@@ -63,8 +63,14 @@ namespace ErpServicesASP.API.Repositories
         public async Task<bool> VerificarExistenciaEmail(string email)
         {
             var emailCadastrado = await _context.Users.FirstOrDefaultAsync(usuario => email == usuario.Email);
-            if (emailCadastrado != null ) return true;
+            if (emailCadastrado != null) return true;
             return false;
+        }
+
+        public async Task<UserModel?> LoginUser(string email, string password)
+        {
+            var usuario = await _context.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
+            return usuario;
         }
     }
 }

@@ -13,9 +13,11 @@ namespace ErpServicesASP.API.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _service;
-        public UsuarioController(IUsuarioService service)
+        private readonly ITokenInterface _tokenService;
+        public UsuarioController(IUsuarioService service, ITokenInterface create_token)
         {
             _service = service;
+            _tokenService = create_token;
         }
 
         /// <summary>
@@ -77,7 +79,7 @@ namespace ErpServicesASP.API.Controllers
         public async Task<ActionResult<ResponseModel<string>>> VerificarExistenciaCPF(string cpf)
         {
             var response = await _service.VerificarExistenciaCPF(cpf);
-            if(!response.Status) return BadRequest(response);
+            if (!response.Status) return BadRequest(response);
             return Ok(response);
         }
 
@@ -86,6 +88,21 @@ namespace ErpServicesASP.API.Controllers
         {
             var response = await _service.VerificarExistenciaEmail(email);
             if (!response.Status) return BadRequest(response);
+            return Ok(response);
+        }
+
+        [HttpGet("Login/{email}/{password}")]
+        public async Task<ActionResult<ResponseModel<string>>> LoginUser(string email, string password)
+        {
+
+            var login = await _service.LoginUser(email, password);
+            if (login.Mensagem == "Usuário não encontrado")
+                return NotFound(login);
+            if (!login.Status)
+                return BadRequest(login);
+            var token = _tokenService.GenerateToken(login.Valor);
+            var response = new ResponseModel<string>();
+            response.Valor = token;
             return Ok(response);
         }
     }
