@@ -3,6 +3,7 @@ using ErpServicesASP.API.Model;
 using ErpServicesASP.API.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ErpServicesASP.API.Controllers
 {
@@ -16,7 +17,8 @@ namespace ErpServicesASP.API.Controllers
         public async Task<ActionResult<ResponseModel<AddressModel>>> GetAdressById(int id)
         {
             var response = await _service.GetAdressById(id);
-            if (response.Mensagem.Contains("Erro")) return BadRequest(response);
+            if(response.Mensagem.IsNullOrEmpty()) return Ok(response);
+            else if (response.Mensagem.Contains("Erro")) return BadRequest(response);
             else if (!response.Status) return NotFound(response);
             return Ok(response);
         }

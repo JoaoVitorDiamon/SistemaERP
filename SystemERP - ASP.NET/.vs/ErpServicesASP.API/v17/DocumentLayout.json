@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\",
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\dto\\membercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\dto\\membercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\dell\\desktop\\projetospessoais\\sistemaerp\\systemerp - asp.net\\erpservicesasp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\model\\membermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\membermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\dell\\desktop\\projetospessoais\\sistemaerp\\systemerp - asp.net\\erpservicesasp.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\model\\enterprisemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\enterprisemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\dell\\desktop\\projetospessoais\\sistemaerp\\systemerp - asp.net\\erpservicesasp.api\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\khaleu\\desktop\\projetos\\sistema_erp\\systemerp - asp.net\\erpservicesasp.api\\repositories\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\repositories\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\dell\\desktop\\projetospessoais\\sistemaerp\\systemerp - asp.net\\erpservicesasp.api\\services\\interfaces\\itokeninterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\services\\interfaces\\itokeninterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\erpservicesasp.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\dell\\desktop\\projetospessoais\\sistemaerp\\systemerp - asp.net\\erpservicesasp.api\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\dell\\desktop\\projetospessoais\\sistemaerp\\systemerp - asp.net\\erpservicesasp.api\\model\\clienttypemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\model\\clienttypemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|c:\\users\\dell\\desktop\\projetospessoais\\sistemaerp\\systemerp - asp.net\\erpservicesasp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9BA631E5-F0F4-4515-A413-C9A2DA7710B6}|ErpServicesASP.API\\ErpServicesASP.API.csproj|solutionrelative:erpservicesasp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,116 +37,93 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1086,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T14:51:38.227Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EnterpriseModel.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\EnterpriseModel.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\EnterpriseModel.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\EnterpriseModel.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Model\\EnterpriseModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAWAAAA",
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\UserModel.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\UserModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\UserModel.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Model\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T23:11:11.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T17:16:10.881Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MemberRepository.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\MemberRepository.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Repositories\\MemberRepository.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Repositories\\MemberRepository.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Repositories\\MemberRepository.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAADkAAAApAAAA",
+              "Title": "ITokenInterface.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\Interfaces\\ITokenInterface.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\Interfaces\\ITokenInterface.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\Interfaces\\ITokenInterface.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Services\\Interfaces\\ITokenInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T22:57:52.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MemberCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\MemberCreateDto.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Dto\\MemberCreateDto.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Dto\\MemberCreateDto.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Dto\\MemberCreateDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T22:55:39.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T17:12:53.633Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MemberModel.cs",
-              "DocumentMoniker": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\MemberModel.cs",
-              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\MemberModel.cs",
-              "ToolTip": "C:\\Users\\khaleu\\Desktop\\Projetos\\sistema_erp\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\MemberModel.cs",
-              "RelativeToolTip": "ErpServicesASP.API\\Model\\MemberModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAeAAAA",
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Services\\TokenService.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Services\\TokenService.cs",
+              "ViewState": "AgIAAAUAAACAmZmZmZkrwAkAAADQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T22:55:29.305Z",
+              "WhenOpened": "2025-05-31T17:12:18.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddressController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\AddressController.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Controllers\\AddressController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Controllers\\AddressController.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Controllers\\AddressController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAApwBMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T16:36:27.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClientTypeModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\ClientTypeModel.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Model\\ClientTypeModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Model\\ClientTypeModel.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Model\\ClientTypeModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T16:24:37.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Program.cs",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\Program.cs",
+              "RelativeToolTip": "ErpServicesASP.API\\Program.cs",
+              "ViewState": "AgIAAAQAAABsmZmZmZkjwBsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:09:34.045Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1349,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1349,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 655,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\appsettings.json",
+              "RelativeDocumentMoniker": "ErpServicesASP.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\ProjetosPessoais\\SistemaERP\\SystemERP - ASP.NET\\ErpServicesASP.API\\appsettings.json",
+              "RelativeToolTip": "ErpServicesASP.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAADVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-31T15:08:47.333Z"
             }
           ]
         }

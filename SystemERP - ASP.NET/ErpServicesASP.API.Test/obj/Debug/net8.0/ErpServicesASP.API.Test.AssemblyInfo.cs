@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ErpServicesASP.API.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1950f917f9d49eb7ac7166db2638c765ec536d9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79213236abaaf543dfa7593ab6b98a90afa7f3d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ErpServicesASP.API.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ErpServicesASP.API.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -31,5 +31,8 @@ namespace ErpServicesASP.API.Model
 
         [ForeignKey("IdAdress")]
         public AddressModel Address { get; set; }
+
+        [ForeignKey("IdClientType")]
+        public ClientTypeModel ClientType { get; set; }
     }
 }
